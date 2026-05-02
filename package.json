@@ -1,0 +1,13 @@
+{
+  "name": "shipwrecked-pools-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shipwrecked Pools customer, technician, admin, reporting, routing, billing, and pool-care app.",
+  "scripts": {
+    "dev": "echo \"S01 will add app-specific dev scripts.\"",
+    "test": "echo \"S01 will add test runners.\"",
+    "lint": "echo \"S01 will add linting.\"",
+    "typecheck": "echo \"S01 will add TypeScript checks.\"",
+    "docs:status": "cat docs/prompt-packs/STATUS_BOARD.md"
+  }
+}

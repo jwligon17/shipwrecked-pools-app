@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+coverage/
+.next/
+.expo/
+.expo-shared/
+
+# Mobile/native generated folders
+ios/
+android/
+
+# Temporary files
+.tmp/
+.cache/
+
+# IDE
+.vscode/settings.json
