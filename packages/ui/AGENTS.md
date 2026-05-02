@@ -1,8 +1,10 @@
-# UI Package Instructions
+# UI Package Agent Rules
 
-Sprint 00 will expand this file.
+## Purpose
+Provide reusable shared UI primitives with a premium and professional baseline.
 
-Rules:
-- Shared UI components should feel premium, clean, and professional.
-- Components should support mobile-first layouts.
-- Avoid hardcoding business logic into shared visual components.
+## Rules
+- Components should be clean, accessible, reusable, and mobile-friendly.
+- Avoid embedding business permission logic directly into generic UI components.
+- Do not hardcode Shipwrecked customer/business data into generic components.
+- Keep composition flexible so app layers enforce domain-specific rules.

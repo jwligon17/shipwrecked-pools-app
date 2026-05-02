@@ -1,10 +1,19 @@
-# Database Instructions
+# Database Package Agent Rules
 
-Sprint 00 will expand this file.
+## Risk Level
+Database work is high-risk and must be sequenced carefully.
 
-Rules:
-- Database changes must be intentional and documented.
-- Only one person/Codex task should modify migrations at a time.
-- Preserve customer data isolation.
-- Separate customer-visible notes from internal notes.
-- Store audit events for sensitive actions.
+## Migration Rules
+- Run only one migration/schema prompt at a time.
+- Destructive migrations require explicit human direction.
+- Prefer additive, reversible migration strategies when possible.
+
+## Modeling Rules
+- Prefer relational clarity over shortcuts.
+- Preserve future organization/multi-tenant support.
+- Support separate water bodies and connected/non-connected pool-spa logic.
+- Keep internal notes and customer-visible notes separated in data modeling.
+
+## Audit And Integrity
+- Ensure sensitive events can be represented in audit-log structures.
+- Avoid schema choices that weaken role-based visibility enforcement.
