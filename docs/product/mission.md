@@ -3,7 +3,7 @@
 ## What This App Is
 The Shipwrecked Pools app is a premium customer app and internal operating system for Shipwrecked Pools. It is designed to help homeowners understand what is happening with their specific pool and to help the Shipwrecked team run service operations with consistent quality, speed, and accountability.
 
-It is not just a customer portal. It is a shared system of record for customer communication, route progress, service reports, service photos, chemistry readings, requests, quotes, approvals, repairs, billing, and operational history.
+It is not just a customer portal. It is a role-based shared system of record for customer communication, route progress, service reports, service photos, chemistry readings, requests, quotes, approvals, repairs, billing, and operational history across customer, technician, and admin/owner experiences.
 
 ## Why Shipwrecked Pools Is Building It
 Shipwrecked Pools has grown by being reliable, communicative, honest, and professional. The app exists to strengthen those exact advantages as the company scales.
@@ -35,14 +35,18 @@ It is the visual anchor that connects customers to their actual pool, not a gene
 ## Product Areas This System Must Support
 The mission includes a complete service-to-decision workflow across:
 - Customer communication and human-answered questions.
+- Context-aware chat with customer-confirmed context attachment, asynchronous technician messaging, and admin triage/intercept controls.
 - Route progress (stops-before-you and ETA, not exact live GPS).
 - Service reports and customer-friendly notes.
-- Service photos and history.
+- Service photos and history, including labeled before/after pairing and admin photo-hide controls for customer visibility.
 - Chemistry readings and chemical additions.
+- Internal chemical recommendation guidance with technician edit/apply workflow and admin-only recommendation table controls.
 - Quote requests, quote approvals, typed signatures, audit logging, and payment flow.
 - Repair workflows and repair reports.
+- Internal master-job grouping for non-weekly/non-biweekly work with per-visit reports and final summary reporting.
 - Billing and payment visibility for approved roles.
 - Customer records, property context, access notes, and pet notes.
+- Commercial account support with admin-reviewed compliance exports.
 - Product and deal opportunities tied to real pool/equipment context.
 
 ## Operational Systemization and Skimmer Replacement
@@ -55,6 +59,7 @@ Role boundaries are a core product rule, not a secondary detail.
 
 - Customers: Can see only their own household/property data.
 - Technicians: Can see assigned operational details (for example gate access notes, pet notes, phone numbers, reminders) but must not see billing, payment data, route profitability, customer profitability, or sensitive financial business data.
+- Owner/admin: May operate in technician workflows when needed but retain stricter admin/owner permissions and audit expectations.
 - Admin/Owner roles: Can access business and financial workflows according to role.
 
 Sensitive actions should be auditable.

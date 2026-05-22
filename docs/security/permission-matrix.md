@@ -1,16 +1,19 @@
 # Shipwrecked Pools Permission Matrix
 
 ## 1. Purpose
-This document is the access-control source of truth for Shipwrecked Pools across the mobile customer app, technician app role, admin dashboard, backend API, database access patterns, billing/payment workflows, route management, report workflows, quote/repair workflows, notifications, CRM/history, and future multi-tenant SaaS expansion.
+This document is the access-control source of truth for Shipwrecked Pools across one role-based mobile app, admin dashboard, backend API, database access patterns, billing/payment workflows, route management, report workflows, quote/repair workflows, notifications, CRM/history, and future multi-tenant SaaS expansion.
 
 This matrix is the contract future implementation must enforce in auth guards, endpoint serializers, UI visibility, query scoping, and audit logging.
 
 ## 2. Core Principles
 - Organization-scoped data from day one.
 - Customers can only access their own data.
+- Customers are customer-only users, but may invite household members.
 - Household members can only access invited customer/property data.
 - Technicians can only access assigned route/stop/customer operational data.
+- Technicians may view future assigned routes outside work hours but cannot submit service completion between 9:00 PM and 8:00 AM local time.
 - Technicians cannot access billing, payment data, quote margin, customer profitability, route profitability, or sensitive admin-only CRM notes.
+- Owner/admin may operate in technician workflows with additional admin/owner permissions.
 - Customer-facing content must use customer-friendly notes.
 - Internal notes must not leak to customers.
 - Exact technician GPS is not customer-visible in V1; customers see route progress, stops-before-you, and ETA.
@@ -29,11 +32,13 @@ This matrix is the contract future implementation must enforce in auth guards, e
 - Main responsibilities: Day-to-day operations, customer/admin workflows, route/report/quote/billing operations.
 - Generally sees: Most operational and billing data required to run service.
 - Generally does not see: Owner-only strategic profitability rollups and margin-sensitive strategy views where explicitly owner-restricted.
+- Additional duties: Admin reviews and approves commercial compliance exports before external email delivery.
 
 ### `technician`
 - Description: Field service operator.
 - Main responsibilities: Assigned stop execution, chemistry, photos, report inputs, customer-safe communication.
 - Generally sees: Assigned route stops, property access context, pet/treat notes, service history needed to perform work.
+- Additional scope: Can see a visit's master-job association and internal-only arrival/safety pop-up reminders that require acknowledgment.
 - Generally does not see: Billing/payment details, profitability data, quote margin/pricing strategy, admin-only CRM notes.
 
 ### `customer`
@@ -95,13 +100,22 @@ Legend: `Allowed`, `Limited`, `Assigned only`, `Own/Invited only`, `Not allowed`
 | route stops | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | technician route progress | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | service visits | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
+| master jobs (internal grouping) | Allowed | Allowed | Assigned only (association/status only) | Not allowed (direct object) | Not allowed (direct object) | Not allowed | System only |
+| master job final summary reports | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | checklists | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | service photos | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | chemistry readings | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | chemical dosages | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
+| chemical recommendation output | Allowed | Allowed | Assigned only | Not allowed | Not allowed | Not allowed | System only |
+| chemical recommendation tables | Allowed | Allowed | Not allowed | Not allowed | Not allowed | Not allowed | System only |
 | reports | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | report comments | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Not allowed | System only |
 | customer questions/conversations | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Limited | System only |
+| chat internal notes | Allowed | Allowed | Assigned only (internal threads only) | Not allowed | Not allowed | Not allowed | System only |
+| commercial export requests | Allowed | Allowed | Not allowed | Own/Invited only (request status only) | Own/Invited only (request status only) | Not allowed | System only |
+| commercial export recipients | Allowed | Allowed | Not allowed | Limited (own approved recipients only) | Limited (own approved recipients only) | Not allowed | System only |
+| technician arrival pop-up acknowledgments | Allowed | Allowed | Assigned only | Not allowed | Not allowed | Not allowed | System only |
+| technician safety reminder acknowledgments | Allowed | Allowed | Assigned only | Not allowed | Not allowed | Not allowed | System only |
 | requests | Allowed | Allowed | Assigned only | Own/Invited only | Own/Invited only | Own/Invited only | System only |
 | quotes | Allowed | Allowed | Assigned only (no margin view) | Own/Invited only | Own/Invited only | Limited | System only |
 | quote approvals/signatures | Allowed | Allowed | Not allowed | Own/Invited only | Own/Invited only (if delegated) | Not allowed | System only |
@@ -128,12 +142,14 @@ Legend: `Allowed`, `Limited`, `Assigned only`, `Own/Invited only`, `Not allowed`
 - Technician cannot see customer profitability.
 - Technician cannot see route profitability.
 - Technician cannot see quote margin or internal pricing strategy.
+- Technician cannot see master-job profitability, margin, or billing status.
 - Customer cannot see internal notes.
 - Household member cannot access data unless invited.
 - Lead cannot access service history before conversion.
 - Customer cannot see other customers on the route.
 - Customer cannot see exact technician GPS in V1.
 - Customer cannot see another customer's property/photos/reports.
+- Commercial export recipients must never receive billing, profitability, internal notes, or unrelated private data.
 - Deal targeting rules cannot expose other customers' equipment/profile data.
 
 ## 7. Sensitive Action Audit Requirements
@@ -148,6 +164,11 @@ The following actions must generate immutable audit events with actor, role, org
 - Publishing report.
 - Correcting report before customer opens.
 - Deleting report/comment/photo.
+- Hiding uploaded photos from customer view.
+- Commercial export approval/rejection and export-send action.
+- Technician arrival pop-up acknowledgment.
+- Technician safety reminder acknowledgment.
+- Override/approval action for threshold-triggered chemical recommendation plans.
 - Route stop reorder.
 - Marking stop skipped/delayed/gate locked/aggressive dog/weather issue/rescheduled.
 - Admin view-as customer.
@@ -161,6 +182,7 @@ The following actions must generate immutable audit events with actor, role, org
 - All customer endpoints must use customer ownership checks.
 - All household endpoints must use invitation/membership checks.
 - All technician endpoints must use assignment checks.
+- Service completion endpoints must enforce local-time restriction (no completion submissions from 9:00 PM to 8:00 AM).
 - All admin endpoints must use admin/owner checks.
 - All sensitive views/actions must emit audit logs.
 - Response serializers must strip fields the role should not see.

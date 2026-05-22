@@ -33,6 +33,7 @@ This document defines what data may be displayed to each role and how data must 
 ### `technician_visible`
 - Who can see it: Assigned technician for assigned stops/work.
 - Example fields: Gate code, pet/treat notes, checklist, assigned stop history.
+- Additional examples: Master-job association status, route-start safety reminder, arrival pop-up acknowledgment prompt.
 - Risks: Technician seeing non-assigned customer or financial data.
 - Implementation notes: Require assignment checks on every read/write.
 
@@ -125,6 +126,7 @@ Customers may see:
 - Weekly maintenance reports.
 - Repair reports.
 - Green-to-clean reports.
+- Master-job-related visit reports and final summary reports through normal report/history flows.
 - Chemistry readings and plain-English explanations.
 - Service photos included in their reports.
 - Quote requests and quotes sent to them.
@@ -145,6 +147,9 @@ Customers must not see:
 - Internal route profitability.
 - Quote margin/cost basis.
 - Employee compensation/commission assumptions.
+- Internal master-job rollup objects (cost, margin, profitability).
+- Internal chemical recommendation suggestions.
+- Internal technician arrival pop-ups or safety reminders.
 - Audit logs (except possible limited customer activity view in a future explicit pack).
 
 ## 5. Household Member Visibility Rules
@@ -181,6 +186,9 @@ Assigned technicians may see:
 - Customer questions assigned to them.
 - Service point statuses/technician notes needed for work.
 - Previous service/repair notes necessary for assigned work.
+- A visit-level indicator that work belongs to a master job.
+- Arrival pop-ups and route-start safety reminders requiring acknowledgment.
+- Suggested chemical guidance only after required readings/data are complete.
 
 Technicians must not see:
 - Billing status.
@@ -193,6 +201,9 @@ Technicians must not see:
 - Owner financial notes.
 - Deal revenue/margin details.
 - Other technicians' compensation assumptions.
+- Master-job profitability, margin, internal costs, or billing status.
+- Customer-visible billing/payment details for any account.
+- Chemical recommendation table administration controls.
 
 ## 7. Admin / Owner Visibility Rules
 Admins can manage operations, customers, reports, routes, quotes, repairs, deals, and billing workflows needed to run Shipwrecked service.
@@ -248,6 +259,8 @@ Rules:
 - Technician sees only photos relevant to assigned/current work.
 - Admin sees operationally relevant photos.
 - Hidden/deleted photos should preserve required audit/history records.
+- Before/after pairs are manually created by technician or admin and require labels.
+- Admin may hide uploaded photos from customer view; hidden state and actor must be auditable.
 
 ## 11. Report Visibility Rules
 Report types and visibility:
@@ -276,6 +289,8 @@ Visibility coverage:
 - Declined quotes: customer/admin/owner visible with reason where provided.
 - Repair job and repair report: customer-facing once published; technician operational visibility when assigned.
 - Before/after photos: customer-visible when part of customer repair report.
+- Master-job financial rollups: admin/owner only.
+- Master-job customer views: visit reports and final summary reports in standard report/history surfaces (not a generic master-job page).
 
 Rules:
 - Customer sees quote amount and line items sent to them.
@@ -297,6 +312,32 @@ Rules:
 - Notification logs may be admin-visible.
 - Customers can manage notification categories.
 - Household members have separate notification preferences.
+
+## 14A. Commercial Export Visibility Rules
+- Commercial exports require explicit admin review/approval before outbound email.
+- Export recipients may include property managers and health department inspectors.
+- Export payloads must exclude billing details, profitability, internal notes, and unrelated customer/property data.
+- Export-send actions and approvals must be auditable.
+
+## 14B. Technician Reminder/Pop-Up Visibility Rules
+- Arrival pop-ups are internal-only and must be acknowledged before service can begin.
+- Safety reminders appear at route start, are internal-only, and require acknowledgment.
+- Customer and household roles cannot view reminder/popup contents or acknowledgment logs.
+
+## 14C. Chemical Recommendation Visibility Rules
+- Suggested chemical amounts are internal guidance only.
+- Customers view only actual applied chemicals and plain-English explanation.
+- Admin can review suggested amount, technician-edited amount, applied amount, and follow/edit behavior.
+- Chemical recommendation table editing is admin/owner only.
+- Suggestions must be blocked when required profile/readings data is incomplete.
+
+## 14D. Context-Aware Chat Visibility Rules
+- Customer must explicitly confirm whether context from the current screen should be attached.
+- Context must never auto-attach without customer confirmation.
+- Technician chat is asynchronous only and limited to active/recent assigned context.
+- Admin can intercept, triage, reassign, and respond across all chats.
+- Internal chat notes are clearly marked and never customer-visible.
+- Closed chats automatically reopen when a customer sends a reply.
 
 ## 15. Multi-Tenant / Future SaaS Visibility Rules
 All future data models and reads must remain organization-scoped to preserve multi-tenant SaaS optionality.
@@ -322,6 +363,9 @@ Future prompt-pack implementations must:
 - Avoid exposing hidden fields in mobile/admin screens.
 - Add customer data-isolation tests.
 - Add technician no-billing/no-profitability access tests.
+- Add tests for customer context-confirmation behavior before chat context attachment.
+- Add tests enforcing asynchronous technician chat expectations.
+- Add tests ensuring chemical recommendation suggestions are never customer-visible.
 - Log sensitive access (gate code, payment visibility, approval actions, admin view-as, export/deletion requests).
 
 These rules are mandatory for Shipwrecked’s Skimmer-replacement direction and customer trust outcomes.

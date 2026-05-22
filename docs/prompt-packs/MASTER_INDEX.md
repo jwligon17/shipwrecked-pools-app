@@ -102,7 +102,7 @@ One person should own main branch, merge order, migration order, and the prompt 
 
 | Sprint | Area | Packs | Priority | Parallelization | Risk |
 |---|---:|---:|---|---|---|
-| S00 | Codex Operating System | 18 | P0 | Mostly sequential | High |
+| S00 | Codex Operating System | 19 | P0 | Mostly sequential | High |
 | S01 | Repo, Infrastructure, Tooling | 16 | P0 | Mostly sequential | High |
 | S02 | Core Database / Domain Model | 28 | P0 | Low | Critical |
 | S03 | Auth, Roles, Permissions | 22 | P0 | Low | Critical |
@@ -124,7 +124,7 @@ One person should own main branch, merge order, migration order, and the prompt 
 | S19 | Privacy, Security, QA, Hardening | 32 | P0/P1/P2 | Medium | Critical |
 | S20 | Release, Beta, Migration from Skimmer | 24 | P1/P2 | Medium | High |
 
-**Total planned prompt packs:** 506
+**Total planned prompt packs:** 507
 
 ---
 
@@ -152,6 +152,8 @@ For the first 3–5 friendly customer beta, prioritize:
 
 Beta should still include the custom pool outline, reports, chemistry, customer profile, pet/dog treat profile, questions, quote approval basics, route progress, push notifications, admin basics, and technician workflow basics.
 
+Amendment note: S00-008A adds mandatory beta/launch planning coverage for single role-based mobile app behavior, internal master-job model, commercial export review controls, before/after pairing and hide controls, route-time completion guardrails, internal-only reminders/pop-ups, internal chemical recommendation visibility rules, and customer-confirmed context-aware chat routing.
+
 ---
 
 # Full Prompt Pack Registry
@@ -168,6 +170,7 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S00-006 | P0 | No | Critical | Create Permission Matrix Doc | Define access for owner/admin/technician/customer/household/lead. |
 | S00-007 | P0 | No | Critical | Create Data Visibility Rules Doc | Define customer-friendly notes, technician-visible notes, and admin-only notes. |
 | S00-008 | P0 | No | High | Create Prompt Pack Format Template | Standardize every future prompt pack. |
+| S00-008A | P0 | No | Critical | Reconcile Feature Amendments With Scope, Permissions, Visibility, and Roadmap | Amend living docs after S00-006/S00-007 to cover single role-based app model, master jobs, commercial exports, before/after pairing, reminders/pop-ups, chemical guidance, and context-aware chat rules. |
 | S00-009 | P0 | No | High | Create Prompt Pack Status Board | Track progress, owner, branch, status, dependencies, and risk. |
 | S00-010 | P0 | No | High | Create Codex Review Checklist | Define review questions Codex must answer after every pack. |
 | S00-011 | P0 | Yes | Medium | Create Handoff Note Template | Standardize implementation handoff notes. |

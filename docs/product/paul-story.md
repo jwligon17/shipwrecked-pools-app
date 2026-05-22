@@ -64,6 +64,8 @@ Instead of wondering whether a value is “bad,” he gets context about whether
 ## Questions Answered by Shipwrecked Humans
 When Paul has a question, he asks it in the app and receives answers from Shipwrecked technicians or admins. In V1, these answers are human-provided, not AI-generated.
 
+When chat opens from a specific area (for example chemistry or billing), Paul is asked to confirm whether he wants that context attached before it is sent. This prevents accidental context leakage and keeps routing clear.
+
 This preserves accountability and trust. Paul knows the answer came from the same team caring for his pool.
 
 ## Quote and Small Repair Experience
@@ -81,6 +83,8 @@ This makes decision-making fast while preserving clear consent.
 When repairs happen, Paul receives a separate repair report rather than having repair details buried inside a regular weekly maintenance report.
 
 Repair reports include before/after photo proof and clear summaries of completed work. This separation helps Paul distinguish routine maintenance from one-off repair outcomes and cost-bearing actions.
+
+For multi-visit jobs, Paul can review progress photos and visit-level report history over time and then see a final completion summary once the job is done. He does this through normal report/history flows, not through a generic master-job page.
 
 ## Deals, Robots, and Notification Preferences
 Shipwrecked can send relevant product or deal opportunities, such as a robot cleaner offer that fits Paul’s setup. These notifications are part of value delivery, not spam.

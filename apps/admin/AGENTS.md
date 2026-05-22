@@ -5,6 +5,7 @@ The admin dashboard is Shipwrecked's internal operations control center.
 
 ## Admin Scope
 Admin workflows may cover leads, customers, properties, pets/access, pool outlines, routes, reports, quotes, repairs, billing, deals, notifications, audit logs, and internal CRM notes.
+Admin workflows also own commercial export review/approval before outbound email delivery and photo visibility overrides (including hide-from-customer behavior).
 
 ## Data Boundaries
 - Billing and profitability data are admin/owner-only.

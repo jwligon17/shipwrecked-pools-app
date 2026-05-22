@@ -49,6 +49,11 @@ Treat this as current intended direction, not guaranteed already-implemented sta
 12. Billing and payment workflows are launch-critical.
 13. Deal/product notifications must be independently toggleable from essential service notifications.
 14. Sensitive actions must be auditable.
+15. App remains a single true mobile app with role-based customer/technician/owner-admin experiences.
+16. Master jobs are internal grouping objects for non-weekly/non-biweekly work; no generic customer-facing master-job page.
+17. Commercial exports require admin review before outbound email and must exclude billing/profitability/internal notes.
+18. Internal chemical recommendation suggestions are never customer-visible.
+19. Customer chat context requires explicit confirmation before attachment; technician chat is asynchronous only.
 
 ## User Roles And Visibility Rules
 - Customer: can view only authorized household/property/service data relevant to their account.
@@ -67,6 +72,7 @@ Technician-prohibited data:
 - Route profitability and customer profitability.
 - Sensitive business financial data.
 - Admin-only business notes.
+- Master-job profitability, margin, and billing status.
 
 ## Customer-Friendly Vs Internal Data
 - Customer-facing notes must remain customer-friendly.

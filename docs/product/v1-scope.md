@@ -4,7 +4,7 @@
 This document defines what belongs in each phase of delivery so Shipwrecked can launch a high-confidence product without overbuilding or shipping a diluted experience. It is the reference for deciding whether features belong in internal demo, friendly beta, V1 launch, post-V1 Skimmer replacement, or later SaaS/valuation work.
 
 ## Product Priorities
-- Deliver a true mobile app experience (not a PWA) for customers and leads.
+- Deliver one true role-based mobile app experience (not a PWA) for customers, technicians, and owner/admin.
 - Prioritize customer experience over internal tooling in early phases (roughly 75% customer experience, 25% internal operations).
 - Preserve the path to full Skimmer replacement while accepting staged migration.
 - Treat the custom top-down pool outline as mandatory in beta/V1, not optional polish.
@@ -53,6 +53,12 @@ The 3–5 customer beta is the first real-world validation phase and must includ
 - Service/report/quote notifications.
 - Basic admin dashboard for operations.
 - Basic technician workflow support.
+- Technician route-start safety reminder acknowledgment.
+- Technician arrival internal pop-up acknowledgment before service begin.
+- Context-aware chat entry points with explicit customer context confirmation.
+- Asynchronous technician chat only (no live chat expectation).
+- Before/after photo pairing with required labels.
+- Admin ability to hide uploaded photos from customer view.
 
 ## V1 Launch Scope
 V1 launch includes all beta capabilities plus launch-critical business workflows:
@@ -65,6 +71,9 @@ V1 launch includes all beta capabilities plus launch-critical business workflows
 - Product/deal notifications with independent opt-out.
 - Route exception notifications.
 - Admin management for routes, customers, reports, quotes, repairs, and billing.
+- Master-job workflows for non-weekly/non-biweekly work as internal grouping objects, including per-visit reports and final summary reports.
+- Commercial account support as separate customer type with admin-reviewed compliance export workflow before email delivery.
+- Suggested chemical guidance workflow: required-data gating, technician edit + applied amount tracking, and admin-only recommendation table editing.
 - Terms and privacy acceptance tracking.
 - Account deletion request path.
 - Basic customer data export path.
@@ -82,6 +91,7 @@ Post-V1 focuses on deeper operational replacement of Skimmer and migration resil
 - Customer migration tooling.
 - Structured Skimmer parallel-period and cutover plan.
 - Operational analytics for quality and throughput.
+- Expanded commercial reporting templates and policy-specific compliance exports.
 
 ## Later SaaS and Valuation Layer
 Later phases can expand to strategic platform and valuation capabilities:
@@ -110,7 +120,7 @@ Later phases can expand to strategic platform and valuation capabilities:
 - Non-essential experimental features that weaken launch focus.
 
 ## Non-Negotiable V1 Requirements
-- True mobile app delivery (not PWA).
+- True single role-based mobile app delivery (not PWA).
 - Support for both customers and leads.
 - Custom top-down pool outline in beta and V1.
 - Route progress with stops-before-you and ETA, not exact GPS surveillance.
@@ -121,6 +131,7 @@ Later phases can expand to strategic platform and valuation capabilities:
 - Billing/payment support by launch.
 - Deal notifications independently toggleable from essential service notifications.
 - Strict role boundaries that block technician access to billing/pricing/profitability and sensitive financial data.
+- Technician service completion restrictions enforce no completion submissions between 9:00 PM and 8:00 AM local time.
 
 ## Beta-Critical Feature List
 - Account access and baseline security prompting (including 2FA path).
@@ -141,6 +152,10 @@ Later phases can expand to strategic platform and valuation capabilities:
 - Deal notification delivery with independent opt-out.
 - Route exception notification handling.
 - Expanded admin workflows for operational control.
+- Master-job visibility and reporting model where master jobs stay internal while customers receive visit-level and final summary reporting in normal history/report flows.
+- Commercial compliance exports with mandatory admin review prior to outbound email.
+- Suggested chemical guidance controls with internal-only recommendation visibility.
+- Customer-confirmed context-aware chat routing and automatic reopen of closed chats when customers reply.
 - Privacy/terms acceptance records, deletion request, basic export, and sensitive-action auditing.
 
 ## Feature Deferral Rules

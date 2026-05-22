@@ -2,6 +2,7 @@
 
 ## Purpose
 Build a premium true mobile app experience for customer and technician roles.
+The product is one app with role-based experiences, not separate customer/technician apps.
 
 ## Local Priorities
 - Customer UX must feel clean, clear, premium, and confidence-building.
@@ -16,6 +17,10 @@ Build a premium true mobile app experience for customer and technician roles.
 ## V1 Product Rules
 - Custom top-down pool outline is V1-critical and should be treated as a core surface, not decorative polish.
 - Customer questions in V1 are human-answered by Shipwrecked staff, not AI-generated.
+- Customer chat must confirm context attachment explicitly before including screen context.
+- Technician chat is asynchronous only.
+- Technician service completion submissions must be blocked between 9:00 PM and 8:00 AM local time.
+- Customers should see master-job outcomes through report/history flows only (visit reports + final summary), not a generic master-job page.
 
 ## UX Quality Rules
 - Handle loading, empty, error, and success states on all user-facing screens.
