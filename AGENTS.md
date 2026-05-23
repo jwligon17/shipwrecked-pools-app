@@ -11,7 +11,17 @@ Use these as source-of-truth product context before major implementation work:
 - `docs/product/paul-story.md`
 - `docs/product/v1-scope.md`
 - `docs/prompt-packs/MASTER_INDEX.md`
+- `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
+- `docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md`
+- `docs/prompt-packs/FEATURE_MAP.md`
+- `docs/prompt-packs/DEPENDENCY_MAP.md`
+- `docs/prompt-packs/PROTECTED_RULES.md`
+- `docs/prompt-packs/MASTER_INDEX_INTEGRITY_REVIEW_CHECKLIST.md`
+- `docs/prompt-packs/AFFECTED_SPRINT_RECALCULATION_RULES.md`
+- `docs/prompt-packs/MASTER_INDEX_UPDATE_PROMPT_TEMPLATE.md`
 - `docs/prompt-packs/STATUS_BOARD.md`
+
+Feature-changing implementation must not proceed until these source-of-truth governance docs are updated when affected by the requested change.
 
 If prompt-level instructions conflict, resolve by following explicit `PACK_PATH` instructions for the active pack and report Pack ID conflicts before editing.
 

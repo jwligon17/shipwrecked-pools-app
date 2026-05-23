@@ -87,6 +87,36 @@ Each changelog entry must include:
 - `implemented_or_verified_by`: Codex
 - `commit_reference`: TODO (human-managed commit)
 
+---
+
+## MI-2026-05-23-002 — Master Index V2 Integrity Review Tidy-Up
+
+- `change_id`: MI-2026-05-23-002
+- `date`: 2026-05-23
+- `change_title`: Normalize Sprint 00 registry identity and governance references after integrity review
+- `summary`: Applied governance-only corrections to remove Sprint 00 registry/count/risk/title drift and strengthen AGENTS source-of-truth references.
+- `source_of_change`: Master Index V2 Integrity Review `PASS WITH NOTES` follow-up corrections.
+- `affected_docs`:
+  - `docs/prompt-packs/MASTER_INDEX.md`
+  - `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
+  - `AGENTS.md`
+- `affected_features`:
+  - source-of-truth-governance
+- `affected_sprints`:
+  - S00 (direct), downstream governance consumers in S01+ (indirect)
+- `affected_prompt_packs`:
+  - S00-008A (explicitly represented/normalized in registry)
+  - S00-018 (title/purpose normalization in registry)
+  - S00-024 through S00-026 (risk normalized to Critical in registry)
+- `protected_rules_checked`: Yes. No protected product or security behavior changed; governance metadata only.
+- `dependency_impact`: Low direct impact; improves sequencing integrity clarity and reduces governance drift risk.
+- `status_board_impact`: None required. `STATUS_BOARD.md` already reflected canonical rows/risk for S00-024 through S00-026 and was not overwritten or downgraded.
+- `follow_up_actions`:
+  - Rerun Master Index V2 integrity review to confirm notes resolved.
+  - Continue Sprint 01+ work using normalized governance references.
+- `implemented_or_verified_by`: Codex
+- `commit_reference`: TODO (human-managed commit)
+
 ## Rules
 - Committed repository docs are source of truth; chat memory is not.
 - Major roadmap or feature changes must update this changelog first or in the same governance change set.

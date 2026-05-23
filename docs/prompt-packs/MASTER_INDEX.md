@@ -198,7 +198,7 @@ One person should own main branch, merge order, migration order, and the prompt 
 
 | Sprint | Area | Packs | Priority | Parallelization | Risk |
 |---|---:|---:|---|---|---|
-| S00 | Codex Operating System | 26 | P0 | Mostly sequential | High |
+| S00 | Codex Operating System | 27 tracked entries (26 numbered + S00-008A amendment) | P0 | Mostly sequential | High |
 | S01 | Repo, Infrastructure, Tooling | 16 | P0 | Mostly sequential | High |
 | S02 | Core Database / Domain Model | 37 | P0 | Low | Critical |
 | S03 | Auth, Roles, Permissions | 24 | P0 | Low | Critical |
@@ -220,7 +220,8 @@ One person should own main branch, merge order, migration order, and the prompt 
 | S19 | Privacy, Security, QA, Hardening | 37 | P0/P1/P2 | Medium | Critical |
 | S20 | Release, Beta, Migration from Skimmer | 24 | P1/P2 | Medium | High |
 
-**Total planned prompt packs:** 581
+**Total planned numbered prompt packs:** 581
+**Tracked Sprint 00 entries:** 27 (S00-001 through S00-026 plus S00-008A amendment/reconciliation pack)
 
 ---
 
@@ -264,6 +265,7 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S00-006 | P0 | No | Critical | Create Permission Matrix Doc | Define access for owner/admin/technician/customer/household/lead. |
 | S00-007 | P0 | No | Critical | Create Data Visibility Rules Doc | Define customer-friendly notes, technician-visible notes, and admin-only notes. |
 | S00-008 | P0 | No | High | Create Prompt Pack Format Template | Standardize every future prompt pack. |
+| S00-008A | P0 | No | Critical | Reconcile Feature Amendments With Scope, Permissions, Visibility, and Roadmap | Reconcile post-pack feature amendments across product/security/master-index governance docs. |
 | S00-009 | P0 | No | High | Create Prompt Pack Status Board | Track progress, owner, branch, status, dependencies, and risk. |
 | S00-010 | P0 | No | High | Create Codex Review Checklist | Define review questions Codex must answer after every pack. |
 | S00-011 | P0 | Yes | Medium | Create Handoff Note Template | Standardize implementation handoff notes. |
@@ -273,15 +275,15 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S00-015 | P0 | Yes | High | Create Release Gate Definitions | Define internal demo, beta, V1 launch, and Skimmer replacement gates. |
 | S00-016 | P0 | Yes | Medium | Create Paul Demo Persona Spec | Define Paul, Megan, Cooper, pool/spa, reports, quotes, and notifications. |
 | S00-017 | P0 | Yes | Medium | Create Codex Skill Plan | Define reusable Codex skills for repeated workflows. |
-| S00-018 | P0 | No | High | Create Initial MASTER_INDEX.md | Install this master index into the repo. |
+| S00-018 | P0 | No | Critical | Finalize Sprint 00 Master Index and Sprint 01 Readiness | Close out Sprint 00 governance and establish Sprint 01 readiness criteria. |
 | S00-019 | P0 | No | Critical | Create MASTER_INDEX_CHANGELOG.md | Create the change log used to track every project direction change and its reason. |
 | S00-020 | P0 | No | Critical | Create MASTER_INDEX_UPDATE_PROTOCOL.md | Define the required process for changing the Master Index before implementation. |
 | S00-021 | P0 | No | Critical | Create FEATURE_MAP.md | Create feature-oriented indexing so each idea maps to all affected sprints/packs. |
 | S00-022 | P0 | No | Critical | Create DEPENDENCY_MAP.md | Create dependency tracking between packs, features, backend contracts, and release gates. |
 | S00-023 | P0 | No | Critical | Create PROTECTED_RULES.md | Store permanent rules Codex must never violate. |
-| S00-024 | P0 | No | High | Create Master Index Integrity Review Checklist | Define how Codex checks for contradictions after each index update. |
-| S00-025 | P0 | No | High | Create Affected Sprint Recalculation Rules | Teach Codex to identify downstream sprint changes after new ideas. |
-| S00-026 | P0 | No | High | Create Master Index Update Prompt Template | Create a reusable prompt template for future index updates. |
+| S00-024 | P0 | No | Critical | Create Master Index Integrity Review Checklist | Define how Codex checks for contradictions after each index update. |
+| S00-025 | P0 | No | Critical | Create Affected Sprint Recalculation Rules | Teach Codex to identify downstream sprint changes after new ideas. |
+| S00-026 | P0 | No | Critical | Create Master Index Update Prompt Template | Create a reusable prompt template for future index updates. |
 
 ## S01 — Repo, Infrastructure, Tooling
 
