@@ -1,6 +1,6 @@
 # Master Index Changelog
 
-Purpose: Track every meaningful change to the Shipwrecked Pools app vision, architecture, sprint sequence, or protected rules.
+Purpose: Record meaningful changes to the Master Index system, prompt-pack roadmap, feature scope, protected rules, dependency relationships, and source-of-truth governance documents.
 
 ## Change ID Format
 `MI-YYYY-MM-DD-###`
@@ -13,60 +13,105 @@ Purpose: Track every meaningful change to the Shipwrecked Pools app vision, arch
 - Requires Retrofit
 - Closed
 
----
+## When to Add a Changelog Entry
+Add an entry when any of the following occur:
+- A new feature idea changes app scope, role behavior, or operational workflow.
+- An existing feature changes priority tier or delivery phase.
+- A sprint gains, loses, splits, or re-sequences prompt packs.
+- A protected business/architecture rule is added, removed, or changed.
+- A feature dependency or build-sequencing dependency changes.
+- A completed sprint or pack requires retrofit/reconciliation.
+- A new source-of-truth document is introduced for product, security, governance, or sequencing.
 
-## MI-2026-05-23-001 — Living Master Index V2 Updates
-
-**Status:** Implemented in Master Index
-
-**Reason:** Incorporate product decisions from the updated project conversation and make this repo the single source of truth.
-
-**Decisions added:**
-- Add Master Index changelog, dependency map, feature map, protected rules, and update protocol.
-- Add dependency recalculation / Master Index integrity system.
-- Add feature-oriented indexing.
-- Add automated route optimization for initial build.
-- Route optimization should understand geography clustering, expected service duration, green pools, repair visits, and commercial vs residential stops.
-- Weekly and biweekly recurring services should stay on the same weekday unless intentionally changed.
-- Add commercial pools/apartment complexes and property-management daily chemical logging.
-- Keep repair workflows single-technician for now.
-- Retain high-quality media for up to two years, then compress/archive older media.
-- On account deletion, delete owner-specific account information except historical photos and report logs retained for liability.
-- Pool outline style should be minimal modern line art, locked north-up, with landscaping and adjacent/detached bodies of water included where relevant.
-- Billing must include monthly billing, one-time charges, autopay, grace periods, customer suspension, partial payments, customer invoicing, and technician skip-service notification after two failed payments.
-- Conversations must support images, voice notes, unread indicators, technician typing indicators, escalation, message priority, and admin oversight of all technician messaging.
-- Technician accountability should track missed checklist items, skipped photos, route speed anomalies, repeat chemistry corrections, complaint frequency, and dirty-pool flags, but not customer-visible quality scoring.
-- Add full weather intelligence: freeze/pump warnings, rain/lightning service delays, route/ETA weather effects.
-- Protect pool-outline marker relationships to operational data permanently.
-
-**Affected sprints:** S00, S02, S03, S04, S06, S08, S10, S11, S13, S14, S16, S18, S19.
-
-**Retrofit required if already implemented:** Yes. If any affected sprint packs are already merged, create retrofit prompt packs instead of silently changing future packs only.
-
-**Protected rules updated:** Yes.
+## Required Entry Format
+Each changelog entry must include:
+- `change_id`
+- `date`
+- `change_title`
+- `summary`
+- `source_of_change`
+- `affected_docs`
+- `affected_features`
+- `affected_sprints`
+- `affected_prompt_packs`
+- `protected_rules_checked`
+- `dependency_impact`
+- `status_board_impact`
+- `follow_up_actions`
+- `implemented_or_verified_by`
+- `commit_reference` (placeholder allowed until merged)
 
 ---
 
-## Template for Future Changes
+## MI-2026-05-23-001 — Master Index V2 Source-of-Truth Adoption
+
+- `change_id`: MI-2026-05-23-001
+- `date`: 2026-05-23
+- `change_title`: Adopt Living Master Index V2 governance system
+- `summary`: Establish Master Index V2 as the durable source-of-truth system and require relational governance updates before feature-changing implementation.
+- `source_of_change`: Shipwrecked product-direction reconciliation and Sprint 00 governance expansion.
+- `affected_docs`:
+  - `docs/prompt-packs/MASTER_INDEX.md`
+  - `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
+  - `docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md`
+  - `docs/prompt-packs/FEATURE_MAP.md`
+  - `docs/prompt-packs/DEPENDENCY_MAP.md`
+  - `docs/prompt-packs/PROTECTED_RULES.md`
+  - `docs/prompt-packs/STATUS_BOARD.md`
+- `affected_features`:
+  - source-of-truth-governance
+  - route-optimization
+  - commercial-pools
+  - commercial-daily-chemical-logs
+  - media-retention
+  - pool-outline
+  - service-points
+  - billing-payments
+  - payment-failure-suspension
+  - conversations
+  - weather-intelligence
+  - technician-accountability
+  - repair-workflows
+- `affected_sprints`:
+  - S00, S02, S03, S04, S06, S08, S10, S11, S13, S14, S16, S18, S19
+- `affected_prompt_packs`:
+  - S00-019 through S00-026 (new governance batch)
+  - Upstream/downstream retrofit packs as needed when implemented work is impacted
+- `protected_rules_checked`: Yes. Protected rules were reviewed and expanded to cover pool-outline linkage, visibility boundaries, route privacy, human-answered V1 questions, quote-audit requirements, payment-failure enforcement, and related governance constraints.
+- `dependency_impact`: Yes. Feature and sequencing dependencies require explicit mapping in `FEATURE_MAP.md` and `DEPENDENCY_MAP.md`, with retrofit creation when completed packs are affected.
+- `status_board_impact`: Yes. Governance packs must be tracked in `STATUS_BOARD.md` with additive updates only; the board must never be replaced by seed/example files.
+- `follow_up_actions`:
+  - Complete S00-019 through S00-026 sequential governance adoption.
+  - Run Master Index integrity reviews before any feature-changing implementation.
+  - Create retrofit packs where accepted changes impact already-implemented packs.
+- `implemented_or_verified_by`: Codex
+- `commit_reference`: TODO (human-managed commit)
+
+## Rules
+- Committed repository docs are source of truth; chat memory is not.
+- Major roadmap or feature changes must update this changelog first or in the same governance change set.
+- Completed prompt packs remain historical records unless superseded by explicit correction/retrofit packs.
+- `docs/prompt-packs/STATUS_BOARD.md` must be updated in place and must never be blindly overwritten from templates or seed files.
+- Protected rules must be checked before accepting and implementing roadmap changes.
+
+---
+
+## Entry Template
 
 ```txt
-Change ID:
-Date:
-Requested by:
-Status:
-Summary:
-Reason:
-Affected features:
-Affected sprints:
-Affected pack IDs:
-Already implemented packs affected? Yes/No
-Retrofit packs required? Yes/No
-Protected rules affected? Yes/No
-Data model changes required? Yes/No
-API contract changes required? Yes/No
-Mobile changes required? Yes/No
-Admin changes required? Yes/No
-Technician workflow changes required? Yes/No
-Billing/privacy/security impact:
-Decision:
+change_id:
+date:
+change_title:
+summary:
+source_of_change:
+affected_docs:
+affected_features:
+affected_sprints:
+affected_prompt_packs:
+protected_rules_checked:
+dependency_impact:
+status_board_impact:
+follow_up_actions:
+implemented_or_verified_by:
+commit_reference:
 ```
