@@ -1,0 +1,12 @@
+node_modules
+pnpm-lock.yaml
+.next
+.expo
+.expo-shared
+dist
+coverage
+build
+out
+android
+ios
+*.log
