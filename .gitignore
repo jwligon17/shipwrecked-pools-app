@@ -20,8 +20,13 @@ dist/
 build/
 coverage/
 .next/
+out/
 .expo/
 .expo-shared/
+.web-build/
+
+# TypeScript
+*.tsbuildinfo
 
 # Mobile/native generated folders
 ios/

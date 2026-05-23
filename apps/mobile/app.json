@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Shipwrecked Pools",
+    "slug": "shipwrecked-pools",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shipwreckedpools.mobile"
+    },
+    "android": {
+      "package": "com.shipwreckedpools.mobile"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

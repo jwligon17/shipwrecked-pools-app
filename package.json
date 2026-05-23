@@ -3,11 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "description": "Shipwrecked Pools customer, technician, admin, reporting, routing, billing, and pool-care app.",
+  "packageManager": "pnpm@9.12.0",
   "scripts": {
-    "dev": "echo \"S01 will add app-specific dev scripts.\"",
-    "test": "echo \"S01 will add test runners.\"",
-    "lint": "echo \"S01 will add linting.\"",
-    "typecheck": "echo \"S01 will add TypeScript checks.\"",
+    "dev": "echo \"Run one workspace app at a time: pnpm dev:mobile | pnpm dev:admin | pnpm dev:api\"",
+    "dev:mobile": "pnpm --filter @shipwrecked/mobile dev",
+    "dev:admin": "pnpm --filter @shipwrecked/admin dev",
+    "dev:api": "pnpm --filter @shipwrecked/api dev",
+    "build": "pnpm -r --if-present build",
+    "build:mobile": "pnpm --filter @shipwrecked/mobile build",
+    "build:admin": "pnpm --filter @shipwrecked/admin build",
+    "build:api": "pnpm --filter @shipwrecked/api build",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:watch": "pnpm -r --if-present test:watch",
+    "format": "echo \"Formatter setup lands in a later Sprint 01 pack.\"",
+    "format:check": "echo \"Formatter check setup lands in a later Sprint 01 pack.\"",
+    "clean": "pnpm -r --if-present clean",
     "docs:status": "cat docs/prompt-packs/STATUS_BOARD.md"
   }
 }

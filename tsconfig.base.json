@@ -3,10 +3,26 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shipwrecked/shared-types/*": ["packages/shared-types/src/*"],
+      "@shipwrecked/api-client/*": ["packages/api-client/src/*"],
+      "@shipwrecked/ui/*": ["packages/ui/src/*"],
+      "@shipwrecked/config/*": ["packages/config/src/*"],
+      "@shipwrecked/auth/*": ["packages/auth/src/*"],
+      "@shipwrecked/notifications/*": ["packages/notifications/src/*"],
+      "@shipwrecked/pool-outline/*": ["packages/pool-outline/src/*"],
+      "@shipwrecked/test-utils/*": ["packages/test-utils/src/*"],
+      "@shipwrecked/db/*": ["packages/db/src/*"]
+    }
   }
 }
