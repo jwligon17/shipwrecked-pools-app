@@ -180,7 +180,7 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S00-015 | P0 | Yes | High | Create Release Gate Definitions | Define internal demo, beta, V1 launch, and Skimmer replacement gates. |
 | S00-016 | P0 | Yes | Medium | Create Paul Demo Persona Spec | Define Paul, Megan, Cooper, pool/spa, reports, quotes, and notifications. |
 | S00-017 | P0 | Yes | Medium | Create Codex Skill Plan | Define reusable Codex skills for repeated workflows. |
-| S00-018 | P0 | No | High | Create Initial MASTER_INDEX.md | Install this master index into the repo. |
+| S00-018 | P0 | No | Critical | Finalize Sprint 00 Master Index and Sprint 01 Readiness | Close out Sprint 00 and confirm readiness to generate Sprint 01 prompt packs. |
 
 ## S01 — Repo, Infrastructure, Tooling
 
