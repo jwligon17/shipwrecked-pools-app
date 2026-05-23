@@ -4,6 +4,10 @@
 
 **Project goal:** Build a premium true mobile app and internal operating system for Shipwrecked Pools that can eventually replace Skimmer for customer communication, route management, service reports, photos, chemistry readings, billing, customer records, quote/repair approvals, technician workflows, internal CRM, deal/product recommendations, analytics, and privacy/security workflows.
 
+**Current source-of-truth version:** V2 — Living Master Index update. This version incorporates the added requirements for master-index change control, dependency recalculation, feature-oriented indexing, automated route optimization, commercial chemical logging, two-year high-quality media retention, monthly/autopay billing, payment failure suspension workflows, advanced conversations, weather intelligence, technician accountability tracking, and protected pool-outline-to-operational-data relationships.
+
+**Single source-of-truth rule:** Once this file is committed into the repo, this file and the companion files it creates (`MASTER_INDEX_CHANGELOG.md`, `FEATURE_MAP.md`, `DEPENDENCY_MAP.md`, `PROTECTED_RULES.md`, and `MASTER_INDEX_UPDATE_PROTOCOL.md`) supersede prior chat threads, detached notes, and earlier versions of the index. New ideas should be translated into a logged Master Index change before Codex implements related code.
+
 ---
 
 ## How to Use This Master Index
@@ -28,6 +32,94 @@ Recommended workflow for each prompt pack:
 14. Update `STATUS_BOARD.md`.
 
 ---
+
+## Living Master Index System
+
+The Master Index must be treated as a living operating system, not just a roadmap. Any meaningful project change should update the index and related docs before implementation.
+
+Required repo files:
+
+```txt
+/docs/prompt-packs/MASTER_INDEX.md
+/docs/prompt-packs/MASTER_INDEX_CHANGELOG.md
+/docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md
+/docs/prompt-packs/FEATURE_MAP.md
+/docs/prompt-packs/DEPENDENCY_MAP.md
+/docs/prompt-packs/PROTECTED_RULES.md
+/docs/prompt-packs/STATUS_BOARD.md
+```
+
+Change protocol:
+
+1. Capture the new idea or decision in `MASTER_INDEX_CHANGELOG.md`.
+2. Assign it a Change ID.
+3. Identify affected features in `FEATURE_MAP.md`.
+4. Identify affected sprints and pack IDs in `DEPENDENCY_MAP.md`.
+5. Decide whether the change affects already-implemented packs.
+6. If it affects completed work, create a retrofit/fix prompt pack instead of silently changing later packs.
+7. Update affected sprint rows, priorities, risks, and parallelization rules.
+8. Update `PROTECTED_RULES.md` if the change creates a permanent business or architecture rule.
+9. Run a Codex Master Index Integrity Review before implementation begins.
+
+Codex must not implement a feature-changing idea until the Master Index, feature map, dependency map, and changelog have been updated.
+
+---
+
+## Feature-Oriented Indexing
+
+In addition to sprint-based organization, the project must maintain `FEATURE_MAP.md`. This allows future project changes to update every affected sprint instead of only the obvious one.
+
+Required feature families:
+
+```txt
+customer-experience
+lead-onboarding
+customer-profile
+household-members
+pets-and-access
+water-bodies
+commercial-pools
+pool-outline
+service-points
+route-optimization
+technician-progress
+technician-visit-workflow
+chemistry
+commercial-daily-chemical-logs
+reports
+media-retention
+conversations
+requests-quotes-repairs
+billing-payments
+payment-failure-suspension
+notifications
+weather-intelligence
+deals-products
+admin-crm
+technician-accountability
+analytics-valuation
+privacy-security
+release-migration
+```
+
+Every prompt pack should eventually include a `Feature Tags` field so updates can be traced relationally.
+
+---
+
+## Protected Project Rules
+
+These rules should live in `PROTECTED_RULES.md` and should also be referenced inside `AGENTS.md`.
+
+1. The pool outline must never be treated as a decorative image only. Service markers must remain tied to operational records including reports, photos, service visits, chemistry where relevant, quotes, repairs, comments, recommendations, and status history.
+2. Customers must never see admin-only internal notes.
+3. Technicians must never see billing, payment details, customer profitability, route profitability, quote margin, or sensitive business data.
+4. Route progress must protect customer and technician privacy. Customers see progress, stops-before-you, and ETA, not other customer addresses or unnecessary tech off-route movement.
+5. Weekly/biweekly recurring services should remain on the same weekday unless admin intentionally changes them.
+6. Commercial chemical logging must support property-management users who can submit required daily chemical readings and chemical additions.
+7. High-quality media should be retained for two years, then compressed/archive-optimized after two years. Account deletion should remove pool-owner-specific account information except historical photos and report logs retained for liability purposes.
+8. V1 customer questions must be answered by humans, not AI.
+9. All quote approvals must include approval action, checkbox confirmation, typed signature, quote version, payment event, and audit log.
+10. Failed payment workflows must be enforceable operationally, including customer suspension and technician skip-service notifications after the configured failure threshold.
 
 ## Priority Tiers
 
@@ -64,7 +156,7 @@ Use these statuses in `STATUS_BOARD.md`:
 - High
 - Critical
 
-Critical prompt packs include auth, permissions, database migrations, billing, quote approval/signature logic, payment flows, customer data isolation, technician data restrictions, gate code visibility, report generation, pool outline data structure, privacy deletion/export, and notification preference logic.
+Critical prompt packs include auth, permissions, database migrations, billing, quote approval/signature logic, payment flows, customer data isolation, technician data restrictions, gate code visibility, report generation, pool outline data structure, pool-outline-to-operational-record relationships, route optimization, commercial chemical logging, payment-failure suspension logic, media retention/deletion exceptions, privacy deletion/export, and notification preference logic.
 
 ---
 
@@ -80,6 +172,10 @@ Critical prompt packs include auth, permissions, database migrations, billing, q
 - Report generation engine
 - Notification preference model
 - Customer data deletion/export
+- Master Index integrity/change protocol updates
+- Route optimization data model
+- Commercial chemical log data model
+- Media retention/deletion exception model
 
 ### Safe to run in parallel later
 
@@ -102,29 +198,29 @@ One person should own main branch, merge order, migration order, and the prompt 
 
 | Sprint | Area | Packs | Priority | Parallelization | Risk |
 |---|---:|---:|---|---|---|
-| S00 | Codex Operating System | 19 | P0 | Mostly sequential | High |
+| S00 | Codex Operating System | 26 | P0 | Mostly sequential | High |
 | S01 | Repo, Infrastructure, Tooling | 16 | P0 | Mostly sequential | High |
-| S02 | Core Database / Domain Model | 28 | P0 | Low | Critical |
-| S03 | Auth, Roles, Permissions | 22 | P0 | Low | Critical |
-| S04 | Lead, Customer, Household Onboarding | 24 | P0 | Medium | High |
+| S02 | Core Database / Domain Model | 37 | P0 | Low | Critical |
+| S03 | Auth, Roles, Permissions | 24 | P0 | Low | Critical |
+| S04 | Lead, Customer, Household Onboarding | 26 | P0 | Medium | High |
 | S05 | Water Bodies, Pool/Spa Logic, Equipment | 20 | P0 | Medium | High |
-| S06 | Custom Pool Outline Studio | 32 | P0 | Low/Medium | Critical |
+| S06 | Custom Pool Outline Studio | 38 | P0 | Low/Medium | Critical |
 | S07 | Customer Mobile Shell + Dynamic Home | 24 | P0 | Medium | High |
-| S08 | Route Management + Technician Progress | 24 | P0 | Medium | High |
+| S08 | Route Management + Technician Progress | 31 | P0 | Medium | High |
 | S09 | Technician Visit Workflow | 28 | P0/P1 | Medium | Critical |
-| S10 | Chemistry + Report Engine | 28 | P0/P1 | Medium | Critical |
-| S11 | Questions + Conversations | 16 | P0/P1 | Medium | Medium |
+| S10 | Chemistry + Report Engine | 31 | P0/P1 | Medium | Critical |
+| S11 | Questions + Conversations | 24 | P0/P1 | Medium | High |
 | S12 | Requests, Quotes, Repairs | 30 | P0/P1 | Medium | Critical |
-| S13 | Billing + Payments | 26 | P1 | Low/Medium | Critical |
-| S14 | Notifications | 28 | P0/P1 | Medium | High |
+| S13 | Billing + Payments | 35 | P1 | Low/Medium | Critical |
+| S14 | Notifications | 33 | P0/P1 | Medium | High |
 | S15 | Deals, Robots, Product Recommendations | 18 | P1/P2 | Medium | Medium |
-| S16 | Admin Dashboard / Internal CRM | 30 | P0/P1/P2 | Medium | High |
+| S16 | Admin Dashboard / Internal CRM | 34 | P0/P1/P2 | Medium | High |
 | S17 | Technician Mobile Polish | 18 | P1 | Medium | High |
-| S18 | Analytics, Profitability, Valuation Data | 20 | P2 | Medium | Medium |
-| S19 | Privacy, Security, QA, Hardening | 32 | P0/P1/P2 | Medium | Critical |
+| S18 | Analytics, Profitability, Valuation Data | 27 | P2 | Medium | Medium |
+| S19 | Privacy, Security, QA, Hardening | 37 | P0/P1/P2 | Medium | Critical |
 | S20 | Release, Beta, Migration from Skimmer | 24 | P1/P2 | Medium | High |
 
-**Total planned prompt packs:** 507
+**Total planned prompt packs:** 581
 
 ---
 
@@ -132,7 +228,7 @@ One person should own main branch, merge order, migration order, and the prompt 
 
 For the first 3–5 friendly customer beta, prioritize:
 
-- S00 — Codex Operating System
+- S00 — Codex Operating System and Master Index Integrity
 - S01 — Repo/Infrastructure
 - S02 — Core Database
 - S03 — Auth/Permissions
@@ -140,7 +236,7 @@ For the first 3–5 friendly customer beta, prioritize:
 - S05 — Water Bodies
 - S06 — Pool Outline Studio
 - S07 — Customer Home
-- S08 — Route Progress
+- S08 — Route Progress and Route Optimization Basics
 - S09 — Technician Visit Basics
 - S10 — Reports/Chemistry Basics
 - S11 — Questions Basics
@@ -151,8 +247,6 @@ For the first 3–5 friendly customer beta, prioritize:
 - S20 — Beta Launch
 
 Beta should still include the custom pool outline, reports, chemistry, customer profile, pet/dog treat profile, questions, quote approval basics, route progress, push notifications, admin basics, and technician workflow basics.
-
-Amendment note: S00-008A adds mandatory beta/launch planning coverage for single role-based mobile app behavior, internal master-job model, commercial export review controls, before/after pairing and hide controls, route-time completion guardrails, internal-only reminders/pop-ups, internal chemical recommendation visibility rules, and customer-confirmed context-aware chat routing.
 
 ---
 
@@ -170,7 +264,6 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S00-006 | P0 | No | Critical | Create Permission Matrix Doc | Define access for owner/admin/technician/customer/household/lead. |
 | S00-007 | P0 | No | Critical | Create Data Visibility Rules Doc | Define customer-friendly notes, technician-visible notes, and admin-only notes. |
 | S00-008 | P0 | No | High | Create Prompt Pack Format Template | Standardize every future prompt pack. |
-| S00-008A | P0 | No | Critical | Reconcile Feature Amendments With Scope, Permissions, Visibility, and Roadmap | Amend living docs after S00-006/S00-007 to cover single role-based app model, master jobs, commercial exports, before/after pairing, reminders/pop-ups, chemical guidance, and context-aware chat rules. |
 | S00-009 | P0 | No | High | Create Prompt Pack Status Board | Track progress, owner, branch, status, dependencies, and risk. |
 | S00-010 | P0 | No | High | Create Codex Review Checklist | Define review questions Codex must answer after every pack. |
 | S00-011 | P0 | Yes | Medium | Create Handoff Note Template | Standardize implementation handoff notes. |
@@ -180,7 +273,15 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S00-015 | P0 | Yes | High | Create Release Gate Definitions | Define internal demo, beta, V1 launch, and Skimmer replacement gates. |
 | S00-016 | P0 | Yes | Medium | Create Paul Demo Persona Spec | Define Paul, Megan, Cooper, pool/spa, reports, quotes, and notifications. |
 | S00-017 | P0 | Yes | Medium | Create Codex Skill Plan | Define reusable Codex skills for repeated workflows. |
-| S00-018 | P0 | No | Critical | Finalize Sprint 00 Master Index and Sprint 01 Readiness | Close out Sprint 00 and confirm readiness to generate Sprint 01 prompt packs. |
+| S00-018 | P0 | No | High | Create Initial MASTER_INDEX.md | Install this master index into the repo. |
+| S00-019 | P0 | No | Critical | Create MASTER_INDEX_CHANGELOG.md | Create the change log used to track every project direction change and its reason. |
+| S00-020 | P0 | No | Critical | Create MASTER_INDEX_UPDATE_PROTOCOL.md | Define the required process for changing the Master Index before implementation. |
+| S00-021 | P0 | No | Critical | Create FEATURE_MAP.md | Create feature-oriented indexing so each idea maps to all affected sprints/packs. |
+| S00-022 | P0 | No | Critical | Create DEPENDENCY_MAP.md | Create dependency tracking between packs, features, backend contracts, and release gates. |
+| S00-023 | P0 | No | Critical | Create PROTECTED_RULES.md | Store permanent rules Codex must never violate. |
+| S00-024 | P0 | No | High | Create Master Index Integrity Review Checklist | Define how Codex checks for contradictions after each index update. |
+| S00-025 | P0 | No | High | Create Affected Sprint Recalculation Rules | Teach Codex to identify downstream sprint changes after new ideas. |
+| S00-026 | P0 | No | High | Create Master Index Update Prompt Template | Create a reusable prompt template for future index updates. |
 
 ## S01 — Repo, Infrastructure, Tooling
 
@@ -235,6 +336,15 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S02-026 | P0 | No | Critical | Repair Job Schema | Store repair workflows and repair reports. |
 | S02-027 | P1 | No | Critical | Billing + Payment Schema | Store invoices, payment references, and billable events. |
 | S02-028 | P0 | No | Critical | Notification + Audit Schema | Store notification preferences, delivery logs, and audit logs. |
+| S02-029 | P0 | No | Critical | Route Optimization Schema | Store route optimization inputs including geography, recurrence, service time estimates, pool type, and job type. |
+| S02-030 | P1 | No | High | Commercial Facility Schema | Support commercial pools, apartment complexes, property-management contacts, and facility-level records. |
+| S02-031 | P1 | No | Critical | Commercial Daily Chemical Log Schema | Allow commercial property managers to log required daily chemical readings and chemical additions. |
+| S02-032 | P0 | No | Critical | Media Retention + Archive Schema | Support two-year high-quality media retention and post-two-year compression/archive states. |
+| S02-033 | P1 | No | High | Weather Intelligence Schema | Store weather alerts, route impacts, freeze warnings, rain/lightning delays, and pump-warning rules. |
+| S02-034 | P0 | No | High | Advanced Conversation Schema | Support message images, voice notes, unread states, typing indicators, escalation, priority, and admin oversight. |
+| S02-035 | P1 | No | Critical | Billing Suspension + Partial Payment Schema | Support monthly billing, autopay, grace periods, failed payment thresholds, partial payments, invoices, and suspension. |
+| S02-036 | P2 | No | High | Technician Accountability Metrics Schema | Track missed checklist items, skipped photos, route speed anomalies, repeat chemistry corrections, complaints, and dirty-pool flags. |
+| S02-037 | P0 | No | Critical | Pool Outline Operational Relationship Constraints | Enforce relationships between service markers and reports, visits, photos, quotes, repairs, comments, and status history. |
 
 ## S03 — Auth, Roles, Permissions
 
@@ -262,6 +372,8 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S03-020 | P0 | Limited | Medium | Password Reset Flow | Add account recovery. |
 | S03-021 | P0 | Limited | Medium | Auth Error States | Add mobile/admin auth error handling. |
 | S03-022 | P0 | No | Critical | Auth Review Pack | Codex reviews auth/permission implementation. |
+| S03-023 | P1 | No | Critical | Commercial Property Manager Permission Rules | Allow property-management users to submit/view permitted commercial chemical logs without broader admin access. |
+| S03-024 | P1 | No | Critical | Commercial Chemical Log Permission Tests | Verify property managers can log readings only for assigned commercial properties. |
 
 ## S04 — Lead, Customer, Household Onboarding
 
@@ -291,6 +403,8 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S04-022 | P0 | Yes | Medium | Onboarding Progress State | Show incomplete/complete onboarding. |
 | S04-023 | P0 | Limited | High | Onboarding Tests | Verify profile creation works. |
 | S04-024 | P0 | No | High | Onboarding Review Pack | Codex reviews onboarding. |
+| S04-025 | P1 | Limited | High | Commercial Property Manager Onboarding | Allow approved property-management contacts to create accounts for daily chemical logging. |
+| S04-026 | P1 | Limited | High | Commercial Facility Intake | Capture commercial/apartment pool facility details and assigned responsible contacts. |
 
 ## S05 — Water Bodies, Pool/Spa Logic, Equipment
 
@@ -353,6 +467,12 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S06-030 | P0 | Limited | Critical | Outline Tests | Backend and rendering tests. |
 | S06-031 | P0 | No | Critical | Outline QA Review | Codex reviews outline system. |
 | S06-032 | P0 | Yes | Medium | Pool Outline Handoff | Document how to create customer outlines. |
+| S06-033 | P0 | Limited | High | Minimal Modern Line-Art Style Rules | Define the visual style for pool outlines as premium minimal modern line art. |
+| S06-034 | P0 | Limited | High | North-Up Orientation Lock | Ensure outlines render north-up consistently. |
+| S06-035 | P0 | Limited | High | Landscaping + Adjacent Water Context Layer | Include relevant landscaping, adjacent bodies of water, and detached spas in the outline context. |
+| S06-036 | P0 | No | Critical | Marker Operational Relationship Enforcement | Ensure service markers stay tied to visits, reports, photos, quotes, repairs, comments, and history. |
+| S06-037 | P0 | No | Critical | Outline Relationship Regression Tests | Test that marker-operational relationships cannot be broken by future changes. |
+| S06-038 | P0 | Yes | Medium | Outline Visual QA Handoff | Document visual QA standards for custom pool outlines. |
 
 ## S07 — Customer Mobile Shell + Dynamic Home
 
@@ -411,6 +531,13 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S08-022 | P0 | Limited | Medium | Technician Route Screen Basic | Show today’s route. |
 | S08-023 | P0 | Limited | Critical | Route Tests | Test progress, privacy, reorder. |
 | S08-024 | P0 | No | Critical | Route Review Pack | Codex reviews route system. |
+| S08-025 | P0 | No | Critical | Automated Route Optimization Engine | Generate optimized routes from geography, job type, recurrence, and expected service duration. |
+| S08-026 | P0 | No | Critical | Geography Clustering Rules | Cluster routes geographically while respecting service days. |
+| S08-027 | P0 | Limited | High | Projected Service Time Model | Store and use expected service time per location, such as a 45-minute weekly visit. |
+| S08-028 | P0 | Limited | High | Green/Repair/Commercial Weighting | Adjust optimization for green pools, repair visits, and commercial vs residential stops. |
+| S08-029 | P0 | No | Critical | Recurring Weekday Lock | Keep weekly and biweekly recurring services on the same weekday unless admin overrides. |
+| S08-030 | P0 | Limited | High | Route Optimization Admin Override | Allow admin and technicians to manually reorder when needed while preserving audit history. |
+| S08-031 | P0 | No | Critical | Route Optimization Tests | Test optimization, privacy, weekday locks, manual overrides, and ETA impacts. |
 
 ## S09 — Technician Visit Workflow
 
@@ -477,6 +604,9 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S10-026 | P0 | Limited | Critical | Report Tests | Test generation, comments, visibility. |
 | S10-027 | P0 | No | Critical | Report Review Pack | Codex reviews report engine. |
 | S10-028 | P0 | Yes | Medium | Report Handoff | Document report creation flow. |
+| S10-029 | P1 | Limited | Critical | Commercial Daily Chemical Logs | Let assigned commercial property managers log readings and chemicals added. |
+| S10-030 | P1 | Limited | High | Commercial Chemical Log History | Store and display daily commercial chemical history by facility/water body. |
+| S10-031 | P1 | Limited | High | Commercial Compliance Export | Export commercial daily chemical logs for compliance/liability needs. |
 
 ## S11 — Questions + Conversations
 
@@ -498,6 +628,14 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S11-014 | P0 | No | Critical | Conversation Permissions | Prevent cross-customer access. |
 | S11-015 | P0 | Limited | High | Conversation Tests | Test permissions and assignment. |
 | S11-016 | P0 | No | High | Conversation Review Pack | Codex reviews messaging. |
+| S11-017 | P0 | Limited | High | Conversation Image Uploads | Allow customers, techs, and admins to attach images to conversations. |
+| S11-018 | P1 | Limited | Medium | Conversation Voice Notes | Allow voice-note messages where supported. |
+| S11-019 | P0 | Limited | Medium | Unread Indicators | Show unread message counts and states. |
+| S11-020 | P1 | Limited | Medium | Technician Typing Indicators | Show typing indicators for technician/admin replies where appropriate. |
+| S11-021 | P0 | Limited | High | Message Escalation | Allow conversations to escalate from technician to admin/owner. |
+| S11-022 | P0 | Limited | High | Message Priority | Mark conversations as normal, important, urgent, or blocked. |
+| S11-023 | P0 | No | Critical | Admin Oversight of Technician Messaging | Ensure admin can read all technician-customer messaging. |
+| S11-024 | P0 | No | High | Advanced Conversation Review Pack | Codex reviews attachments, priority, escalation, unread states, and oversight. |
 
 ## S12 — Requests, Quotes, Repairs
 
@@ -564,6 +702,15 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S13-024 | P1 | Limited | Critical | Webhook Tests | Test Stripe event handling. |
 | S13-025 | P1 | No | Critical | Billing Review Pack | Codex reviews billing system. |
 | S13-026 | P1 | Yes | Medium | Billing Handoff | Document payment/billing flow. |
+| S13-027 | P1 | No | Critical | Monthly Billing Logic | Support monthly recurring maintenance billing. |
+| S13-028 | P1 | No | Critical | One-Time Charges | Support one-time charges for repairs, products, green-to-clean, and other jobs. |
+| S13-029 | P1 | No | Critical | Autopay Settings | Allow autopay setup, status, and customer/admin visibility. |
+| S13-030 | P1 | No | Critical | Failed Payment Grace Periods | Support configurable grace periods after failed payment. |
+| S13-031 | P1 | No | Critical | Two-Failed-Payments Skip Service Flag | Notify technician/admin to skip that week’s service after configured failed-payment threshold. |
+| S13-032 | P1 | No | Critical | Customer Suspension Workflow | Suspend/resume customers based on billing status and admin action. |
+| S13-033 | P1 | No | Critical | Partial Payment Support | Allow partial invoice payments and track remaining balance. |
+| S13-034 | P1 | No | Critical | Customer Invoicing | Generate and display customer invoices for recurring and one-time charges. |
+| S13-035 | P1 | No | Critical | Billing Suspension Tests | Test grace periods, partial payments, autopay, suspension, and technician skip-service visibility. |
 
 ## S14 — Notifications
 
@@ -597,6 +744,11 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S14-026 | P0 | Limited | Critical | Notification Tests | Test preferences and delivery logic. |
 | S14-027 | P0 | No | Critical | Notification Review Pack | Codex reviews notification system. |
 | S14-028 | P0 | Yes | Medium | Notification Handoff | Document notification categories. |
+| S14-029 | P1 | Limited | High | Weather Intelligence Backend | Connect weather conditions to notifications, delays, warnings, and route impacts. |
+| S14-030 | P1 | Limited | High | Freeze/Pump Warning Notifications | Notify customers to run pumps or protect equipment during cold conditions. |
+| S14-031 | P1 | Limited | High | Rain/Lightning Service Delay Rules | Trigger service delay messaging based on unsafe or service-disrupting weather. |
+| S14-032 | P1 | Limited | High | Weather-Based ETA/Route Adjustments | Allow weather to affect route estimates and admin/tech route decisions. |
+| S14-033 | P1 | No | High | Weather Notification Tests | Test weather alert rules, preference handling, and route-delay impacts. |
 
 ## S15 — Deals, Robots, Product Recommendations
 
@@ -655,6 +807,10 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S16-028 | P1 | Limited | High | Admin Tests | Test admin permissions. |
 | S16-029 | P1 | No | High | Admin Review Pack | Codex reviews admin dashboard. |
 | S16-030 | P1 | Yes | Low | Admin Handoff | Document admin usage. |
+| S16-031 | P1 | Limited | High | Commercial Property Admin View | Manage apartment/commercial pool facilities and property-management contacts. |
+| S16-032 | P1 | Limited | High | Commercial Daily Chemical Log Admin View | Review daily commercial chemical readings and chemical additions. |
+| S16-033 | P1 | Limited | Critical | Suspension Admin View | Manage failed-payment grace periods, suspension state, and resume service. |
+| S16-034 | P0 | Limited | High | Route Optimization Admin Controls | View optimized route logic, override route order, and inspect service-time assumptions. |
 
 ## S17 — Technician Mobile Polish
 
@@ -703,6 +859,13 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S18-018 | P2 | Limited | Medium | Analytics Tests | Verify data events. |
 | S18-019 | P2 | No | Medium | Analytics Review Pack | Codex reviews analytics. |
 | S18-020 | P2 | Yes | Low | Valuation Data Handoff | Document strategic business data. |
+| S18-021 | P2 | Limited | Medium | Missed Checklist Metrics | Track missed checklist items by technician, route, and account. |
+| S18-022 | P2 | Limited | Medium | Skipped Photo Metrics | Track skipped or missing required photo patterns. |
+| S18-023 | P2 | Limited | Medium | Route Speed Anomaly Metrics | Track unusually fast/slow service patterns without creating a customer-visible score. |
+| S18-024 | P2 | Limited | Medium | Repeat Chemistry Correction Metrics | Track repeated chemical corrections and recurring water-balance issues. |
+| S18-025 | P2 | Limited | Medium | Customer Complaint Frequency Metrics | Track complaint frequency and unresolved issue patterns. |
+| S18-026 | P2 | Limited | Medium | Pool Still Dirty Flag Metrics | Track post-service dirty-pool flags and related follow-up. |
+| S18-027 | P2 | Limited | Medium | Technician Coaching History | Store admin-only coaching/follow-up history without customer-visible quality scores. |
 
 ## S19 — Privacy, Security, QA, Hardening
 
@@ -740,6 +903,11 @@ Amendment note: S00-008A adds mandatory beta/launch planning coverage for single
 | S19-030 | P0 | No | Critical | Security Review Pack | Codex reviews security. |
 | S19-031 | P0 | No | Critical | QA Review Pack | Codex reviews QA readiness. |
 | S19-032 | P0 | Yes | Medium | Beta Readiness Handoff | Summarize readiness and risks. |
+| S19-033 | P0 | No | Critical | High-Quality Two-Year Media Retention Policy | Retain high-quality photos for up to two years for service proof and liability reduction. |
+| S19-034 | P1 | No | Critical | Post-Two-Year Media Compression Workflow | Compress/archive old media after two years while preserving historical evidence. |
+| S19-035 | P1 | No | Critical | Account Deletion Liability Exception | Delete pool-owner account information while retaining historical photos and report logs for liability. |
+| S19-036 | P1 | No | Critical | Retained Report/Photo Access Rules | Define who can access retained historical photos/report logs after account deletion. |
+| S19-037 | P1 | No | Critical | Media Retention + Deletion Tests | Test media retention, compression, deletion, and liability-exception rules. |
 
 ## S20 — Release, Beta, Migration from Skimmer
 
@@ -877,6 +1045,11 @@ S00-002-create-paul-story-source-doc.md
 S00-003-create-v1-scope-doc.md
 S00-004-create-root-agents-md.md
 S00-005-create-folder-level-agents-md-files.md
+S00-019-create-master-index-changelog.md
+S00-020-create-master-index-update-protocol.md
+S00-021-create-feature-map.md
+S00-022-create-dependency-map.md
+S00-023-create-protected-rules.md
 ```
 
-Do not ask Codex to build app features until S00, S01, S02, and S03 are complete.
+Do not ask Codex to build app features until S00, S01, S02, and S03 are complete. Do not ask Codex to implement project direction changes until the Master Index changelog, feature map, dependency map, protected rules, and affected sprint updates have been updated.
