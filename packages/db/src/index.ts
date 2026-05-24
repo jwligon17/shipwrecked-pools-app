@@ -1,5 +1,7 @@
 export const DB_PACKAGE_STATUS = 'foundation_only' as const;
 
+export * from './schema';
+
 export interface DbPackageMetadata {
   packageName: '@shipwrecked/db';
   status: typeof DB_PACKAGE_STATUS;
