@@ -19,5 +19,10 @@ describe('db package smoke', () => {
     expect(db.LEAD_TYPES).toContain('commercial');
     expect(db.LEAD_STATUSES).toContain('qualified');
     expect(db.LEAD_SOURCES).toContain('website');
+    expect(db.CUSTOMERS_TABLE).toBe('customers');
+    expect(db.CUSTOMER_TYPES).toContain('commercial');
+    expect(db.CUSTOMER_STATUSES).toContain('past_due');
+    expect(db.CUSTOMER_ONBOARDING_STATUSES).toContain('in_progress');
+    expect(db.CUSTOMER_BILLING_PROFILE_STATUSES).toContain('active');
   });
 });
