@@ -28,5 +28,8 @@ describe('db package smoke', () => {
     expect(db.HOUSEHOLD_MEMBER_RELATIONSHIPS).toContain('spouse');
     expect(db.HOUSEHOLD_MEMBER_STATUSES).toContain('active');
     expect(db.HOUSEHOLD_MEMBER_ACCESS_LEVELS).toContain('manage_profile');
+    expect(db.PROPERTIES_TABLE).toBe('properties');
+    expect(db.PROPERTY_TYPES).toContain('commercial');
+    expect(db.PROPERTY_STATUSES).toContain('paused');
   });
 });
