@@ -130,6 +130,51 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Dependencies: S02 request/quote schema -> S12 flow -> S13 billing/payment hooks.
 - Priority: Beta / V1.
 
+### 8A) Repair/Install Progress Tracker
+
+- Description: Customer-facing three-stage tracker for approved small repair/install workflows with explicit no-part-required handling.
+- Roles involved: customer, household_member (view only where delegated), technician, admin, owner_admin.
+- Customer-visible surface: active work-order progress card and work-order detail/status states.
+- Technician-visible surface: assigned work-order execution context and part/no-part milestone updates without financial exposure.
+- Admin-visible surface: queue and progress monitoring, lifecycle correction controls, and approval/completion oversight.
+- Data objects likely needed: work_order, work_order_progress_state, work_order_status_event, work_order_completion_event, required_completion_photo.
+- Permission/data visibility concerns: customers only see their own work orders; technicians cannot see margin/profitability; completion evidence required for billable completion.
+- Protected rules involved: #3, #11.
+- Affected sprints: S02, S07, S09, S12, S14, S16, S19.
+- Affected prompt-pack categories: lifecycle schema, trigger rules, home cards, notification triggers, privacy and integrity tests.
+- Dependencies: S02 work-order schema -> S12 progress triggers -> S07 customer surfaces -> S14 notifications -> S16 operational dashboards -> S19 verification.
+- Priority: Beta / V1.
+
+### 8B) Work Orders + Parts Lifecycle
+
+- Description: Explicit lifecycle for work-order part-required states with customer-friendly labels and automatic stage behavior when no part is required.
+- Roles involved: technician, admin, owner_admin, customer, household_member.
+- Customer-visible surface: "Work Order Approved", "Item / Part Ordered" or "Ready for Service/No Part Needed", and "Repair / Installation Complete".
+- Technician-visible surface: create workflow, mark part-required/no-part, update ordered/purchased states, mark completion.
+- Admin-visible surface: audit and override for status quality, wait-on-part queues, and completion verification.
+- Data objects likely needed: work_order_part_requirement, work_order_part_item, part_lifecycle_state, part_status_history.
+- Permission/data visibility concerns: customer-facing part labels must stay non-technical and cost-free; no technician/customer margin visibility.
+- Protected rules involved: #2, #3, #11.
+- Affected sprints: S02, S09, S12, S16, S19.
+- Affected prompt-pack categories: schema, technician workflow, trigger automation, dashboard queues, role-boundary tests.
+- Dependencies: S02 parts model -> S09 field updates -> S12 tracker stage logic -> S16 queues/dashboards -> S19 permission/integrity tests.
+- Priority: Beta / V1.
+
+### 8C) Workflow-Linked Shopping List
+
+- Description: Internal shopping list system classifying items as approved revenue, pending approval, inventory need, or non-billable service need.
+- Roles involved: technician (authorized), admin, owner_admin.
+- Customer-visible surface: none (customer may see tracker state outcomes only).
+- Technician-visible surface: assigned/authorized list entries relevant to active workflow execution.
+- Admin-visible surface: full shopping list dashboard with revenue-association and approval-state filtering.
+- Data objects likely needed: shopping_list_item, shopping_list_source_type, linked_work_order, approval_state_link, inventory_need_flag.
+- Permission/data visibility concerns: shopping list is internal; customer cannot see list internals; technician cannot see margin/profitability.
+- Protected rules involved: #2, #12.
+- Affected sprints: S02, S09, S12, S16, S18, S19.
+- Affected prompt-pack categories: schema, CRM/internal dashboards, analytics segmentation, permission tests.
+- Dependencies: S02 shopping-list schema -> S09/S12 workflow linking -> S16 internal queue surfaces -> S18 analytics -> S19 security tests.
+- Priority: V1.
+
 ### 9) Master Jobs
 
 - Description: Internal grouping for non-weekly/non-biweekly work with visit reports + final summary, internal rollups hidden from customers.

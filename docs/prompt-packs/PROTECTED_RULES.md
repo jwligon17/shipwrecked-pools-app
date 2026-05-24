@@ -93,3 +93,14 @@ Technicians must never see:
 4. Do not touch implementation code in governance/doc packs.
 5. Stop and report when a requested change conflicts with protected rules.
 6. Completed prompt packs are historical records; use amendment/reconciliation/retrofit packs for changes.
+
+## 11) Work Order Lifecycle Separation Rules
+
+1. Small repair and installation workflows must have their own lifecycle separate from weekly maintenance visits, even when the work is performed during a weekly service visit.
+2. Work-order completion status must never be inferred solely from weekly maintenance visit completion.
+3. Billable small repair/install completion requires completion photos tied to the specific work order.
+
+## 12) Shopping List Classification Rules
+
+1. Shopping list items must identify whether they are tied to approved revenue, pending approval, internal inventory, or non-billable service needs.
+2. Shopping list classification is internal-only and must not expose cost, margin, or profitability to technicians beyond role-permitted operational context, and must never be customer-visible.

@@ -90,7 +90,10 @@ reports
 media-retention
 conversations
 requests-quotes-repairs
+repair-install-progress
+work-orders
 billing-payments
+shopping-list
 payment-failure-suspension
 notifications
 weather-intelligence
@@ -200,27 +203,27 @@ One person should own main branch, merge order, migration order, and the prompt 
 | ------ | ---------------------------------------: | ----------------------------------------------------: | -------- | ----------------- | -------- |
 | S00    |                   Codex Operating System | 27 tracked entries (26 numbered + S00-008A amendment) | P0       | Mostly sequential | High     |
 | S01    |            Repo, Infrastructure, Tooling |                                                    16 | P0       | Mostly sequential | High     |
-| S02    |             Core Database / Domain Model |                                                    37 | P0       | Low               | Critical |
+| S02    |             Core Database / Domain Model |                                                    40 | P0       | Low               | Critical |
 | S03    |                 Auth, Roles, Permissions |                                                    24 | P0       | Low               | Critical |
 | S04    |     Lead, Customer, Household Onboarding |                                                    26 | P0       | Medium            | High     |
 | S05    |  Water Bodies, Pool/Spa Logic, Equipment |                                                    20 | P0       | Medium            | High     |
 | S06    |               Custom Pool Outline Studio |                                                    38 | P0       | Low/Medium        | Critical |
-| S07    |     Customer Mobile Shell + Dynamic Home |                                                    24 | P0       | Medium            | High     |
+| S07    |     Customer Mobile Shell + Dynamic Home |                                                    27 | P0       | Medium            | High     |
 | S08    |   Route Management + Technician Progress |                                                    31 | P0       | Medium            | High     |
-| S09    |                Technician Visit Workflow |                                                    28 | P0/P1    | Medium            | Critical |
+| S09    |                Technician Visit Workflow |                                                    32 | P0/P1    | Medium            | Critical |
 | S10    |                Chemistry + Report Engine |                                                    31 | P0/P1    | Medium            | Critical |
 | S11    |                Questions + Conversations |                                                    24 | P0/P1    | Medium            | High     |
-| S12    |                Requests, Quotes, Repairs |                                                    30 | P0/P1    | Medium            | Critical |
+| S12    |                Requests, Quotes, Repairs |                                                    36 | P0/P1    | Medium            | Critical |
 | S13    |                       Billing + Payments |                                                    35 | P1       | Low/Medium        | Critical |
-| S14    |                            Notifications |                                                    33 | P0/P1    | Medium            | High     |
+| S14    |                            Notifications |                                                    35 | P0/P1    | Medium            | High     |
 | S15    |   Deals, Robots, Product Recommendations |                                                    18 | P1/P2    | Medium            | Medium   |
-| S16    |           Admin Dashboard / Internal CRM |                                                    34 | P0/P1/P2 | Medium            | High     |
+| S16    |           Admin Dashboard / Internal CRM |                                                    37 | P0/P1/P2 | Medium            | High     |
 | S17    |                 Technician Mobile Polish |                                                    18 | P1       | Medium            | High     |
-| S18    | Analytics, Profitability, Valuation Data |                                                    27 | P2       | Medium            | Medium   |
-| S19    |         Privacy, Security, QA, Hardening |                                                    37 | P0/P1/P2 | Medium            | Critical |
+| S18    | Analytics, Profitability, Valuation Data |                                                    30 | P2       | Medium            | Medium   |
+| S19    |         Privacy, Security, QA, Hardening |                                                    40 | P0/P1/P2 | Medium            | Critical |
 | S20    |    Release, Beta, Migration from Skimmer |                                                    24 | P1/P2    | Medium            | High     |
 
-**Total planned numbered prompt packs:** 581
+**Total planned numbered prompt packs:** 608
 **Tracked Sprint 00 entries:** 27 (S00-001 through S00-026 plus S00-008A amendment/reconciliation pack)
 
 ---
@@ -347,6 +350,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S02-035 | P1       | No       | Critical | Billing Suspension + Partial Payment Schema       | Support monthly billing, autopay, grace periods, failed payment thresholds, partial payments, invoices, and suspension.              |
 | S02-036 | P2       | No       | High     | Technician Accountability Metrics Schema          | Track missed checklist items, skipped photos, route speed anomalies, repeat chemistry corrections, complaints, and dirty-pool flags. |
 | S02-037 | P0       | No       | Critical | Pool Outline Operational Relationship Constraints | Enforce relationships between service markers and reports, visits, photos, quotes, repairs, comments, and status history.            |
+| S02-038 | P0       | No       | Critical | Work Order Progress Schema                        | Store work-order lifecycle, status history, and customer-visible three-stage progress states for repair/install workflows.            |
+| S02-039 | P0       | No       | Critical | Work Order Parts Schema                           | Store part-required flags, customer-friendly part descriptors, and ordered/purchased/received/not-required part lifecycle states.     |
+| S02-040 | P1       | No       | High     | Shopping List Schema                              | Store internal shopping list items tied to approved workflows, pending approvals, inventory needs, or non-billable service needs.     |
 
 ## S03 — Auth, Roles, Permissions
 
@@ -504,6 +510,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S07-022 | P1       | Yes      | Medium   | Dark Mode Foundation          | Prepare premium dark mode.                     |
 | S07-023 | P0       | Limited  | High     | Customer Home Tests           | Test dynamic priority states.                  |
 | S07-024 | P0       | No       | High     | Customer Shell Review Pack    | Codex reviews mobile shell.                    |
+| S07-025 | P0       | Limited  | High     | Customer Work Order Progress Card | Show active repair/install progress under the pool outline or in the home priority area.   |
+| S07-026 | P1       | Limited  | Medium   | Customer Work Orders Screen   | Let customers view pending approvals and active approved repair/install workflows.           |
+| S07-027 | P1       | Limited  | Medium   | Pending Approval Cash-Flow Card | Highlight pending customer approvals for repair/install workflows in a premium home card. |
 
 ## S08 — Route Management + Technician Progress
 
@@ -573,6 +582,10 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S09-026 | P0       | Limited  | Critical | Technician Visit Tests            | Test required photo/checklist flow.          |
 | S09-027 | P0       | No       | Critical | Technician Visit Review Pack      | Codex reviews visit workflow.                |
 | S09-028 | P0       | Yes      | Medium   | Technician Workflow Handoff       | Document technician usage.                   |
+| S09-029 | P0       | Limited  | High     | Technician Create Work Order Flow | Let technicians start a small repair/install workflow from failed or failing equipment/items. |
+| S09-030 | P0       | Limited  | High     | Technician Part Requirement Flow | Let technicians mark whether a work order requires a part or no part is required.            |
+| S09-031 | P1       | Limited  | High     | Technician Part Ordered/Purchased Status | Let technicians/admins update the item/part ordered milestone state.                |
+| S09-032 | P0       | No       | Critical | Technician Work Order Completion Flow | Complete specific repair/install work orders separately from weekly maintenance completion. |
 
 ## S10 — Chemistry + Report Engine
 
@@ -673,6 +686,12 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S12-028 | P0       | Limited  | High     | Quote/Repair Notifications     | Trigger quote/repair updates.                       |
 | S12-029 | P0       | Limited  | Critical | Quote/Repair Tests             | Test approvals, signatures, permissions.            |
 | S12-030 | P0       | No       | Critical | Quote/Repair Review Pack       | Codex reviews revenue workflow.                     |
+| S12-031 | P0       | No       | Critical | Repair/Install Progress Tracker Backend | Add customer-visible three-stage progress tracking for approved repair/install workflows. |
+| S12-032 | P0       | No       | High     | Work Order Approval Progress Trigger | Fill stage one after customer approval is completed.                                         |
+| S12-033 | P0       | No       | High     | Part Ordered Progress Trigger  | Fill stage two when part is ordered/purchased, or auto-complete stage two when no part is required. |
+| S12-034 | P0       | No       | Critical | Repair/Install Completion Progress Trigger | Fill final stage only when the specific work order is completed.                          |
+| S12-035 | P1       | No       | High     | Work Order Visit Association Rules | Support work orders inside weekly visits or as separate visits while preserving separate statuses. |
+| S12-036 | P0       | No       | Critical | Work Order Progress Tests      | Test approval, part-required/no-part flows, separate-vs-attached visit behavior, and completion integrity. |
 
 ## S13 — Billing + Payments
 
@@ -751,6 +770,8 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S14-031 | P1       | Limited  | High     | Rain/Lightning Service Delay Rules  | Trigger service delay messaging based on unsafe or service-disrupting weather.    |
 | S14-032 | P1       | Limited  | High     | Weather-Based ETA/Route Adjustments | Allow weather to affect route estimates and admin/tech route decisions.           |
 | S14-033 | P1       | No       | High     | Weather Notification Tests          | Test weather alert rules, preference handling, and route-delay impacts.           |
+| S14-034 | P0       | Limited  | High     | Work Order Progress Notifications   | Notify customers on meaningful repair/install progress state changes.               |
+| S14-035 | P1       | Limited  | Medium   | Pending Work Order Approval Reminder | Remind customers about pending approvals with controlled cadence.                  |
 
 ## S15 — Deals, Robots, Product Recommendations
 
@@ -813,6 +834,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S16-032 | P1       | Limited  | High     | Commercial Daily Chemical Log Admin View | Review daily commercial chemical readings and chemical additions.                       |
 | S16-033 | P1       | Limited  | Critical | Suspension Admin View                    | Manage failed-payment grace periods, suspension state, and resume service.              |
 | S16-034 | P0       | Limited  | High     | Route Optimization Admin Controls        | View optimized route logic, override route order, and inspect service-time assumptions. |
+| S16-035 | P0       | Limited  | High     | Work Order Dashboard                    | Admin view for pending, approved, in-progress, waiting-on-part, and completed work orders. |
+| S16-036 | P1       | Limited  | High     | Shopping List Dashboard                 | Admin/authorized-tech shopping list across approved, pending, inventory, and non-billable needs. |
+| S16-037 | P1       | Limited  | High     | Pending Approval Revenue Queue          | Show pending repair/install approvals as a cash-flow opportunity queue.                 |
 
 ## S17 — Technician Mobile Polish
 
@@ -868,6 +892,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S18-025 | P2       | Limited  | Medium | Customer Complaint Frequency Metrics | Track complaint frequency and unresolved issue patterns.                              |
 | S18-026 | P2       | Limited  | Medium | Pool Still Dirty Flag Metrics        | Track post-service dirty-pool flags and related follow-up.                            |
 | S18-027 | P2       | Limited  | Medium | Technician Coaching History          | Store admin-only coaching/follow-up history without customer-visible quality scores.  |
+| S18-028 | P2       | Limited  | Medium | Work Order Cycle Time Analytics      | Track recommendation-to-approval, approval-to-part-ordered, and part-ordered-to-completion timing. |
+| S18-029 | P2       | Limited  | Medium | Pending Approval Value Analytics     | Track total pending repair/install approval value over time.                                        |
+| S18-030 | P2       | Limited  | Medium | Shopping List Revenue Association Analytics | Separate shopping-list signals by approved revenue, pending revenue, inventory, and non-billable needs. |
 
 ## S19 — Privacy, Security, QA, Hardening
 
@@ -910,6 +937,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S19-035 | P1       | No       | Critical | Account Deletion Liability Exception         | Delete pool-owner account information while retaining historical photos and report logs for liability. |
 | S19-036 | P1       | No       | Critical | Retained Report/Photo Access Rules           | Define who can access retained historical photos/report logs after account deletion.                   |
 | S19-037 | P1       | No       | Critical | Media Retention + Deletion Tests             | Test media retention, compression, deletion, and liability-exception rules.                            |
+| S19-038 | P0       | No       | Critical | Work Order Progress Privacy Tests            | Verify customers only see their own work-order progress and customer-visible status details.            |
+| S19-039 | P0       | No       | Critical | Shopping List Permission Tests               | Verify customers cannot see internal shopping-list details and technicians cannot see margin/profit data. |
+| S19-040 | P0       | No       | Critical | Work Order Progress Integrity Review         | Verify tracker states align with approval, part, and completion records with no status drift.           |
 
 ## S20 — Release, Beta, Migration from Skimmer
 

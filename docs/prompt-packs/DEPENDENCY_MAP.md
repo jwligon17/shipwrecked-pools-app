@@ -37,6 +37,7 @@ S00 governance and source-of-truth controls
 - Route foundations (S08/S09) must precede reliable service-report progression and technician accountability.
 - Reports and chemistry outputs (S10) must exist before advanced customer history and compliance flows.
 - Quote/repair workflow maturity (S12) should precede dependent billing/payment triggers (S13).
+- Work-order progress lifecycle (approval -> part/no-part readiness -> completion) must remain distinct from weekly maintenance visit completion state.
 - Notifications (S14) should follow event producers and preference models.
 - Commercial exports require report readiness + data visibility controls + admin review controls.
 - Master jobs depend on quote/repair/report/billing foundations and remain internal grouping objects.
@@ -150,6 +151,28 @@ S12 quote/repair payment trigger readiness
     -> S14 failure/suspension notifications
     -> S16 suspension operations controls
     -> S19 money-flow and visibility security tests
+
+### Work-Order Progress Tracker
+
+```txt
+S02 work-order lifecycle + state history model
+S12 approval/part/no-part/completion trigger logic
+  -> S07 customer home/work-order progress surfaces
+  -> S14 progress notifications/reminders
+  -> S16 admin pending/active queue visibility
+  -> S19 privacy and lifecycle integrity validation
+```
+
+### Workflow-Linked Shopping List
+
+```txt
+S02 shopping-list schema + source classification model
+S09 technician/admin item status updates
+S12 workflow linkage (approved, pending, inventory, non-billable)
+  -> S16 shopping-list and pending-approval dashboards
+  -> S18 revenue-association analytics
+  -> S19 permission and data-separation tests
+```
 ```
 
 ### Deal/Product Eligibility

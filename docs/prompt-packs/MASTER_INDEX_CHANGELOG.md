@@ -123,6 +123,55 @@ Each changelog entry must include:
 - `implemented_or_verified_by`: Codex
 - `commit_reference`: TODO (human-managed commit)
 
+---
+
+## MI-2026-05-24-REPAIR-INSTALL-PROGRESS — Repair / Install Progress Tracker + Workflow-Linked Shopping List
+
+- `change_id`: MI-2026-05-24-REPAIR-INSTALL-PROGRESS
+- `date`: 2026-05-24
+- `change_title`: Repair / Install Progress Tracker + Workflow-Linked Shopping List
+- `summary`: Adds source-of-truth planning for a customer-facing three-stage work-order progress tracker, explicit no-part-required stage logic, workflow-linked shopping list classification, and separate lifecycle tracking from weekly maintenance completion.
+- `source_of_change`: Shipwrecked scope expansion request focused on customer clarity, approval cash-flow visibility, and internal workflow-linked purchasing operations.
+- `affected_docs`:
+  - `docs/prompt-packs/MASTER_INDEX.md`
+  - `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
+  - `docs/prompt-packs/FEATURE_MAP.md`
+  - `docs/prompt-packs/DEPENDENCY_MAP.md`
+  - `docs/prompt-packs/PROTECTED_RULES.md`
+  - `docs/prompt-packs/STATUS_BOARD.md`
+  - `docs/prompt-packs/RETROFIT_QUEUE.md`
+- `affected_features`:
+  - requests-quotes-repairs (enhanced)
+  - technician-visit-workflow (enhanced)
+  - notifications (enhanced)
+  - admin-crm (enhanced)
+  - analytics-valuation (enhanced)
+  - privacy-security (enhanced)
+  - repair-install-progress (new)
+  - work-orders (new)
+  - shopping-list (new)
+- `affected_sprints`:
+  - S02, S07, S09, S12, S14, S16, S18, S19
+- `affected_prompt_packs`:
+  - S02-038 through S02-040
+  - S07-025 through S07-027
+  - S09-029 through S09-032
+  - S12-031 through S12-036
+  - S14-034 through S14-035
+  - S16-035 through S16-037
+  - S18-028 through S18-030
+  - S19-038 through S19-040
+- `protected_rules_checked`: Yes. Added durable rule that small repair/install lifecycle must remain separate from weekly maintenance lifecycle, and rule requiring shopping-list revenue/need classification.
+- `dependency_impact`: Yes. Added explicit upstream/downstream dependencies between approvals, work-order lifecycle, parts/no-part logic, shopping-list classification, notifications, dashboards, analytics, and privacy/integrity tests.
+- `status_board_impact`: Yes. Added new Not Started status rows for the new S02/S07/S09/S12/S14/S16/S18/S19 packs. No retrofits required because affected implementation packs are not yet implemented/merged.
+- `follow_up_actions`:
+  - Execute new S02 schema planning packs before downstream implementation packs.
+  - Keep S12 workflow/state-trigger packs sequenced before S14/S16/S18/S19 dependent packs.
+  - Preserve no-part-required stage behavior and separate weekly-vs-work-order completion states in implementation packs.
+  - Run Master Index integrity review before starting S02 implementation.
+- `implemented_or_verified_by`: Codex
+- `commit_reference`: TODO (human-managed commit)
+
 ## Rules
 
 - Committed repository docs are source of truth; chat memory is not.
