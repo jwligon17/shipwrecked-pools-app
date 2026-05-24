@@ -11,5 +11,9 @@ describe('db package smoke', () => {
     expect(db.APP_USERS_TABLE).toBe('app_users');
     expect(db.APP_USER_STATUSES).toContain('invited');
     expect(db.APP_USER_PREFERRED_CONTACT_METHODS).toContain('push');
+    expect(db.ORGANIZATION_MEMBERSHIPS_TABLE).toBe('organization_memberships');
+    expect(db.ORGANIZATION_MEMBERSHIP_ROLES).toContain('technician');
+    expect(db.ORGANIZATION_MEMBERSHIP_ADMIN_ROLES).toContain('owner');
+    expect(db.ORGANIZATION_MEMBERSHIP_STATUSES).toContain('active');
   });
 });

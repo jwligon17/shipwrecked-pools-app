@@ -6,6 +6,7 @@ This directory documents Shipwrecked domain-model intent as schema packs are imp
 
 - `organizations.md`: foundational tenant/organization model.
 - `app-users.md`: app-level user profile model with auth-provider separation.
+- `roles-and-memberships.md`: organization-scoped user role and membership model.
 
 ## Scope Rules
 
