@@ -8,13 +8,13 @@ Sprint 02 is for core database/domain model implementation with strict sequencin
 
 - [ ] Sprint 01 changes are committed.
 - [ ] Working tree is clean before starting first S02 pack.
-- [ ] Root package/workspace scripts are coherent.
-- [ ] App shells (`apps/mobile`, `apps/admin`, `apps/api`) exist.
-- [ ] Shared packages exist (`shared-types`, `api-client`, `ui`).
-- [ ] DB package foundation exists (`packages/db`).
-- [ ] Seed placeholders exist (`packages/db/seeds/*` and strategy docs).
-- [ ] Baseline testing/tooling docs and scripts exist.
-- [ ] `pnpm` is available locally and baseline checks can run.
+- [x] Root package/workspace scripts are coherent.
+- [x] App shells (`apps/mobile`, `apps/admin`, `apps/api`) exist.
+- [x] Shared packages exist (`shared-types`, `api-client`, `ui`).
+- [x] DB package foundation exists (`packages/db`).
+- [x] Seed placeholders exist (`packages/db/seeds/*` and strategy docs).
+- [x] Baseline testing/tooling docs and scripts exist.
+- [x] `pnpm` is available locally and baseline checks can run.
 
 ## 3. Risk Rules
 
@@ -28,11 +28,11 @@ Sprint 02 is for core database/domain model implementation with strict sequencin
 
 Go only if all are true:
 
-- [ ] Status board is current through S01-016.
-- [ ] Handoffs exist for all completed S01 packs.
-- [ ] Local environment can run required baseline commands.
-- [ ] No unresolved Sprint 01 blockers remain.
-- [ ] Active S02 pack dependencies are satisfied.
+- [x] Status board is current through S01-016.
+- [x] Handoffs exist for all completed S01 packs.
+- [x] Local environment can run required baseline commands.
+- [x] No unresolved Sprint 01 blockers remain.
+- [x] Active S02 pack dependencies are satisfied.
 
 No-Go conditions:
 
@@ -41,7 +41,13 @@ No-Go conditions:
 - [ ] status board/handoff mismatch.
 - [ ] pack dependency conflict.
 
-## 5. Blocker Handling
+## 5. Current Readiness Note (2026-05-23)
+
+- Sprint 01 baseline checks were rerun after `pnpm` setup and documented as passing in `docs/codex/SPRINT_01_CLOSEOUT.md` (section 11) and `docs/handoffs/sprint-01-baseline-check-fixes.md`.
+- Sprint 02 can begin once current documentation reconciliation changes are merged/pushed and the working tree is clean.
+- Sprint 02 execution must remain within S02 core database/domain-model scope and continue to honor protected role/visibility/security rules.
+
+## 6. Blocker Handling
 
 If blocked:
 
