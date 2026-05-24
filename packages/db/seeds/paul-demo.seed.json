@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "seed_version": "S01-014-placeholder-v1",
+    "execution_mode": "non_executing_reference_only",
+    "warning": "This file is demo placeholder data only. Do not use for production and do not treat as executable seed input."
+  },
+  "organization": {
+    "id": "org_demo_shipwrecked_001",
+    "name": "Shipwrecked Pools Demo",
+    "is_demo": true
+  },
+  "users": {
+    "owner_admin": {
+      "id": "user_owner_admin_demo_001",
+      "role": "owner_admin",
+      "email": "owner-admin-demo@shipwrecked.local"
+    },
+    "technician": {
+      "id": "user_technician_demo_001",
+      "role": "technician",
+      "email": "tech-demo@shipwrecked.local"
+    },
+    "customer_paul": {
+      "id": "user_customer_paul_demo_001",
+      "role": "customer",
+      "email": "paul-demo@shipwrecked.local"
+    },
+    "household_megan": {
+      "id": "user_household_megan_demo_001",
+      "role": "household_member",
+      "email": "megan-demo@shipwrecked.local"
+    }
+  },
+  "property": {
+    "id": "property_demo_001",
+    "label": "Paul Home - Demo",
+    "address": "1234 Harbor View Dr, Demo City, TX 75000",
+    "gate_code": "DEMO_GATE_CODE_DO_NOT_USE",
+    "access_note": "Demo access only. Not a real location."
+  },
+  "pet": {
+    "id": "pet_cooper_demo_001",
+    "name": "Cooper",
+    "species": "dog",
+    "treat_permission": true
+  },
+  "water_bodies": [
+    {
+      "id": "body_pool_demo_001",
+      "type": "pool"
+    },
+    {
+      "id": "body_spa_demo_001",
+      "type": "spa"
+    }
+  ],
+  "service_points": [
+    "skimmer",
+    "steps",
+    "shallow_end",
+    "deep_end",
+    "spa",
+    "tile_line",
+    "equipment_pad"
+  ],
+  "route_stop": {
+    "route_id": "route_demo_001",
+    "stop_id": "stop_demo_001",
+    "service_day": "Thursday"
+  },
+  "service_report": {
+    "report_id": "report_demo_001",
+    "type": "weekly_maintenance",
+    "status": "placeholder"
+  },
+  "chemistry": {
+    "reading_set_id": "chem_demo_001",
+    "values": {
+      "free_chlorine": "placeholder",
+      "ph": "placeholder",
+      "alkalinity": "placeholder"
+    }
+  },
+  "quote_repair": {
+    "quote_id": "quote_demo_001",
+    "repair_id": "repair_demo_001",
+    "payment_method": "TEST_PAYMENT_METHOD_PLACEHOLDER"
+  },
+  "master_job": {
+    "master_job_id": "master_job_demo_001",
+    "type": "green_to_clean",
+    "status": "placeholder"
+  },
+  "media": {
+    "before_after_pair_id": "pair_demo_001",
+    "photo_ids": [
+      "photo_before_demo_001",
+      "photo_after_demo_001"
+    ]
+  },
+  "notification_preferences": {
+    "essential_service_notifications": true,
+    "deal_notifications": true
+  },
+  "chat": {
+    "thread_id": "chat_demo_001",
+    "context_attach_confirmation_required": true,
+    "technician_chat_mode": "asynchronous"
+  }
+}

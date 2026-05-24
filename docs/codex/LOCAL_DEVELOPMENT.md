@@ -25,6 +25,11 @@ pnpm install:deps
 3. Keep secrets out of `EXPO_PUBLIC_*` and `NEXT_PUBLIC_*` vars.
 4. See `docs/codex/ENVIRONMENT_VARIABLES.md` for guardrails.
 
+## CI Checks
+- CI workflow: `.github/workflows/ci.yml`
+- CI check reference: `docs/codex/CI_CHECKS.md`
+- Local goal: keep `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, and `pnpm doctor` green before opening PRs.
+
 ## Daily Commands
 Run from repo root:
 

@@ -25,7 +25,8 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "clean": "pnpm -r --if-present clean",
-    "docs:status": "cat docs/prompt-packs/STATUS_BOARD.md"
+    "docs:status": "cat docs/prompt-packs/STATUS_BOARD.md",
+    "seed:demo": "echo \"S01-014 placeholder only: no executable DB seed runner yet. See packages/db/seeds/README.md\""
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
