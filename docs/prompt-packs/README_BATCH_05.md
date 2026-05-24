@@ -8,6 +8,7 @@ This batch includes:
 - `S00-017-create-codex-skill-plan.md`
 
 Recommended batch execution style:
+
 - Add and commit these prompt pack files.
 - Use the batch runner to execute them sequentially.
 - Stop on any issue.

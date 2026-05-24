@@ -16,7 +16,6 @@
 
 Create a durable checklist for reviewing Master Index V2 integrity before implementation work resumes or after any significant roadmap/feature update.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -120,7 +118,7 @@ Include sections:
    - STOP
 
 10. **Read-Only Integrity Review Prompt**
-   Include a reusable prompt users can paste into Codex to run a read-only integrity review.
+    Include a reusable prompt users can paste into Codex to run a read-only integrity review.
 
 Update `STATUS_BOARD.md` for S00-024.
 
@@ -143,6 +141,7 @@ S00-024 is complete only if:
 Review S00-024 changes before finalizing.
 
 Check:
+
 1. Did you create the integrity checklist?
 2. Does it validate the whole V2 source-of-truth system?
 3. Does it include reusable read-only review prompt?

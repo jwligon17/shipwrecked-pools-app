@@ -28,6 +28,7 @@ S00 governance and source-of-truth controls
 ```
 
 ## Required Sprint Dependency Rules
+
 - S00 governance must be complete before source-of-truth-changing implementation work.
 - S01 infrastructure must be stable before app/package feature implementation.
 - S02 schema/domain model must exist before feature APIs and workflow UIs.
@@ -43,6 +44,7 @@ S00 governance and source-of-truth controls
 ## Feature Dependency Map
 
 ### Pool Outline
+
 ```txt
 S02 water-body + outline + marker relationship schemas
   -> S06 outline studio authoring
@@ -53,6 +55,7 @@ S02 water-body + outline + marker relationship schemas
 ```
 
 ### Service Points
+
 ```txt
 S02 service-point schema + status history constraints
   -> S06 marker management
@@ -61,6 +64,7 @@ S02 service-point schema + status history constraints
 ```
 
 ### Reports
+
 ```txt
 S02 report/photo schemas
 S09 visit completion events
@@ -71,6 +75,7 @@ S09 visit completion events
 ```
 
 ### Before/After Galleries
+
 ```txt
 S02 photo + pairing data model
 S10 report media workflows
@@ -79,6 +84,7 @@ S10 report media workflows
 ```
 
 ### Master Jobs
+
 ```txt
 S02 master-job internal model
 S12 non-maintenance job flows
@@ -88,6 +94,7 @@ S13 payment/billing event linkage
 ```
 
 ### Commercial Exports
+
 ```txt
 S02 commercial account/contact/export schemas
 S03 commercial permission guards
@@ -97,6 +104,7 @@ S10 compliance-report data availability
 ```
 
 ### Chemical Guidance
+
 ```txt
 S02 chemistry + recommendation traceability model
 S09 technician readings capture
@@ -106,6 +114,7 @@ S10 suggestion + applied-amount workflows
 ```
 
 ### Context-Aware Chat
+
 ```txt
 S02 conversation/context models
 S03 role + assignment + visibility guards
@@ -114,6 +123,7 @@ S03 role + assignment + visibility guards
 ```
 
 ### Route Progress
+
 ```txt
 S02 route/stop/eta data model
   -> S08 route optimization + progress logic
@@ -123,6 +133,7 @@ S02 route/stop/eta data model
 ```
 
 ### Technician Alerts / Safety Reminders
+
 ```txt
 S02 reminder/popup acknowledgment models
 S03 technician assignment + access rules
@@ -131,6 +142,7 @@ S03 technician assignment + access rules
 ```
 
 ### Billing / Payments
+
 ```txt
 S02 billing schema + suspension state model
 S12 quote/repair payment trigger readiness
@@ -141,6 +153,7 @@ S12 quote/repair payment trigger readiness
 ```
 
 ### Deal/Product Eligibility
+
 ```txt
 S04/S05 customer + pool/equipment profile completeness
 S10 service and chemistry history context
@@ -150,6 +163,7 @@ S10 service and chemistry history context
 ```
 
 ### Privacy / Export / Deletion
+
 ```txt
 S02 audit + retention/deletion data models
 S03 policy and role guards
@@ -159,6 +173,7 @@ S13 billing-retention intersections
 ```
 
 ## Unsafe Parallel Work (Never Parallel)
+
 - Database migrations and core schema changes.
 - Auth/permission guard model changes.
 - Billing/payment money-flow changes.
@@ -170,7 +185,9 @@ S13 billing-retention intersections
 - Pool outline data format and marker-relationship model.
 
 ## Limited Parallel Work
+
 Parallel execution is allowed only after backend contracts are stable for that domain:
+
 - Mobile UI polish and states.
 - Admin list/detail UI surfaces.
 - Documentation and handoff updates.
@@ -178,7 +195,9 @@ Parallel execution is allowed only after backend contracts are stable for that d
 - Non-breaking QA prompts and test-case documentation.
 
 ## Codex Stop Rules
+
 Codex must stop and report before edits when any of the following is true:
+
 - A required dependency is not yet implemented or approved.
 - Requested change conflicts with `PROTECTED_RULES.md`.
 - Status board state is mismatched for the targeted pack.
@@ -187,7 +206,9 @@ Codex must stop and report before edits when any of the following is true:
 - A sequencing/dependency change is requested without corresponding `DEPENDENCY_MAP.md` update.
 
 ## Retrofit Rule
+
 If upstream dependencies change after downstream packs are implemented:
+
 - Create retrofit packs.
 - Update `STATUS_BOARD.md` with retrofit pack status.
 - Do not silently adjust only future packs.

@@ -111,6 +111,7 @@ Return:
 ```
 
 ## Usage Notes
+
 - Use Full Version for new features, priority shifts, dependency changes, protected-rule updates, integrations, or retrofit scenarios.
 - Use Quick Version for small governance edits that still require source-of-truth consistency.
 - Both versions enforce governance-before-implementation.

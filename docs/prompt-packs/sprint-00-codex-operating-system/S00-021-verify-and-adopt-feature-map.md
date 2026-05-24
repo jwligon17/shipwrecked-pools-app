@@ -16,7 +16,6 @@
 
 Verify, adopt, and if needed refine `docs/prompt-packs/FEATURE_MAP.md` so it maps every major Shipwrecked Pools feature to affected sprints, roles, data objects, permissions, visibility rules, and likely prompt-pack areas.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -100,22 +98,28 @@ The feature map must include at least:
    - internal grouping, individual visit reports, final summary report, internal profitability/cost rollups.
 
 10. **Billing / Payments**
-   - invoices, payment methods, Stripe references, no raw cards, technician invisibility.
+
+- invoices, payment methods, Stripe references, no raw cards, technician invisibility.
 
 11. **Notifications**
-   - push-first, service/report/quote/repair/deal, opt-outs, logs, household preferences.
+
+- push-first, service/report/quote/repair/deal, opt-outs, logs, household preferences.
 
 12. **Commercial Accounts / Compliance Exports**
-   - commercial customer type, property manager, health inspector, admin-reviewed exports.
+
+- commercial customer type, property manager, health inspector, admin-reviewed exports.
 
 13. **Deals / Products / Robots**
-   - eligibility, product recommendations, opt-out, quote/install tasks.
+
+- eligibility, product recommendations, opt-out, quote/install tasks.
 
 14. **Privacy / Data Export / Deletion / Audit Logs**
-   - protected sensitive data and compliance.
+
+- protected sensitive data and compliance.
 
 15. **Admin Portal**
-   - desktop admin, customer/route/report/quote/billing/chat/export/analytics.
+
+- desktop admin, customer/route/report/quote/billing/chat/export/analytics.
 
 For each feature, include:
 
@@ -154,6 +158,7 @@ S00-021 is complete only if:
 Review S00-021 changes before finalizing.
 
 Check:
+
 1. Did you avoid implementation files?
 2. Did you preserve current product direction?
 3. Does the feature map include all S00-008A amendments?

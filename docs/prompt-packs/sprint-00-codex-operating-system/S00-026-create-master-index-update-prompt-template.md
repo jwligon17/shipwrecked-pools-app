@@ -16,7 +16,6 @@
 
 Create a reusable prompt template for future Master Index/source-of-truth updates so the user can paste one prompt into Codex whenever a new feature idea, major change, or roadmap update occurs.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -74,6 +72,7 @@ The prompt template must include:
 ## 1. Purpose
 
 Explain that it is used for:
+
 - new feature ideas
 - major priority changes
 - dependency changes
@@ -85,6 +84,7 @@ Explain that it is used for:
 ## 2. Inputs User Should Provide
 
 Ask user to provide:
+
 - raw change idea
 - reason/business goal
 - whether it affects beta/V1/post-V1/SaaS
@@ -100,6 +100,7 @@ Ask user to provide:
 ## 3. Required Codex Reads
 
 The template must tell Codex to read:
+
 - Master Index
 - changelog
 - update protocol
@@ -114,6 +115,7 @@ The template must tell Codex to read:
 ## 4. Required Codex Behavior
 
 The template must instruct Codex to:
+
 - not implement code
 - first summarize the change
 - identify affected features/sprints/packs
@@ -132,6 +134,7 @@ The template must instruct Codex to:
 ## 5. Stop Conditions
 
 Template must make Codex stop if:
+
 - protected rule conflict exists
 - user has not clarified a high-risk ambiguity
 - requested change affects billing/payment/privacy/security but lacks enough info
@@ -143,6 +146,7 @@ Template must make Codex stop if:
 ## 6. Output Format
 
 Template should require:
+
 - change summary
 - affected docs
 - affected features
@@ -182,6 +186,7 @@ S00-026 is complete only if:
 Review S00-026 changes before finalizing.
 
 Check:
+
 1. Did you create the Master Index update prompt template?
 2. Does it include full and quick versions?
 3. Does it enforce protected rules and no implementation before source-of-truth updates?

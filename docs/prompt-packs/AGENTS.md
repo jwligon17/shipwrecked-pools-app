@@ -1,9 +1,11 @@
 # Prompt Packs Agent Rules
 
 ## Purpose
+
 Keep prompt-pack execution disciplined, scoped, and auditable.
 
 ## Workflow Rules
+
 1. Execute one prompt pack at a time.
 2. Treat `PACK_PATH` as the source of truth for current execution.
 3. Stop and report if Pack ID references conflict.

@@ -67,6 +67,7 @@ Stop after completing the current prompt pack only.
 ```
 
 ## Usage Notes
+
 - Keep `PACK_PATH` absolute or repo-relative to one pack file only.
 - Do not hardcode a specific pack ID in the runner body. The active pack is derived from `PACK_PATH` and pack content.
 - If a pack filename and internal metadata disagree, stop and report before editing files.

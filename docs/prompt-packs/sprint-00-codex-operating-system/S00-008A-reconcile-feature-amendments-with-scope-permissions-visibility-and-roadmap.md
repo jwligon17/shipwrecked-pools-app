@@ -368,6 +368,7 @@ Update `docs/product/mission.md` only if needed to reflect the app as a role-bas
 Update `docs/prompt-packs/MASTER_INDEX.md` so the relevant sprint prompt pack descriptions and/or counts account for these additions. Do not renumber already-completed packs. Add amendment notes where needed. If a future sprint needs additional prompt packs, add them as new rows or update descriptions in a clean way.
 
 Update `docs/security/permission-matrix.md` and `docs/security/data-visibility-rules.md` to include:
+
 - owner-as-technician behavior
 - technician completion time restriction
 - master jobs and admin-only profitability
@@ -386,6 +387,7 @@ Update root and folder-level AGENTS files only where durable rules are needed to
 Update `docs/prompt-packs/STATUS_BOARD.md` with an S00-008A row marked Implemented after completion.
 
 Create a handoff note explaining:
+
 - what was added
 - which files changed
 - how the master index changed

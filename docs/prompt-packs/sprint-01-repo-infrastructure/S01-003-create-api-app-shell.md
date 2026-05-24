@@ -80,6 +80,7 @@ Create a minimal structured TypeScript API shell in `apps/api`.
 Prefer a structured TypeScript API setup suitable for NestJS-style modular backend development.
 
 If using NestJS:
+
 - create a minimal app module
 - create a health endpoint
 - create a standard bootstrap

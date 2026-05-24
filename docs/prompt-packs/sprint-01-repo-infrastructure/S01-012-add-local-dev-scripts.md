@@ -91,6 +91,7 @@ Inspect existing root and package scripts before modifying them.
 Avoid duplicating scripts or creating scripts that call packages that do not exist.
 
 If a script cannot work until future packs finish setup, either:
+
 - avoid adding it yet, or
 - document it as future/placeholder clearly
 

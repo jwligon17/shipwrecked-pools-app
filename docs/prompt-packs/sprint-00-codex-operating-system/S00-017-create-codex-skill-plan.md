@@ -21,6 +21,7 @@ This pack plans the skills; it does not need to implement them yet.
 ## Why This Matters
 
 The user and wife will run many prompt packs through Codex. Some workflows will repeat constantly:
+
 - create backend endpoint
 - add database migration
 - update API contract
@@ -80,6 +81,7 @@ Execute S00-017 only.
 Create `docs/codex/CODEX_SKILL_PLAN.md`, a plan for future reusable Codex skills.
 
 The plan must explain:
+
 - what Codex skills are for in this repo
 - when to use a skill vs a prompt pack
 - how skills should reduce repeated instructions
@@ -128,72 +130,93 @@ The plan must include at least these future skills:
    - Updates schema docs.
 
 10. `skill-seed-data`
-   - Adds Paul/demo/beta seed data.
+
+- Adds Paul/demo/beta seed data.
 
 ## Mobile/Admin UI Skills
 
 11. `skill-mobile-screen`
-   - Adds customer/technician mobile screen with loading/empty/error/success states.
+
+- Adds customer/technician mobile screen with loading/empty/error/success states.
 
 12. `skill-technician-workflow`
-   - Adds technician route/service/checklist/photo/chemistry workflows.
+
+- Adds technician route/service/checklist/photo/chemistry workflows.
 
 13. `skill-admin-page`
-   - Adds desktop admin portal page.
+
+- Adds desktop admin portal page.
 
 14. `skill-ui-component`
-   - Adds shared UI component.
+
+- Adds shared UI component.
 
 ## Shipwrecked Feature Skills
 
 15. `skill-pool-outline-workflow`
-   - Pool outline, service points, markers, outline studio.
+
+- Pool outline, service points, markers, outline studio.
 
 16. `skill-report-workflow`
-   - Maintenance, repair, green-to-clean, acid wash, final summary reports.
+
+- Maintenance, repair, green-to-clean, acid wash, final summary reports.
 
 17. `skill-photo-gallery-workflow`
-   - Before/after pairs, labels, visibility, admin hide.
+
+- Before/after pairs, labels, visibility, admin hide.
 
 18. `skill-master-job-workflow`
-   - Internal grouping, visits, rollups, reports, profitability admin-only.
+
+- Internal grouping, visits, rollups, reports, profitability admin-only.
 
 19. `skill-commercial-export-workflow`
-   - Commercial accounts, health department/property manager exports, admin approval.
+
+- Commercial accounts, health department/property manager exports, admin approval.
 
 20. `skill-quote-repair-workflow`
-   - Requests, quotes, approvals, signatures, repairs, payment trigger.
+
+- Requests, quotes, approvals, signatures, repairs, payment trigger.
 
 21. `skill-billing-stripe-workflow`
-   - Payment methods, invoices, Stripe references, webhooks, no raw card storage.
+
+- Payment methods, invoices, Stripe references, webhooks, no raw card storage.
 
 22. `skill-notification-workflow`
-   - Push/SMS/email preferences, logs, triggers.
+
+- Push/SMS/email preferences, logs, triggers.
 
 23. `skill-context-aware-chat-workflow`
-   - Chat entry points, context confirmation, routing, technician/admin assignment, internal notes.
+
+- Chat entry points, context confirmation, routing, technician/admin assignment, internal notes.
 
 24. `skill-chemical-guidance-workflow`
-   - Suggested chemical guidance, required data checks, technician edits, admin tables, safety rules.
+
+- Suggested chemical guidance, required data checks, technician edits, admin tables, safety rules.
 
 25. `skill-route-progress-workflow`
-   - Stops-before-you/ETA, privacy, technician route reorder.
+
+- Stops-before-you/ETA, privacy, technician route reorder.
 
 26. `skill-privacy-export-deletion-workflow`
-   - Customer data export/deletion and privacy requirements.
+
+- Customer data export/deletion and privacy requirements.
 
 ## QA / Release Skills
 
 27. `skill-test-writer`
-   - Adds tests according to testing philosophy.
+
+- Adds tests according to testing philosophy.
 
 28. `skill-release-gate-check`
-   - Checks release gate readiness.
+
+- Checks release gate readiness.
 
 29. `skill-beta-feedback-triage`
-   - Organizes beta issues and post-beta fixes.
+
+- Organizes beta issues and post-beta fixes.
 
 For each skill, include:
+
 - purpose
 - when to use
 - inputs the skill expects
@@ -227,6 +250,7 @@ S00-017 is complete only if:
 Review S00-017 changes before finalizing.
 
 Check:
+
 1. Did you create `docs/codex/CODEX_SKILL_PLAN.md`?
 2. Does it include foundation, backend, database, mobile/admin, Shipwrecked feature, QA, and release skills?
 3. Does it explain when to use skills vs prompt packs?

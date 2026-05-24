@@ -52,7 +52,11 @@ for (const path of requiredPaths) {
 }
 
 const envExample = readFileSync('.env.example', 'utf8');
-if (envExample.includes('sk_live_') || envExample.includes('pk_live_') || envExample.includes('-----BEGIN')) {
+if (
+  envExample.includes('sk_live_') ||
+  envExample.includes('pk_live_') ||
+  envExample.includes('-----BEGIN')
+) {
   logErr('Potential real secret marker detected in .env.example');
 } else {
   logOk('.env.example secret marker scan passed');

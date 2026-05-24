@@ -3,7 +3,9 @@
 Purpose: Ensure roadmap and feature changes are applied relationally across all source-of-truth docs before feature-changing implementation begins.
 
 ## Source-of-Truth Hierarchy
+
 Apply updates in this order of authority:
+
 1. `docs/prompt-packs/MASTER_INDEX.md`
 2. `docs/prompt-packs/FEATURE_MAP.md`
 3. `docs/prompt-packs/DEPENDENCY_MAP.md`
@@ -14,7 +16,9 @@ Apply updates in this order of authority:
 8. `docs/handoffs/*` as execution records
 
 ## When This Protocol Must Be Used
+
 Run this protocol whenever any of the following happen:
+
 - A new feature or workflow changes scope.
 - A feature changes priority tier or timeline.
 - A sprint gains, loses, renumbers, or resequences prompt packs.
@@ -24,6 +28,7 @@ Run this protocol whenever any of the following happen:
 - New external or current-conversation source-of-truth files are introduced.
 
 ## Required Update Sequence
+
 1. Capture the proposed change and scope.
 2. Check for protected-rule conflicts.
 3. Update `MASTER_INDEX_CHANGELOG.md` with required entry fields.
@@ -37,6 +42,7 @@ Run this protocol whenever any of the following happen:
 11. Commit governance updates before implementation packs begin.
 
 ## Codex Rules
+
 - Do not implement feature-changing code until the source-of-truth governance docs above are updated.
 - Stop immediately if a requested change conflicts with `PROTECTED_RULES.md`.
 - Never overwrite `docs/prompt-packs/STATUS_BOARD.md` with a seed/example file.
@@ -45,6 +51,7 @@ Run this protocol whenever any of the following happen:
 - If pack IDs conflict between prompt text, file path, and status board, stop and report the conflict before editing.
 
 ## Human Operator Rules
+
 - Start from a clean git working tree.
 - Use a dedicated branch/worktree for significant Master Index governance changes.
 - Review `git diff --stat` and scoped file list before commit.

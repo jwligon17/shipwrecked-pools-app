@@ -1,18 +1,23 @@
 # Prompt Pack S00-002 — Create Paul Story Source Doc
 
 ## Sprint
+
 S00 — Codex Operating System
 
 ## Priority
+
 P0 — Foundation
 
 ## Risk Level
+
 Low, if scoped correctly. High if Codex starts building screens or app features.
 
 ## Can Run In Parallel?
+
 No. Run only after S00-001 has been completed and committed.
 
 ## Goal
+
 Create a durable product narrative source document for Paul’s Shipwrecked Pools app experience at:
 
 ```txt
@@ -22,11 +27,13 @@ docs/product/paul-story.md
 This document should preserve the customer journey and emotional product vision in story form so Codex and future developers understand what experience the app is supposed to create.
 
 ## Why This Matters
+
 The Paul story is the clearest expression of the app’s desired customer experience. It shows how the app should feel from the customer’s perspective: premium, reassuring, clear, personal, and useful.
 
 Most software projects lose the customer story as soon as development starts. This file prevents that. Future prompt packs should be able to reference Paul’s story when building the customer home screen, custom pool outline, route progress, reports, questions, quote approvals, repair reports, notifications, pet profiles, deal preferences, and onboarding.
 
 ## Dependency
+
 S00-001 should be complete first.
 
 Expected existing file:
@@ -38,6 +45,7 @@ docs/product/mission.md
 If `docs/product/mission.md` does not exist, Codex should stop and report that S00-001 must be completed first.
 
 ## Story Context Codex Must Preserve
+
 Paul is a homeowner who likes having a pool but does not understand pool maintenance. He is frustrated because he often does not know:
 
 - whether his pool company showed up,
@@ -97,6 +105,7 @@ Paul’s app experience should include:
 - ability to turn off deal notifications while keeping service notifications.
 
 ## Important Product Interpretation
+
 The story should not imply that the app is valuable because it is flashy. The story should make clear that the app is valuable because it reduces uncertainty and creates confidence.
 
 Paul should feel:
@@ -108,6 +117,7 @@ Paul should feel:
 The story should also make clear that the custom pool outline is emotionally important. It makes Paul feel like Shipwrecked knows his actual pool — his steps, his skimmer, his spa, his return jet, his equipment pad, his service history, his dog note, his questions, and his repairs.
 
 ## Required Sections In The Document
+
 Create `docs/product/paul-story.md` with these sections:
 
 1. `# Paul’s Shipwrecked Pools App Experience`
@@ -131,6 +141,7 @@ Create `docs/product/paul-story.md` with these sections:
 The story should be readable, narrative, and detailed enough to guide product decisions. It should not be a dry bullet list only, though the final “Features Implied” section may use bullets.
 
 ## Files Codex Should Create Or Modify
+
 Codex should create:
 
 ```txt
@@ -150,6 +161,7 @@ docs/handoffs/S00-002-create-paul-story-source-doc.md
 ```
 
 ## Files Codex Must Not Touch
+
 Codex must not modify:
 
 ```txt
@@ -172,6 +184,7 @@ tsconfig.base.json
 Codex must not implement any screens, data models, app flows, auth logic, report logic, billing logic, or notification logic.
 
 ## Build Prompt For Codex
+
 Copy/paste the following prompt into Codex for this pack:
 
 ```txt
@@ -227,6 +240,7 @@ Do not implement S00-003 or any other pack.
 ```
 
 ## Bite-Sized Implementation Steps
+
 Codex should complete these steps:
 
 1. Confirm S00-001 output exists.
@@ -239,6 +253,7 @@ Codex should complete these steps:
 8. Stop.
 
 ## Acceptance Criteria
+
 This pack is complete when:
 
 - `docs/product/paul-story.md` exists.
@@ -257,6 +272,7 @@ This pack is complete when:
 - No app code, database code, API code, mobile screens, admin screens, auth logic, notification logic, or billing logic was changed.
 
 ## Codex Self-Review Prompt
+
 After implementation, paste this into Codex:
 
 ```txt
@@ -281,6 +297,7 @@ If anything is missing, too generic, or outside scope, fix it now. Then summariz
 ```
 
 ## Expected Git Diff
+
 Expected changed/created files:
 
 ```txt
@@ -292,6 +309,7 @@ docs/prompt-packs/STATUS_BOARD.md
 Anything outside those files should be treated as suspicious unless Codex gives a very good reason.
 
 ## Recommended Commit Message
+
 After Codex completes and self-reviews this pack, commit with:
 
 ```bash

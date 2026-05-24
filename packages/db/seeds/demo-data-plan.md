@@ -3,6 +3,7 @@
 This plan defines the fixture groups expected for Shipwrecked demo/test seeds.
 
 ## Planned Fixture Groups
+
 - Organization
 - Owner/Admin users
 - Technician users
@@ -18,6 +19,7 @@ This plan defines the fixture groups expected for Shipwrecked demo/test seeds.
 - Chat placeholders
 
 ## Data Discipline
+
 - Placeholder IDs only.
 - Placeholder dates/times only.
 - No private or real customer data.

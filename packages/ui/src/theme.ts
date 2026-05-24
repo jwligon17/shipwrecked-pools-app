@@ -1,7 +1,12 @@
-import { spacingScale } from "./spacing";
-import { reportStatusColors, routeStatusColors, poolStatusColors, quoteRepairStatusColors } from "./status-colors";
-import { uiTokens } from "./tokens";
-import { typographyScale } from "./typography";
+import { spacingScale } from './spacing';
+import {
+  reportStatusColors,
+  routeStatusColors,
+  poolStatusColors,
+  quoteRepairStatusColors,
+} from './status-colors';
+import { uiTokens } from './tokens';
+import { typographyScale } from './typography';
 
 export const shipwreckedTheme = {
   tokens: uiTokens,
@@ -11,8 +16,8 @@ export const shipwreckedTheme = {
     pool: poolStatusColors,
     route: routeStatusColors,
     report: reportStatusColors,
-    quoteRepair: quoteRepairStatusColors
-  }
+    quoteRepair: quoteRepairStatusColors,
+  },
 } as const;
 
 export type ShipwreckedTheme = typeof shipwreckedTheme;

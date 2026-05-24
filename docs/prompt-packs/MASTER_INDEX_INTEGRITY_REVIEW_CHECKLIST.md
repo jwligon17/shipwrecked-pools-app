@@ -3,7 +3,9 @@
 Purpose: Run a consistent integrity review of the Master Index V2 governance system before implementation resumes and after any major roadmap/feature change.
 
 ## 1) Required Files Check
+
 Verify all required files exist and are current:
+
 - `docs/prompt-packs/MASTER_INDEX.md`
 - `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
 - `docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md`
@@ -13,6 +15,7 @@ Verify all required files exist and are current:
 - `docs/prompt-packs/STATUS_BOARD.md`
 
 ## 2) Status Board Alignment
+
 - Every pack listed in Master Index is represented or intentionally omitted with explicit rationale.
 - Completed rows include corresponding handoff notes.
 - Governance packs are present and tracked.
@@ -20,6 +23,7 @@ Verify all required files exist and are current:
 - Pack IDs, titles, dependencies, and statuses are coherent.
 
 ## 3) Feature Map Alignment
+
 - Every major feature area in product docs exists in `FEATURE_MAP.md`.
 - Each feature includes:
   - roles involved
@@ -29,35 +33,42 @@ Verify all required files exist and are current:
 - Feature priorities match current product direction (Beta/V1/Post-V1/SaaS).
 
 ## 4) Dependency Alignment
+
 - Sprint sequencing is coherent and up to date.
 - Unsafe parallel domains are explicitly marked.
 - Limited-parallel boundaries are clearly described.
 - Already-implemented packs affected by dependency changes are identified for retrofit.
 
 ## 5) Protected Rule Alignment
+
 - Non-negotiable role/privacy/billing/report/chat/chemical/export rules are represented.
 - No sprint or feature mapping contradicts protected rules.
 - Any new feature decision is checked against protected rules before implementation.
 
 ## 6) Master Index Counts and Pack IDs
+
 - Sprint pack counts are plausible relative to registry content.
 - No duplicate pack IDs.
 - No ambiguous skipped IDs that obscure sequence intent.
 - Retrofit/correction packs are clearly labeled.
 
 ## 7) Completed Work Reconciliation
+
 - Completed S00/S01 governance and infra work still fits V2 direction.
 - Handoffs match status board states.
 - Historical packs are preserved as records.
 - New V2 governance pack adoption is reflected in docs and status board.
 
 ## 8) Implementation Readiness
+
 - Resume implementation only when no critical governance contradictions remain.
 - Do not resume S01/S02 feature-changing work until source-of-truth updates are complete.
 - Any critical mismatch yields `NEEDS FIX` or `STOP`.
 
 ## 9) Final Result Categories
+
 Choose one result:
+
 - `PASS`: No material contradictions; governance system is coherent.
 - `PASS WITH NOTES`: Coherent enough to proceed with minor follow-ups.
 - `NEEDS FIX`: Material inconsistencies require updates before proceeding.

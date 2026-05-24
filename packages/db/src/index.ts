@@ -1,7 +1,7 @@
-export const DB_PACKAGE_STATUS = "foundation_only" as const;
+export const DB_PACKAGE_STATUS = 'foundation_only' as const;
 
 export interface DbPackageMetadata {
-  packageName: "@shipwrecked/db";
+  packageName: '@shipwrecked/db';
   status: typeof DB_PACKAGE_STATUS;
   schemaImplemented: false;
   migrationsImplemented: false;
@@ -9,9 +9,9 @@ export interface DbPackageMetadata {
 }
 
 export const dbPackageMetadata: DbPackageMetadata = {
-  packageName: "@shipwrecked/db",
+  packageName: '@shipwrecked/db',
   status: DB_PACKAGE_STATUS,
   schemaImplemented: false,
   migrationsImplemented: false,
-  connectionImplemented: false
+  connectionImplemented: false,
 };

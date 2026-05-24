@@ -1,6 +1,6 @@
 export const typographyScale = {
-  fontFamilyBase: "System",
-  fontFamilyHeading: "System",
+  fontFamilyBase: 'System',
+  fontFamilyHeading: 'System',
   sizeXs: 12,
   sizeSm: 14,
   sizeMd: 16,
@@ -13,7 +13,7 @@ export const typographyScale = {
   weightBold: 700,
   lineHeightTight: 1.2,
   lineHeightBase: 1.4,
-  lineHeightRelaxed: 1.6
+  lineHeightRelaxed: 1.6,
 } as const;
 
 export type TypographyScale = typeof typographyScale;

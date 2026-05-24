@@ -22,7 +22,6 @@ This pack should not invent unrelated product direction. It should ensure the ch
 
 The V2 Master Index system makes the Master Index a living source of truth. Future product changes should not be scattered across chat threads. They need a change log that records what changed, why, what files were affected, what sprints/packs need recalculation, and which protected rules were checked.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -35,7 +34,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -144,6 +142,7 @@ S00-019 is complete only if:
 Review S00-019 changes before finalizing.
 
 Check:
+
 1. Did you avoid implementation files?
 2. Did you preserve existing status board progress?
 3. Did you create/refine `MASTER_INDEX_CHANGELOG.md` without inventing unrelated feature scope?

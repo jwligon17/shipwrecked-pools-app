@@ -1,12 +1,15 @@
 # Shipwrecked Pools App — Agent Instructions
 
 ## Project Mission
+
 Build a premium true mobile app and internal operating system for Shipwrecked Pools that can replace Skimmer for customer communication, route management, service reports, photos, chemistry, billing, customer records, quote/repair approvals, technician workflows, and internal CRM.
 
 The primary product outcome is customer confidence through clarity, consistency, and accountability.
 
 ## Source Product Docs
+
 Use these as source-of-truth product context before major implementation work:
+
 - `docs/product/mission.md`
 - `docs/product/paul-story.md`
 - `docs/product/v1-scope.md`
@@ -26,7 +29,9 @@ Feature-changing implementation must not proceed until these source-of-truth gov
 If prompt-level instructions conflict, resolve by following explicit `PACK_PATH` instructions for the active pack and report Pack ID conflicts before editing.
 
 ## Current Intended Architecture
+
 Treat this as current intended direction, not guaranteed already-implemented state:
+
 - Monorepo.
 - True mobile app: Expo React Native + TypeScript.
 - Backend API: TypeScript (NestJS preferred, or equivalent structured framework).
@@ -38,6 +43,7 @@ Treat this as current intended direction, not guaranteed already-implemented sta
 - Mobile/admin clients should use the API/client layer for business workflows rather than direct DB access.
 
 ## Core Product Priorities
+
 1. Customer experience is the top priority.
 2. Build for trust, clarity, and operational consistency.
 3. Preserve strict role boundaries and sensitive-data protection.
@@ -45,6 +51,7 @@ Treat this as current intended direction, not guaranteed already-implemented sta
 5. Preserve future multi-tenant SaaS optionality.
 
 ## V1 Non-Negotiables
+
 1. Deliver a true mobile app (not PWA-only).
 2. Support both leads and customers.
 3. Custom top-down customer pool outline is mandatory.
@@ -66,6 +73,7 @@ Treat this as current intended direction, not guaranteed already-implemented sta
 19. Customer chat context requires explicit confirmation before attachment; technician chat is asynchronous only.
 
 ## User Roles And Visibility Rules
+
 - Customer: can view only authorized household/property/service data relevant to their account.
 - Household member: scoped access based on invitation/permissions.
 - Lead: supported in app lifecycle with restricted non-customer access.
@@ -73,11 +81,13 @@ Treat this as current intended direction, not guaranteed already-implemented sta
 - Admin/Owner: operational and business access by role policy.
 
 Technician-visible examples:
+
 - Assigned route details and stop context.
 - Access instructions, gate codes, pet/dog notes, dog treat permission.
 - Customer phone number and operational reminders.
 
 Technician-prohibited data:
+
 - Billing/payment details.
 - Route profitability and customer profitability.
 - Sensitive business financial data.
@@ -85,11 +95,13 @@ Technician-prohibited data:
 - Master-job profitability, margin, and billing status.
 
 ## Customer-Friendly Vs Internal Data
+
 - Customer-facing notes must remain customer-friendly.
 - Internal notes are operational/admin data and must never leak to customers.
 - Data exposure should be minimized per role and tied to business necessity.
 
 ## Privacy, Security, And Audit Rules
+
 - Treat role boundaries as product-critical requirements, not optional hardening.
 - Enforce least-privilege access for sensitive data.
 - Log sensitive actions with audit trails.
@@ -97,6 +109,7 @@ Technician-prohibited data:
 - Do not expose exact technician live GPS to customers.
 
 ## Prompt Pack Workflow
+
 1. Execute one prompt pack at a time.
 2. Treat `PACK_PATH` as source of truth for current execution scope.
 3. If prompt text, prompt pack, or repo docs reference conflicting Pack IDs, stop and report conflict before changes.
@@ -112,7 +125,9 @@ Technician-prohibited data:
 13. Stop after current pack completion.
 
 ## Planning Before Changes
+
 Before edits:
+
 1. Confirm current pack ID and title.
 2. Verify prerequisites.
 3. Identify acceptance criteria.
@@ -120,19 +135,23 @@ Before edits:
 5. Call out risks, assumptions, and checks to run.
 
 ## File Scope And Do-Not-Touch Rules
+
 - Only modify files required by the active prompt pack.
 - Do not modify unrelated files, even for opportunistic cleanup.
 - For documentation-only packs, do not touch app/API/database/package/auth/billing implementation code.
 - Respect pack-level "Files Not To Touch" lists.
 
 ## Testing And Verification Rules
+
 - For code packs: add/update tests required by the pack and run required checks.
 - For docs-only packs: run only requested documentation checks.
 - If no code/build tests apply, state that explicitly in final handoff.
 - Report failing checks and either fix them or clearly document blockers.
 
 ## Handoff Requirements
+
 Every completed pack must include:
+
 - Updated status in `docs/prompt-packs/STATUS_BOARD.md`.
 - Handoff note in `docs/handoffs/` with pack ID/title, files changed, checks run, self-review findings, fixes made, limitations, and next recommended pack.
 - Final summary including exact git add/commit commands for the user.
@@ -140,7 +159,9 @@ Every completed pack must include:
 Do not commit changes unless explicitly instructed. Default is human-managed commits.
 
 ## Review Guidelines
+
 Review your diff for:
+
 1. Scope creep.
 2. Unrelated file changes.
 3. Missing acceptance criteria.
@@ -153,7 +174,9 @@ Review your diff for:
 Fix material issues before final response.
 
 ## When To Stop And Ask For Direction
+
 Stop and ask for direction if:
+
 - Instructions conflict on Pack ID or scope.
 - Required prerequisites are missing.
 - Requested changes require touching forbidden files.
@@ -161,7 +184,9 @@ Stop and ask for direction if:
 - Acceptance criteria cannot be met within current pack scope.
 
 ## Current Things Not To Build Yet
+
 Unless explicitly required by the active pack, do not start:
+
 - Unrequested app/API/database feature implementation.
 - AI-generated customer answer workflows for V1 questions.
 - Exact live GPS customer tracking.

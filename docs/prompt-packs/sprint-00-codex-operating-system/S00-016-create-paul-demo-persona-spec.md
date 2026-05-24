@@ -99,6 +99,7 @@ The spec must include:
 ## 2. Property and Access
 
 Include sample property data without using real private info:
+
 - residential property
 - backyard pool
 - gate code placeholder
@@ -110,6 +111,7 @@ Include sample property data without using real private info:
 ## 3. Bodies of Water
 
 Define Paul’s pool system:
+
 - main pool
 - connected spa or separate spa? Choose a consistent default and document it.
 - If using connected spa, explain shared chemistry.
@@ -122,6 +124,7 @@ Define Paul’s pool system:
 ## 4. Pool Outline and Service Points
 
 Define demo pool outline expectations:
+
 - custom top-down outline
 - service points/markers:
   - skimmer
@@ -145,6 +148,7 @@ Define demo pool outline expectations:
 ## 5. Route/Technician Scenario
 
 Define demo route:
+
 - Paul is on Thursday route
 - technician has stops before Paul
 - customer sees stops-before-you and ETA
@@ -157,6 +161,7 @@ Define demo route:
 ## 6. Weekly Service Scenario
 
 Define sample weekly service:
+
 - gate arrival photo
 - pool photos
 - spa photos if applicable
@@ -176,6 +181,7 @@ Define sample weekly service:
 ## 7. Report and Chemistry Scenario
 
 Define:
+
 - latest report
 - previous reports
 - chemistry history
@@ -187,6 +193,7 @@ Define:
 ## 8. Quote/Repair Scenario
 
 Define sample quote:
+
 - filter clean or return fitting repair
 - customer asks question
 - admin/technician responds
@@ -199,6 +206,7 @@ Define sample quote:
 ## 9. Master Job Scenario
 
 Define a non-maintenance job scenario for Paul:
+
 - green-to-clean or acid wash
 - internal master job groups multiple visits
 - each visit has report
@@ -210,6 +218,7 @@ Define a non-maintenance job scenario for Paul:
 ## 10. Context-Aware Chat Scenario
 
 Define:
+
 - customer taps chat from chemistry
 - customer confirms context or chooses something else
 - customer chooses admin, technician, or Shipwrecked team
@@ -222,6 +231,7 @@ Define:
 ## 11. Notification Scenario
 
 Define expected notification examples:
+
 - service day reminder
 - add water reminder
 - on the way
@@ -236,6 +246,7 @@ Define expected notification examples:
 ## 12. Billing Scenario
 
 Define:
+
 - stored payment method placeholder
 - invoice list
 - quote approval charge
@@ -246,6 +257,7 @@ Define:
 ## 13. Admin Demo Scenario
 
 Define admin actions:
+
 - create/edit Paul
 - create/edit property
 - create/edit Cooper
@@ -262,6 +274,7 @@ Define admin actions:
 ## 14. Test Assertions
 
 Define expected assertions:
+
 - Paul cannot see other customers
 - Megan can see invited location only
 - technician sees assigned operational data only
@@ -291,6 +304,7 @@ S00-016 is complete only if:
 Review S00-016 before finalizing.
 
 Check:
+
 1. Did you create `docs/product/paul-demo-persona.md`?
 2. Is Paul’s demo data complete enough for future seed data and QA?
 3. Does the persona include customer, household, technician, admin, reports, route, quote/repair, master job, chat, notifications, billing, and test assertions?

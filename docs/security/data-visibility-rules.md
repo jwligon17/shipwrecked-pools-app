@@ -1,36 +1,43 @@
 # Shipwrecked Pools Data Visibility Rules
 
 ## 1. Purpose
+
 This document defines what data may be displayed to each role and how data must be transformed before display.
 
 `docs/security/permission-matrix.md` defines role access and action authorization. This document defines field-level and display-level visibility, including note separation, masking, customer-safe language, and serializer behavior.
 
 ## 2. Data Visibility Levels
+
 ### `public_marketing`
+
 - Who can see it: Anyone, including non-authenticated visitors.
 - Example fields: Public service descriptions, generic feature marketing copy.
 - Risks: Overpromising features not delivered yet.
 - Implementation notes: Keep separate from customer/account data tables.
 
 ### `lead_visible`
+
 - Who can see it: The lead and authorized internal staff.
 - Example fields: Lead contact profile, request status, onboarding progress.
 - Risks: Accidental exposure of customer-only records before conversion.
 - Implementation notes: Enforce lead-only ownership checks until conversion.
 
 ### `customer_visible`
+
 - Who can see it: Authenticated customer on their own account scope.
 - Example fields: Customer profile, published reports, own chemistry and quotes.
 - Risks: Cross-customer leakage.
 - Implementation notes: Always apply organization + customer ownership filters.
 
 ### `household_visible`
+
 - Who can see it: Invited household members after acceptance.
 - Example fields: Shared property data, pool status, report history per invitation.
 - Risks: Household member receiving access before invite acceptance.
 - Implementation notes: Require accepted invitation/membership and permission flags.
 
 ### `technician_visible`
+
 - Who can see it: Assigned technician for assigned stops/work.
 - Example fields: Gate code, pet/treat notes, checklist, assigned stop history.
 - Additional examples: Master-job association status, route-start safety reminder, arrival pop-up acknowledgment prompt.
@@ -38,82 +45,98 @@ This document defines what data may be displayed to each role and how data must 
 - Implementation notes: Require assignment checks on every read/write.
 
 ### `admin_visible`
+
 - Who can see it: Admin and owner roles.
 - Example fields: Route management views, billing operations, quote workflows.
 - Risks: Broad internal data exposure without need-to-know controls.
 - Implementation notes: Keep owner-only categories explicitly excluded.
 
 ### `owner_only`
+
 - Who can see it: Owner/admin role only (`owner_admin`).
 - Example fields: Route profitability, customer profitability, sensitive strategy notes.
 - Risks: Margin strategy leakage inside team.
 - Implementation notes: Dedicated owner checks; do not inherit via general admin role.
 
 ### `system_only`
+
 - Who can see it: Service principals only, not human UI roles.
 - Example fields: Webhook payload internals, delivery pipeline metadata.
 - Risks: Internal service metadata leaking into UI/API responses.
 - Implementation notes: Never serialize directly to client apps.
 
 ### `audit_only`
+
 - Who can see it: Authorized audit reviewers (owner/admin per policy).
 - Example fields: Gate-code access events, admin view-as logs, deletion events.
 - Risks: Tampering or silent access to sensitive action history.
 - Implementation notes: Immutable append-only logging with actor + context.
 
 ### `masked`
+
 - Who can see it: Roles allowed to reference value but not full raw value.
 - Example fields: Payment method display (`**** 4242`), partial tokens.
 - Risks: Re-identification if masking is weak.
 - Implementation notes: Store raw sensitive data only in compliant providers; expose masked projection.
 
 ### `never_customer_visible`
+
 - Who can see it: Internal roles only; never customers/household.
 - Example fields: Internal notes, cost basis, margin strategy, internal QA flags.
 - Risks: Trust breach if leaked into customer report/app views.
 - Implementation notes: Explicit serializer deny list for customer/household roles.
 
 ### `never_technician_visible`
+
 - Who can see it: Owner/admin/system only.
 - Example fields: Billing status, payment records, profitability, margin strategy.
 - Risks: Financial and privacy boundary violations.
 - Implementation notes: Role guards plus response filtering; add regression tests.
 
 ## 3. Note Types
+
 Every note-like field added in future work must declare a note type and a visibility level.
 
 ### `customer_friendly_note`
+
 - Purpose: Plain-language message safe for customers.
 - Visibility: `customer_visible`, `household_visible`, `admin_visible`, `owner_only`.
 - Example: "Light staining near the return jet is being monitored."
 
 ### `technician_operational_note`
+
 - Purpose: Field execution guidance for assigned technicians.
 - Visibility: `technician_visible`, `admin_visible`, `owner_only`.
 - Example: "Check return jet marker during next visit; customer asked about staining."
 
 ### `admin_internal_note`
+
 - Purpose: Internal service/account handling context.
 - Visibility: `admin_visible`, `owner_only`.
 - Example: "Customer prefers detailed explanations before approving repairs."
 
 ### `owner_financial_note`
+
 - Purpose: Sensitive financial strategy and margin context.
 - Visibility: `owner_only`.
 - Example: "High-margin repair opportunity; review pricing before sending."
 
 ### `system_generated_note`
+
 - Purpose: Automated operational/system messages.
 - Visibility: Depends on destination role; default `system_only` until mapped.
 - Example: "Route exception notification queued for delivery."
 
 ### `audit_note`
+
 - Purpose: Security/compliance event record.
 - Visibility: `audit_only`.
 - Example: "Gate code viewed by technician at 12:41 PM."
 
 ## 4. Customer-Facing Data Rules
+
 Customers may see:
+
 - Their own profile.
 - Their household members.
 - Their property/address.
@@ -137,6 +160,7 @@ Customers may see:
 - Conversations/questions they started or that are shared with them.
 
 Customers must not see:
+
 - Internal notes.
 - Technician-only notes.
 - Admin-only notes.
@@ -153,9 +177,11 @@ Customers must not see:
 - Audit logs (except possible limited customer activity view in a future explicit pack).
 
 ## 5. Household Member Visibility Rules
+
 Household members can view customer/property data only after invitation and acceptance.
 
 Baseline default visibility after invite acceptance:
+
 - Reports: Yes.
 - Chemistry: Yes.
 - Pool outline: Yes.
@@ -167,11 +193,14 @@ Baseline default visibility after invite acceptance:
 - Notification preferences: Separate household-level preferences.
 
 Policy rule:
+
 - Service/report/pool status should be visible by default.
 - Billing/payment authority and quote approval authority must be configurable by customer/admin controls.
 
 ## 6. Technician Visibility Rules
+
 Assigned technicians may see:
+
 - Assigned route and stops.
 - Customer name.
 - Customer phone number.
@@ -191,6 +220,7 @@ Assigned technicians may see:
 - Suggested chemical guidance only after required readings/data are complete.
 
 Technicians must not see:
+
 - Billing status.
 - Invoices.
 - Payment methods.
@@ -206,9 +236,11 @@ Technicians must not see:
 - Chemical recommendation table administration controls.
 
 ## 7. Admin / Owner Visibility Rules
+
 Admins can manage operations, customers, reports, routes, quotes, repairs, deals, and billing workflows needed to run Shipwrecked service.
 
 Owner-only visibility includes:
+
 - Customer profitability.
 - Route profitability.
 - Company-level financial analytics.
@@ -216,7 +248,9 @@ Owner-only visibility includes:
 - Compensation/margin strategy (if added later).
 
 ## 8. Lead Visibility Rules
+
 Leads can see before conversion:
+
 - Their own lead profile.
 - Onboarding steps.
 - Basic request/quote status.
@@ -224,6 +258,7 @@ Leads can see before conversion:
 - Uploaded pool photos they submitted.
 
 Leads cannot see before conversion:
+
 - Service history.
 - Reports.
 - Route progress.
@@ -232,6 +267,7 @@ Leads cannot see before conversion:
 - Customer-only app features until approved/converted.
 
 ## 9. Route Progress Privacy Rules
+
 - Customer sees service day status.
 - Customer sees stops-before-you and ETA.
 - Customer may see route-progress visualization.
@@ -242,7 +278,9 @@ Leads cannot see before conversion:
 - Route exception notifications must be customer-safe and must not reveal other customers.
 
 ## 10. Photo Visibility Rules
+
 Photo categories in scope:
+
 - Customer-uploaded onboarding photos.
 - Technician service photos.
 - Gate arrival/departure photos.
@@ -254,6 +292,7 @@ Photo categories in scope:
 - Admin-only photos where required.
 
 Rules:
+
 - Photos must be scoped to organization/customer/property/water body/service visit/report.
 - Customer sees only photos attached to their own reports/quotes/repairs or profile.
 - Technician sees only photos relevant to assigned/current work.
@@ -263,7 +302,9 @@ Rules:
 - Admin may hide uploaded photos from customer view; hidden state and actor must be auditable.
 
 ## 11. Report Visibility Rules
+
 Report types and visibility:
+
 - Weekly maintenance reports: customer-visible after publish.
 - Repair reports: customer-visible after publish, separate from weekly maintenance.
 - Green-to-clean reports: customer-visible after publish as separate report class.
@@ -272,13 +313,16 @@ Report types and visibility:
 - Corrected reports: customer-visible latest revision; corrections tracked.
 
 Additional rules:
+
 - Reports are customer-visible after publishing.
 - Report comments are customer-visible unless explicitly marked internal-only.
 - Admin correction before customer opens must be tracked/audited.
 - Internal notes used to generate report content must never leak into customer report text.
 
 ## 12. Quote / Repair / Billing Visibility Rules
+
 Visibility coverage:
+
 - Quote request: customer/household/admin visible within account scope.
 - Quote draft: admin/owner internal; technician only sees operational instruction subset when assigned.
 - Quote sent: customer-visible line items and totals sent to that account.
@@ -293,6 +337,7 @@ Visibility coverage:
 - Master-job customer views: visit reports and final summary reports in standard report/history surfaces (not a generic master-job page).
 
 Rules:
+
 - Customer sees quote amount and line items sent to them.
 - Technician may see work instructions but not margin/pricing strategy.
 - Payment methods should be masked.
@@ -300,6 +345,7 @@ Rules:
 - Approvals must be auditable.
 
 ## 13. Deals / Product Recommendation Visibility Rules
+
 - Customers only see deals eligible for their pool/equipment type.
 - Deal targeting must not expose hidden customer data.
 - Customers can turn off deal/product notifications while keeping service-critical notifications.
@@ -307,6 +353,7 @@ Rules:
 - Technician should not see revenue/margin details unless explicitly allowed in a future pack.
 
 ## 14. Notification Visibility Rules
+
 - Notification content must be role-safe.
 - Push/SMS/email fallback must not include sensitive gate code or billing details.
 - Notification logs may be admin-visible.
@@ -314,17 +361,20 @@ Rules:
 - Household members have separate notification preferences.
 
 ## 14A. Commercial Export Visibility Rules
+
 - Commercial exports require explicit admin review/approval before outbound email.
 - Export recipients may include property managers and health department inspectors.
 - Export payloads must exclude billing details, profitability, internal notes, and unrelated customer/property data.
 - Export-send actions and approvals must be auditable.
 
 ## 14B. Technician Reminder/Pop-Up Visibility Rules
+
 - Arrival pop-ups are internal-only and must be acknowledged before service can begin.
 - Safety reminders appear at route start, are internal-only, and require acknowledgment.
 - Customer and household roles cannot view reminder/popup contents or acknowledgment logs.
 
 ## 14C. Chemical Recommendation Visibility Rules
+
 - Suggested chemical amounts are internal guidance only.
 - Customers view only actual applied chemicals and plain-English explanation.
 - Admin can review suggested amount, technician-edited amount, applied amount, and follow/edit behavior.
@@ -332,6 +382,7 @@ Rules:
 - Suggestions must be blocked when required profile/readings data is incomplete.
 
 ## 14D. Context-Aware Chat Visibility Rules
+
 - Customer must explicitly confirm whether context from the current screen should be attached.
 - Context must never auto-attach without customer confirmation.
 - Technician chat is asynchronous only and limited to active/recent assigned context.
@@ -340,11 +391,13 @@ Rules:
 - Closed chats automatically reopen when a customer sends a reply.
 
 ## 15. Multi-Tenant / Future SaaS Visibility Rules
+
 All future data models and reads must remain organization-scoped to preserve multi-tenant SaaS optionality.
 
 No role should ever query or render cross-organization data unless explicit cross-tenant support is added in a future controlled pack.
 
 ## 16. Paul Examples
+
 - Pool outline marker note: Paul sees customer-friendly marker text; technician sees operational note; admin can see internal context; owner can also see financial strategy notes if present.
 - Technician route progress: Paul and Megan see "stops before you" + ETA only; assigned technician sees full operational stop sequence; admin sees route operations; owner sees same plus profitability dashboards.
 - Weekly report: Paul and Megan see published weekly report with photos and plain-English chemistry; technician sees assigned execution context; admin/owner can inspect internal draft and correction metadata.
@@ -356,7 +409,9 @@ No role should ever query or render cross-organization data unless explicit cros
 - Turning off deal notifications: Paul can disable deal/product notifications while still receiving service, route, report, and quote-critical notifications.
 
 ## 17. Implementation Rules For Future Codex Tasks
+
 Future prompt-pack implementations must:
+
 - Declare visibility level for every new field.
 - Separate internal and customer-facing notes at schema and serializer boundaries.
 - Serialize API responses by role and scope.

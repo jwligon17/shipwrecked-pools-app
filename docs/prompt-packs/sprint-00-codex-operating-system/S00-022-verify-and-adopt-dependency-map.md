@@ -16,7 +16,6 @@
 
 Verify, adopt, and if needed refine `docs/prompt-packs/DEPENDENCY_MAP.md` so Codex and the user understand build order, unsafe parallel work, and dependencies between features, sprints, prompt packs, and data objects.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -145,6 +143,7 @@ S00-022 is complete only if:
 Review S00-022 changes before finalizing.
 
 Check:
+
 1. Did you avoid implementation files?
 2. Does dependency map cover sprints, features, parallelization, and stop rules?
 3. Does it include all high-risk amendments: master jobs, commercial exports, before/after, chemical guidance, chat?

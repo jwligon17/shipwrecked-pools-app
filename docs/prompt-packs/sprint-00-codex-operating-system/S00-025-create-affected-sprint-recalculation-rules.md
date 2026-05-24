@@ -16,7 +16,6 @@
 
 Create durable rules for recalculating which sprints/prompt packs are affected when a feature, protected rule, dependency, or product requirement changes.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -128,6 +126,7 @@ Define when to create a retrofit pack:
 ## 5. Do-Not-Recalculate Cases
 
 Clarify that not every wording change requires pack changes:
+
 - typo fixes
 - formatting-only changes
 - nonfunctional copy changes with no scope impact
@@ -136,6 +135,7 @@ Clarify that not every wording change requires pack changes:
 ## 6. Output Format
 
 Include a template for affected sprint analysis:
+
 - change summary
 - affected features
 - affected roles
@@ -167,6 +167,7 @@ S00-025 is complete only if:
 Review S00-025 changes before finalizing.
 
 Check:
+
 1. Did you create affected sprint recalculation rules?
 2. Are rules specific to Shipwrecked features?
 3. Do they explain when to create retrofit prompt packs?

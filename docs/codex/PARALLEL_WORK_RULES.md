@@ -1,7 +1,9 @@
 # Parallel Work Rules (Shipwrecked Pools)
 
 ## 1. Core Rule
+
 One prompt pack equals exactly:
+
 - one Codex task
 - one self-review
 - one handoff note
@@ -12,9 +14,11 @@ One prompt pack equals exactly:
 Do not stack multiple uncommitted packs in one working tree.
 
 ## 2. Suggested Operator Roles
+
 Roles can rotate, but only one person owns mainline at a time.
 
 ### Mainline Owner
+
 - Owns `main` branch merge order.
 - Maintains `docs/prompt-packs/STATUS_BOARD.md` as source of truth.
 - Approves or blocks risky packs.
@@ -23,6 +27,7 @@ Roles can rotate, but only one person owns mainline at a time.
 - Checks release-gate readiness and unresolved blockers.
 
 ### Feature Runner
+
 - Executes safe packs on scoped branch/worktree.
 - Follows `PACK_PATH` exactly and stays in pack scope.
 - Creates handoff notes and runs self-review per pack.
@@ -30,6 +35,7 @@ Roles can rotate, but only one person owns mainline at a time.
 - Escalates conflicts to Mainline Owner before proceeding.
 
 ## 3. Worktree / Branch Rules
+
 - Create one branch or worktree per prompt pack.
 - Start each pack from latest mainline state.
 - Do not run a pack with a dirty working tree.
@@ -39,7 +45,9 @@ Roles can rotate, but only one person owns mainline at a time.
 - If two operators selected overlapping scope, stop and reassign before coding.
 
 ## 4. Never Run These In Parallel
+
 Do not parallelize these areas:
+
 - database migrations and schema changes
 - auth, role, and permission guards
 - shared API contracts/OpenAPI definitions
@@ -58,6 +66,7 @@ Do not parallelize these areas:
 - internal note/customer note visibility model
 
 ## 5. Safe To Parallelize Later (After Contracts Stabilize)
+
 - mobile empty/loading/error states
 - visual polish and copy improvements
 - documentation updates
@@ -71,7 +80,9 @@ Do not parallelize these areas:
 - product/deal content screens
 
 ## 6. Limited Parallelization Areas
+
 These can run in parallel only after backend/API contracts are stable and reviewed:
+
 - customer mobile screens
 - technician mobile screens
 - admin dashboard screens
@@ -82,7 +93,9 @@ These can run in parallel only after backend/API contracts are stable and review
 - commercial export UI
 
 ## 7. Conflict Detection Rules
+
 Pause immediately when any of these happen:
+
 - Codex modifies files outside expected pack scope.
 - Two operators touch the same shared file/folder.
 - Status board pack IDs or statuses conflict.
@@ -93,6 +106,7 @@ Pause immediately when any of these happen:
 - A major decision is labeled as "assumed" without confirmation.
 
 ## 8. Coordination Protocol (Per Session)
+
 1. Both operators pull latest.
 2. Check `docs/prompt-packs/STATUS_BOARD.md`.
 3. Choose non-conflicting packs.
@@ -105,6 +119,7 @@ Pause immediately when any of these happen:
 10. Decide next pack.
 
 ## 9. Shipwrecked-Specific Coordination Warnings
+
 - Pool outline work spans customer app, admin portal, service points, and data model.
 - Master-job work spans quotes, billing, reports, technician visits, and profitability boundaries.
 - Commercial export work spans reports, permissions, data visibility, and external recipients.
@@ -113,7 +128,9 @@ Pause immediately when any of these happen:
 - Before/after galleries span photos, reports, service points, and customer visibility controls.
 
 ## 10. Human Decision Gates (Pause And Escalate)
+
 Pause and ask ChatGPT/developer help when:
+
 - database redesign is required
 - billing/payment behavior is ambiguous
 - permission or visibility rules conflict
@@ -124,6 +141,7 @@ Pause and ask ChatGPT/developer help when:
 - tests fail and Codex cannot fix within scope
 
 ## Operator Reminders
+
 - Keep one-pack-at-a-time discipline even during parallel operation.
 - Prefer stopping early over merging uncertain changes.
 - Protect customer trust by enforcing role boundaries and data minimization in every pack.

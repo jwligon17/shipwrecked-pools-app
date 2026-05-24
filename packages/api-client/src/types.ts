@@ -5,7 +5,7 @@ export interface ApiClientConfig {
 }
 
 export interface RequestOptions {
-  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+  method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
   headers?: Record<string, string>;
   query?: Record<string, string | number | boolean | undefined>;
   body?: unknown;

@@ -1,9 +1,11 @@
 # Shipwrecked Pools Testing Philosophy
 
 ## 1. Testing Mission
+
 Testing is the operational safety net that lets Shipwrecked run Codex quickly without blind trust. Tests protect customer confidence, enforce role boundaries, prevent sensitive-data leakage, and keep weekly service, repair, chemistry, billing, and communication workflows reliable as the app replaces Skimmer.
 
 ## 2. Test Categories
+
 - Unit tests: Verify isolated business rules, transformers, serializers, validation utilities, pricing calculators, and workflow state transitions.
 - Integration tests: Verify multi-component flows (API + DB + policies + eventing) for realistic execution paths.
 - API/contract tests: Verify request/response shapes, schema constraints, OpenAPI alignment, and backward-compatible contract behavior.
@@ -22,7 +24,9 @@ Testing is the operational safety net that lets Shipwrecked run Codex quickly wi
 - Regression tests: Lock in fixed bugs and critical workflows to prevent backsliding.
 
 ## 3. Shipwrecked-Specific Test Priorities
+
 High-priority scenarios for every relevant pack:
+
 - Customers can access only their own household/property/pool/reports/photos/quotes/invoices.
 - Household members can access only invited-scope data.
 - Technicians can access assigned operational context only.
@@ -43,7 +47,9 @@ High-priority scenarios for every relevant pack:
 - Technician completion is blocked from 9:00 PM to 8:00 AM local time.
 
 ## 4. Testing By App Area
+
 ### Backend/API
+
 - Role guards and ownership/assignment checks.
 - Input validation and sanitized error handling.
 - Organization-scoped query behavior.
@@ -52,6 +58,7 @@ High-priority scenarios for every relevant pack:
 - Failure-path behavior (timeouts, missing data, denied access, conflicts).
 
 ### Mobile Customer App
+
 - Loading/empty/error/success states on core screens.
 - Dynamic home priority-state correctness.
 - Pool-outline rendering and marker visibility.
@@ -60,6 +67,7 @@ High-priority scenarios for every relevant pack:
 - Notification preference controls including deal opt-out independence.
 
 ### Technician Mobile Workflow
+
 - Route assignment and future-route visibility.
 - Arrival pop-up and route-start safety reminder acknowledgments.
 - Required photos and chemistry capture.
@@ -67,6 +75,7 @@ High-priority scenarios for every relevant pack:
 - Visit completion validation, including 9 PM–8 AM restriction.
 
 ### Admin Dashboard
+
 - Customer/profile, route, and pool-outline management.
 - Quote/repair/master-job operational flows.
 - Commercial export review/approval prior to send.
@@ -75,6 +84,7 @@ High-priority scenarios for every relevant pack:
 - Audit log access boundaries.
 
 ### Billing and Payments
+
 - Provider token/reference-only payment method handling.
 - Quote-approval charge behavior and failure handling.
 - Upfront payment behavior for master jobs.
@@ -82,12 +92,14 @@ High-priority scenarios for every relevant pack:
 - Webhook/event reconciliation behavior when implemented.
 
 ### Notifications
+
 - Preference routing by role and household scope.
 - Essential service notifications vs deal/product opt-out independence.
 - Service/report/quote/repair notification correctness.
 - Push-first behavior with SMS/email fallback when implemented.
 
 ## 5. Minimum Test Expectations By Prompt Pack Type
+
 - Docs-only packs: Scope/diff checks only; explicitly state no code/build tests required.
 - Backend logic packs: Unit + integration + permission + regression tests for changed logic.
 - Database migration packs: Migration validation, rollback path checks, data integrity checks, and affected query behavior tests.
@@ -100,7 +112,9 @@ High-priority scenarios for every relevant pack:
 - QA/review packs: Ensure required checks, status updates, and handoff completeness are documented and enforced.
 
 ## 6. Acceptance Criteria For Future Prompt Packs
+
 Implementation prompt packs are incomplete unless:
+
 - Relevant tests were added or updated for behavior changes.
 - Required check commands were executed.
 - Failures were fixed or documented as blockers.
@@ -109,6 +123,7 @@ Implementation prompt packs are incomplete unless:
 - `docs/prompt-packs/STATUS_BOARD.md` reflects accurate test/check status.
 
 ## 7. If Tests Cannot Run
+
 - State exactly why tests could not run.
 - Document environment or dependency blocker.
 - Do not claim tests passed.
@@ -116,6 +131,7 @@ Implementation prompt packs are incomplete unless:
 - Do not commit risky implementation logic without checks (docs-only changes are the exception when correctly scoped).
 
 ## 8. Human Operator Checklist
+
 - Run `git status`.
 - Run `git diff --stat`.
 - Run required pack-specific test commands (once Sprint 01 test tooling is installed).

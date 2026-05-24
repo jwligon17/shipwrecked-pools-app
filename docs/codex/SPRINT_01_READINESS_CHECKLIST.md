@@ -1,9 +1,11 @@
 # Sprint 01 Readiness Checklist
 
 ## 1. Sprint 01 Purpose
+
 Sprint 01 is for repo, infrastructure, and tooling setup before feature implementation.
 
 Sprint 01 should prepare:
+
 - monorepo structure
 - package manager/workspace configuration discipline
 - mobile app shell
@@ -22,6 +24,7 @@ Sprint 01 should prepare:
 - initial empty-app build verification
 
 ## 2. Preconditions Before Starting Sprint 01
+
 - [ ] `git status` is clean
 - [ ] All Sprint 00 docs are committed
 - [ ] `docs/prompt-packs/STATUS_BOARD.md` is accurate through S00-018
@@ -33,6 +36,7 @@ Sprint 01 should prepare:
 - [ ] No database/auth/billing implementation has begun outside approved Sprint 01 pack scope
 
 ## 3. Sprint 01 Risk Rules
+
 - Do not start database schema implementation before repo/tooling stability is in place.
 - Do not implement app features before mobile/admin/API shells and workspace foundations exist.
 - Do not add billing/auth/payment logic in Sprint 01 unless a prompt pack explicitly requires it.
@@ -41,7 +45,9 @@ Sprint 01 should prepare:
 - Continue enforcing prompt packs, self-review, handoffs, and status board updates.
 
 ## 4. Recommended Sprint 01 Stack Assumptions
+
 Planning assumptions (to be refined by Sprint 01 prompt packs):
+
 - monorepo
 - TypeScript
 - Expo React Native for mobile
@@ -51,6 +57,7 @@ Planning assumptions (to be refined by Sprint 01 prompt packs):
 - shared packages for types, API client, UI, config, auth, notifications, pool-outline, and test utilities
 
 ## 5. Sprint 01 Go/No-Go Checklist
+
 - [ ] Sprint 00 is complete
 - [ ] S00-018 is committed
 - [ ] Working tree is clean

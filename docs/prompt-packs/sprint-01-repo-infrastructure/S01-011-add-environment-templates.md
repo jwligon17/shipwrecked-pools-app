@@ -122,6 +122,7 @@ Do not include secrets.
 #### API
 
 `apps/api/.env.example` may include server-only placeholders:
+
 - API port
 - database URL placeholder
 - auth secret placeholder

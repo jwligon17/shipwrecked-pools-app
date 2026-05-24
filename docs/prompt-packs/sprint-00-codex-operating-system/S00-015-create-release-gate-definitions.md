@@ -78,6 +78,7 @@ The document must include these gates:
 Purpose: Confirm Sprint 00 operating system is ready before implementation.
 
 Must include:
+
 - product docs exist
 - master index exists
 - feature amendments reconciled
@@ -97,6 +98,7 @@ Must include:
 This is the first emotional proof.
 
 Must show:
+
 - Paul can log in
 - Paul has property/customer profile
 - Paul has pool/spa profile
@@ -110,6 +112,7 @@ Must show:
 ## Gate 2 — Internal Operations Test: "Paul Gets Serviced"
 
 Must show:
+
 - technician logs into same mobile app via technician role
 - technician sees route/stop
 - technician sees gate/pet/access notes
@@ -126,6 +129,7 @@ Must show:
 ## Gate 3 — Decision/Revenue Test: "Paul Makes a Decision"
 
 Must show:
+
 - Paul asks a context-aware question
 - admin/technician responds
 - quote/request workflow works
@@ -140,6 +144,7 @@ Must show:
 For 3–5 friendly customers.
 
 Must include:
+
 - customer onboarding/invite
 - role-based login
 - custom pool outline
@@ -161,6 +166,7 @@ Must include:
 Launch to all Shipwrecked customers/leads.
 
 Must include:
+
 - lead/customer onboarding
 - household invites
 - payment method and billing basics
@@ -181,6 +187,7 @@ Must include:
 ## Gate 6 — Skimmer Parallel Period
 
 Must define:
+
 - run Shipwrecked app and Skimmer in parallel temporarily
 - verify route management
 - verify reports/photos/chemistry
@@ -193,6 +200,7 @@ Must define:
 ## Gate 7 — Skimmer Replacement
 
 Must define:
+
 - app handles route management
 - app handles reports/photos/chemistry
 - app handles customer text/push/email communication
@@ -207,6 +215,7 @@ Must define:
 ## Gate 8 — Future SaaS / Valuation Layer
 
 Must define:
+
 - multi-tenant readiness
 - analytics/profitability
 - local pool system database
@@ -217,6 +226,7 @@ Must define:
 - possible SaaS packaging
 
 For each gate, include:
+
 - purpose
 - required features
 - minimum tests/checks
@@ -243,6 +253,7 @@ S00-015 is complete only if:
 Review S00-015 changes before finalizing.
 
 Check:
+
 1. Did you create `docs/product/release-gates.md`?
 2. Does it define all requested gates?
 3. Does each gate include practical go/no-go criteria?

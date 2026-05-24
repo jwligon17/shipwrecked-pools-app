@@ -16,7 +16,6 @@
 
 Verify, adopt, and if needed refine `docs/prompt-packs/PROTECTED_RULES.md` so it clearly defines non-negotiable product, privacy, role, billing, reporting, route, chemical, commercial, and Codex workflow rules.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -84,6 +82,7 @@ Protected rules must include:
 ## 2. Technician Financial Restrictions
 
 Technicians must never see:
+
 - billing status
 - payment details
 - payment history
@@ -183,6 +182,7 @@ S00-023 is complete only if:
 Review S00-023 changes before finalizing.
 
 Check:
+
 1. Did you avoid implementation files?
 2. Are all protected rules included?
 3. Do protected rules align with permission/data visibility docs?

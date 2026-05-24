@@ -16,7 +16,6 @@
 
 Verify, adopt, and if needed refine `docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md` so future changes are handled consistently.
 
-
 ## Common Scope Rule For This V2 Governance Pack
 
 This is a documentation/governance pack only.
@@ -29,7 +28,6 @@ Do not modify package/workspace config unless the prompt pack explicitly require
 Do not delete or rewrite completed prompt packs.
 Do not delete previous handoffs.
 Do not overwrite the existing real `STATUS_BOARD.md` with a seed/example status board.
-
 
 ## Files Codex Should Read First
 
@@ -140,6 +138,7 @@ S00-020 is complete only if:
 Review S00-020 changes before finalizing.
 
 Check:
+
 1. Did you preserve existing status-board progress?
 2. Did you create/refine update protocol without adding unrelated product scope?
 3. Does the protocol define clear update sequence?

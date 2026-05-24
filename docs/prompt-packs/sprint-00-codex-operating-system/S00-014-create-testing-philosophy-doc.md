@@ -23,6 +23,7 @@ This document should help the user and their wife run Codex confidently without 
 The Shipwrecked Pools app will handle customer accounts, technician routes, access/gate codes, pet notes, pool outlines, service reports, chemistry readings, before/after photos, master jobs, quotes, approvals, payments, commercial exports, notification preferences, and admin-only profitability.
 
 The testing philosophy must protect the company from:
+
 - customer data leakage
 - technician access to billing/profitability
 - internal notes leaking to customers
@@ -69,6 +70,7 @@ Modify only if useful and tightly scoped:
 ## Files Codex Must Not Touch
 
 Do not modify:
+
 - implementation code
 - app/admin/API implementation files
 - database migrations/schema implementation files
@@ -139,6 +141,7 @@ Include high-priority scenarios:
 Define expectations for each future area:
 
 ### Backend/API
+
 - role guards
 - input validation
 - audit logging
@@ -147,6 +150,7 @@ Define expectations for each future area:
 - failure states
 
 ### Mobile Customer App
+
 - loading/empty/error/success states
 - dynamic home priority states
 - pool outline rendering
@@ -157,6 +161,7 @@ Define expectations for each future area:
 - notification settings
 
 ### Technician Mobile Workflow
+
 - route assignment
 - future route viewing
 - arrival alerts
@@ -168,6 +173,7 @@ Define expectations for each future area:
 - time-of-day completion restriction
 
 ### Admin Dashboard
+
 - customer/profile management
 - route management
 - pool outline studio
@@ -179,6 +185,7 @@ Define expectations for each future area:
 - audit logs
 
 ### Billing and Payments
+
 - card on file references only
 - quote approval charge behavior
 - upfront payment for master jobs
@@ -187,6 +194,7 @@ Define expectations for each future area:
 - webhooks when implemented
 
 ### Notifications
+
 - preferences
 - household-specific settings
 - deal opt-out
@@ -211,6 +219,7 @@ Define what Codex must do for:
 ## 6. Acceptance Criteria for Future Prompt Packs
 
 State that future implementation prompt packs are not complete unless:
+
 - appropriate tests are added or updated
 - required commands are run
 - failing tests are fixed or documented as blockers
@@ -221,6 +230,7 @@ State that future implementation prompt packs are not complete unless:
 ## 7. What to Do When Tests Cannot Run
 
 Provide guidance:
+
 - explain why
 - document blocker
 - do not pretend tests passed
@@ -230,6 +240,7 @@ Provide guidance:
 ## 8. Human Operator Checklist
 
 Include simple commands and checks:
+
 - `git status`
 - `git diff --stat`
 - test commands once added in Sprint 01
@@ -257,6 +268,7 @@ S00-014 is complete only if:
 Review S00-014 changes before finalizing.
 
 Check:
+
 1. Did you create `docs/qa/testing-philosophy.md`?
 2. Is it specific to Shipwrecked Pools and not generic?
 3. Does it include testing categories, app-area expectations, and future prompt pack expectations?

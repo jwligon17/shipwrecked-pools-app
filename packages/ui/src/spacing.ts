@@ -6,7 +6,7 @@ export const spacingScale = {
   lg: 16,
   xl: 24,
   xxl: 32,
-  section: 40
+  section: 40,
 } as const;
 
 export type SpacingToken = keyof typeof spacingScale;

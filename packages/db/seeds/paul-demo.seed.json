@@ -93,10 +93,7 @@
   },
   "media": {
     "before_after_pair_id": "pair_demo_001",
-    "photo_ids": [
-      "photo_before_demo_001",
-      "photo_after_demo_001"
-    ]
+    "photo_ids": ["photo_before_demo_001", "photo_after_demo_001"]
   },
   "notification_preferences": {
     "essential_service_notifications": true,

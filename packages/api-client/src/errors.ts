@@ -5,9 +5,9 @@ export class ApiClientError extends Error {
 
   constructor(message: string, options: { status: number; code?: string; details?: unknown }) {
     super(message);
-    this.name = "ApiClientError";
+    this.name = 'ApiClientError';
     this.status = options.status;
-    this.code = options.code ?? "API_CLIENT_ERROR";
+    this.code = options.code ?? 'API_CLIENT_ERROR';
     this.details = options.details;
   }
 }

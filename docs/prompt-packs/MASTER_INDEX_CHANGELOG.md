@@ -3,9 +3,11 @@
 Purpose: Record meaningful changes to the Master Index system, prompt-pack roadmap, feature scope, protected rules, dependency relationships, and source-of-truth governance documents.
 
 ## Change ID Format
+
 `MI-YYYY-MM-DD-###`
 
 ## Status Values
+
 - Proposed
 - Accepted
 - Mapped
@@ -14,7 +16,9 @@ Purpose: Record meaningful changes to the Master Index system, prompt-pack roadm
 - Closed
 
 ## When to Add a Changelog Entry
+
 Add an entry when any of the following occur:
+
 - A new feature idea changes app scope, role behavior, or operational workflow.
 - An existing feature changes priority tier or delivery phase.
 - A sprint gains, loses, splits, or re-sequences prompt packs.
@@ -24,7 +28,9 @@ Add an entry when any of the following occur:
 - A new source-of-truth document is introduced for product, security, governance, or sequencing.
 
 ## Required Entry Format
+
 Each changelog entry must include:
+
 - `change_id`
 - `date`
 - `change_title`
@@ -118,6 +124,7 @@ Each changelog entry must include:
 - `commit_reference`: TODO (human-managed commit)
 
 ## Rules
+
 - Committed repository docs are source of truth; chat memory is not.
 - Major roadmap or feature changes must update this changelog first or in the same governance change set.
 - Completed prompt packs remain historical records unless superseded by explicit correction/retrofit packs.

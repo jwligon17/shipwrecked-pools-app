@@ -10,6 +10,7 @@ It includes:
 - `S01-016-verify-empty-app-build.md`
 
 Recommended batch style:
+
 - Add and commit these prompt pack files first.
 - Run them sequentially with the batch runner.
 - Stop on any issue.

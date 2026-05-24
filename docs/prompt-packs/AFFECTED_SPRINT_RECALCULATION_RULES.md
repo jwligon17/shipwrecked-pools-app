@@ -3,7 +3,9 @@
 Purpose: Define how to recalculate affected sprints and prompt packs whenever feature scope, protected rules, dependencies, or product direction changes.
 
 ## Required Source Documents
+
 Always use these docs together:
+
 - `docs/prompt-packs/MASTER_INDEX.md`
 - `docs/prompt-packs/MASTER_INDEX_CHANGELOG.md`
 - `docs/prompt-packs/MASTER_INDEX_UPDATE_PROTOCOL.md`
@@ -13,7 +15,9 @@ Always use these docs together:
 - `docs/prompt-packs/STATUS_BOARD.md`
 
 ## 1) Change Types
+
 Recalculation can be triggered by:
+
 - New feature
 - Feature priority change
 - Permission/role change
@@ -28,6 +32,7 @@ Recalculation can be triggered by:
 - Documentation/governance-only change
 
 ## 2) Recalculation Process
+
 1. Identify the changed feature/rule and summarize scope.
 2. Locate related feature families in `FEATURE_MAP.md`.
 3. Identify impacted roles.
@@ -41,7 +46,9 @@ Recalculation can be triggered by:
 11. Run the Master Index integrity review checklist before implementation.
 
 ## 3) Sprint Impact Heuristics
+
 Use these heuristics to avoid under- or over-scoping:
+
 - Role/auth changes typically affect S03, role-gated API surfaces, mobile/admin visibility, and permission tests.
 - Data visibility changes typically affect S02/S03 models/serializers, reports/history surfaces, admin views, and regression tests.
 - Database/domain changes propagate from S02 into all dependent feature sprints.
@@ -55,7 +62,9 @@ Use these heuristics to avoid under- or over-scoping:
 - UI-only changes can remain narrow if they do not alter data, permissions, or dependencies.
 
 ## 4) Retrofit Rules
+
 Create retrofit packs when:
+
 - Completed sprint docs conflict with new accepted direction.
 - A completed pack omitted or violated a protected rule.
 - A completed infrastructure/governance artifact is stale against current source-of-truth.
@@ -63,13 +72,16 @@ Create retrofit packs when:
 - Status board and master index disagree on pack existence/order/state.
 
 ## 5) Do-Not-Recalculate Cases
+
 Do not trigger broad recalculation for:
+
 - Typo/grammar-only edits.
 - Formatting-only edits.
 - Nonfunctional copy edits with no behavior/scope/dependency impact.
 - Historical handoff wording tweaks unless materially misleading.
 
 ## 6) Output Format Template
+
 Use this template for each recalculation analysis:
 
 ```txt
@@ -86,6 +98,7 @@ safe_to_proceed_after_governance_updates: yes/no
 ```
 
 ## 7) Decision Rules
+
 - If protected rules are touched, validate against `PROTECTED_RULES.md` before proposing implementation packs.
 - If completed packs are impacted, create retrofit packs instead of silently changing only future packs.
 - If dependency sequence changes, update `DEPENDENCY_MAP.md` and `MASTER_INDEX.md` together.

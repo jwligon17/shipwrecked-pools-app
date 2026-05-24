@@ -7,6 +7,7 @@ This small package adds one prompt pack:
 Use it after committing S00-008 and before running S00-009.
 
 Why this exists:
+
 - S00-006 and S00-007 were completed before the new feature decisions were incorporated.
 - This pack updates the living product docs, master index, permission matrix, data visibility rules, and durable instructions.
 - It does not require deleting the master index, restarting the repo, or modifying implementation code.

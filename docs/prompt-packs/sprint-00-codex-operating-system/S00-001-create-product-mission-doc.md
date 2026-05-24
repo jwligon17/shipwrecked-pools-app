@@ -1,18 +1,23 @@
 # Prompt Pack S00-001 — Create Product Mission Doc
 
 ## Sprint
+
 S00 — Codex Operating System
 
 ## Priority
+
 P0 — Foundation
 
 ## Risk Level
+
 Low, if scoped correctly. High if Codex starts modifying app code.
 
 ## Can Run In Parallel?
+
 No. This is the first prompt pack and should be run alone.
 
 ## Goal
+
 Create a clear, durable product mission document for the Shipwrecked Pools app at:
 
 ```txt
@@ -24,11 +29,13 @@ This document should teach Codex, future developers, and the Shipwrecked Pools t
 This is not a generic app mission document. It must be specific to Shipwrecked Pools.
 
 ## Why This Matters
+
 The app is intended to become more than a customer portal. It is meant to become the proprietary operating system for Shipwrecked Pools and eventually replace Skimmer for customer communication, service reports, service photos, route progress, chemistry readings, billing, repair approvals, customer records, and internal CRM.
 
 The mission document will shape all future prompt packs. Codex should be able to read it and understand that the app exists to create a premium, confidence-building pool ownership experience for customers while making Shipwrecked more scalable, more systematized, and more valuable.
 
 ## Current Business Context
+
 Shipwrecked Pools is already making real money from ongoing pool maintenance. The company has grown by being reliable, communicative, honest, and professional. The app should amplify those strengths, not replace them.
 
 The customer experience should feel clean, premium, and professional. It should match the future direction of the Shipwrecked Pools website. It should not feel like a gimmicky pirate game, although tasteful brand personality is acceptable later.
@@ -36,6 +43,7 @@ The customer experience should feel clean, premium, and professional. It should 
 The app should eventually become a moat for Shipwrecked Pools by making customers feel deeply connected to their exact pool, their service history, their chemistry, their technician progress, their quotes, their repairs, and their pool-care decisions.
 
 ## Core Product Vision
+
 The app should help a customer like Paul move from:
 
 ```txt
@@ -55,6 +63,7 @@ Shipwrecked Pools helps homeowners feel confident that their pool is being cared
 ```
 
 ## Required Themes To Include In The Mission Doc
+
 The mission document must include these themes:
 
 1. **Confidence as the product** — The app is not just about reports; it reduces uncertainty for homeowners.
@@ -69,6 +78,7 @@ The mission document must include these themes:
 10. **Future SaaS optionality** — The backend may eventually become useful as a separate SaaS product, so the architecture should not be overly locked to one hardcoded customer setup.
 
 ## Files Codex Should Create Or Modify
+
 Codex should create:
 
 ```txt
@@ -88,6 +98,7 @@ docs/handoffs/S00-001-create-product-mission-doc.md
 ```
 
 ## Files Codex Must Not Touch
+
 Codex must not modify:
 
 ```txt
@@ -110,6 +121,7 @@ tsconfig.base.json
 Codex must not create database migrations, app screens, API routes, billing logic, or authentication logic.
 
 ## Build Prompt For Codex
+
 Copy/paste the following prompt into Codex for this pack:
 
 ```txt
@@ -153,6 +165,7 @@ Do not implement S00-002 or any other pack.
 ```
 
 ## Bite-Sized Implementation Steps
+
 Codex should complete these steps:
 
 1. Read existing repo guidance and the master index.
@@ -164,6 +177,7 @@ Codex should complete these steps:
 7. Stop.
 
 ## Acceptance Criteria
+
 This pack is complete when:
 
 - `docs/product/mission.md` exists.
@@ -177,6 +191,7 @@ This pack is complete when:
 - No app code, database schema, package config, API code, mobile code, admin code, or billing code was changed.
 
 ## Codex Self-Review Prompt
+
 After implementation, paste this into Codex:
 
 ```txt
@@ -198,6 +213,7 @@ If anything is missing or too generic, fix it now. Then summarize the final chan
 ```
 
 ## Expected Git Diff
+
 Expected changed/created files:
 
 ```txt
@@ -209,6 +225,7 @@ docs/prompt-packs/STATUS_BOARD.md
 Anything outside those files should be treated as suspicious unless Codex gives a very good reason.
 
 ## Recommended Commit Message
+
 After Codex completes and self-reviews this pack, commit with:
 
 ```bash

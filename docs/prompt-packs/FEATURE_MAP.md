@@ -3,6 +3,7 @@
 Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, protected rules, sprint areas, prompt-pack categories, and dependencies so roadmap changes are applied relationally.
 
 ## Usage Rules
+
 - Update this file whenever feature scope/priority/dependency changes.
 - Keep mappings aligned with `MASTER_INDEX.md`, `DEPENDENCY_MAP.md`, and `PROTECTED_RULES.md`.
 - Use this map before adding or changing prompt packs.
@@ -10,6 +11,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 ## Feature Mapping Matrix
 
 ### 1) Role-Based Single App
+
 - Description: One true mobile app with role-based experiences for customer, household member, technician, and owner/admin.
 - Roles involved: customer, household_member, technician, admin, owner_admin, lead, commercial contacts/export recipients (as scoped users).
 - Customer-visible surface: customer/household app shell, account-scoped service/billing/conversation views.
@@ -24,6 +26,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 2) Custom Pool Outline / Service Points
+
 - Description: Minimal north-up operational pool outline with service markers linked to operational records.
 - Roles involved: customer, household_member, technician, admin, owner_admin.
 - Customer-visible surface: read-only outline + customer-safe service point history.
@@ -38,6 +41,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 3) Routes / Technician Progress
+
 - Description: Route progress with stops-before-you and ETA, no exact customer-facing live GPS.
 - Roles involved: customer, household_member, technician, admin, owner_admin.
 - Customer-visible surface: route-progress timeline, stops-before-you, ETA only.
@@ -52,6 +56,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 4) Technician Workflow
+
 - Description: Assigned-stop workflow including access notes, arrival popups, safety reminders, photos, chemistry, and local-time completion restriction.
 - Roles involved: technician, admin, owner_admin.
 - Customer-visible surface: resulting reports/status only.
@@ -66,6 +71,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 5) Reports / Photos / Before-After
+
 - Description: Distinct report types with required photos and before/after pairing controls.
 - Roles involved: customer, household_member, technician, admin, owner_admin.
 - Customer-visible surface: published maintenance/repair/green-to-clean/final-summary reports.
@@ -80,6 +86,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 6) Chemistry / Suggested Chemical Guidance
+
 - Description: Exact readings plus internal recommendation workflow with customer-visible applied chemical explanations only.
 - Roles involved: technician, admin, owner_admin, customer, household_member.
 - Customer-visible surface: applied chemicals + plain-English explanation.
@@ -94,6 +101,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: V1.
 
 ### 7) Questions / Context-Aware Chat
+
 - Description: Human-answered conversations with explicit context-attach confirmation and async technician messaging.
 - Roles involved: customer, household_member, technician, admin, owner_admin, lead.
 - Customer-visible surface: chat entry points + explicit context-confirmation UX.
@@ -108,6 +116,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 8) Requests / Quotes / Repairs
+
 - Description: Request-to-quote-to-repair flow with approval action, checkbox, typed signature, audit, and payment gating where applicable.
 - Roles involved: customer, household_member (delegated), technician, admin, owner_admin, lead.
 - Customer-visible surface: requests, quotes, approvals, repair status.
@@ -122,6 +131,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 9) Master Jobs
+
 - Description: Internal grouping for non-weekly/non-biweekly work with visit reports + final summary, internal rollups hidden from customers.
 - Roles involved: admin, owner_admin, technician, customer/household (indirect report visibility only).
 - Customer-visible surface: visit-level reports + final summary via normal history, not master-job page.
@@ -136,6 +146,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: V1.
 
 ### 10) Billing / Payments
+
 - Description: Monthly/autopay/one-time billing with provider-tokenized payment methods and suspension workflow.
 - Roles involved: customer, household_member (scoped), admin, owner_admin, system_service.
 - Customer-visible surface: invoices, payments, masked methods, suspension/resolution states.
@@ -150,6 +161,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: V1.
 
 ### 11) Notifications
+
 - Description: Push-first notifications with fallback channels and separate essential-service vs deal/product preference controls.
 - Roles involved: customer, household_member, technician, admin, owner_admin, system_service.
 - Customer-visible surface: notification feed/preferences and critical status alerts.
@@ -164,6 +176,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Beta / V1.
 
 ### 12) Commercial Accounts / Compliance Exports
+
 - Description: Commercial customer type with property-manager workflows and admin-reviewed outbound compliance exports.
 - Roles involved: admin, owner_admin, customer commercial contacts, inspectors/property managers (approved recipients).
 - Customer-visible surface: export request/status visibility only.
@@ -178,6 +191,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: V1 / Post-V1.
 
 ### 13) Deals / Products / Robots
+
 - Description: Targeted recommendations/install opportunities with independent opt-out controls.
 - Roles involved: customer, household_member, admin, owner_admin, technician (operational awareness only).
 - Customer-visible surface: recommendations/deals and opt-out settings.
@@ -192,6 +206,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: Post-V1 / SaaS-Valuation.
 
 ### 14) Privacy / Data Export / Deletion / Audit Logs
+
 - Description: Export/deletion governance with liability-safe exceptions and immutable sensitive-action auditability.
 - Roles involved: customer, household_member, admin, owner_admin, system_service.
 - Customer-visible surface: request/export/deletion status and defined data scope.
@@ -206,6 +221,7 @@ Purpose: Map major Shipwrecked feature families to roles, visibility surfaces, p
 - Priority: V1 / SaaS-Valuation.
 
 ### 15) Admin Portal
+
 - Description: Desktop-first operating console for route, report, customer, quote, billing, chat, export, and analytics workflows.
 - Roles involved: admin, owner_admin.
 - Customer-visible surface: none directly; downstream service quality/output.

@@ -156,6 +156,7 @@ List each completed pack:
 - S00-018 Sprint 00 Closeout / Sprint 01 Readiness
 
 For each, include:
+
 - expected output doc(s)
 - purpose
 - completion evidence/check

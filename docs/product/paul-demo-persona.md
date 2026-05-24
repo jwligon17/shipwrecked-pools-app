@@ -1,6 +1,7 @@
 # Paul Demo Persona Specification
 
 ## 1. Persona Overview
+
 - Name: Paul Bennett (demo persona).
 - Household member/spouse: Megan Bennett.
 - Dog/pet: Cooper.
@@ -13,6 +14,7 @@
 - Role model: Paul is `customer`; Megan is invited `household_member` with scoped access.
 
 ## 2. Property and Access
+
 Use placeholder demo data only.
 
 - Property label: `Paul Home - Demo`.
@@ -25,6 +27,7 @@ Use placeholder demo data only.
 - Technician arrival reminder: Ring side bell once, then proceed to gate.
 
 ## 3. Bodies of Water
+
 Default model for recurring demos: connected spa configuration.
 
 - Body 1: Main pool (chlorinated salt system).
@@ -42,11 +45,14 @@ Default model for recurring demos: connected spa configuration.
   - Salt cell.
 
 ## 4. Pool Outline and Service Points
+
 ### Outline Expectations
+
 - Custom top-down outline of Paul’s specific pool/spa geometry.
 - Published customer-visible layout with internally managed marker metadata.
 
 ### Required Service Points / Markers
+
 - Skimmer.
 - Steps.
 - Shallow end.
@@ -60,15 +66,18 @@ Default model for recurring demos: connected spa configuration.
 - Cleaner.
 
 ### Marker Statuses
+
 - Green (`normal`): healthy/expected condition.
 - Yellow (`watch`): monitoring concern (for example light staining, filter pressure trend).
 - Red (`action_needed`): intervention required for testing scenarios.
 
 ### Notes
+
 - Customer-facing notes must be customer-friendly.
 - Internal notes may include operational detail and must remain non-customer-visible.
 
 ## 5. Route / Technician Scenario
+
 - Route day: Thursday.
 - Customer route view: Stops-before-you plus ETA only.
 - Exact live GPS: Never shown to customer.
@@ -78,13 +87,16 @@ Default model for recurring demos: connected spa configuration.
 - Service completion guardrail: Technician cannot complete between 9:00 PM and 8:00 AM local time.
 
 ## 6. Weekly Service Scenario
+
 ### Required Capture
+
 - Gate arrival photo.
 - Pool photos (surface + water clarity).
 - Spa photos (when applicable).
 - Filter pressure photo.
 
 ### Chemistry Readings
+
 - Free chlorine.
 - pH.
 - Total alkalinity.
@@ -93,12 +105,14 @@ Default model for recurring demos: connected spa configuration.
 - Calcium hardness.
 
 ### Service Outcome Data
+
 - Actual chemicals used.
 - Customer-friendly summary.
 - Positive baseline scenario: "Everything looks perfect!"
 - Watch scenario: filter pressure trending high or light return-jet staining noted.
 
 ## 7. Report and Chemistry Scenario
+
 - Latest report available immediately after completion.
 - Previous reports available in history.
 - Chemistry history includes plain-English explanations.
@@ -110,6 +124,7 @@ Default model for recurring demos: connected spa configuration.
   - Master-job visit/final summary where applicable.
 
 ## 8. Quote / Repair Scenario
+
 - Sample quote: filter clean or return fitting repair.
 - Customer asks question in app.
 - Admin/technician provides response.
@@ -123,6 +138,7 @@ Default model for recurring demos: connected spa configuration.
 - Repair report generated separately from weekly report.
 
 ## 9. Master Job Scenario
+
 Non-maintenance demo scenario: green-to-clean (multi-visit).
 
 - Internal master job groups multiple visits.
@@ -133,6 +149,7 @@ Non-maintenance demo scenario: green-to-clean (multi-visit).
 - Technician sees assignment and operational context but not profitability/billing details.
 
 ## 10. Context-Aware Chat Scenario
+
 - Customer opens chat from chemistry surface.
 - Customer must confirm whether chemistry context is attached.
 - Customer may choose audience intent: admin, technician, or Shipwrecked team.
@@ -143,7 +160,9 @@ Non-maintenance demo scenario: green-to-clean (multi-visit).
 - Closed chat automatically reopens when customer replies.
 
 ## 11. Notification Scenario
+
 Expected examples:
+
 - Service day reminder.
 - Add water reminder.
 - On the way.
@@ -155,10 +174,12 @@ Expected examples:
 - Deal/robot promotion.
 
 Preference behavior:
+
 - Paul can disable deal notifications.
 - Essential service/report/quote/repair notifications remain enabled.
 
 ## 12. Billing Scenario
+
 - Stored payment method placeholder only (provider reference, masked display).
 - Invoice list visible to Paul/Megan per permissions.
 - Quote approval triggers sandbox/test charge path.
@@ -166,7 +187,9 @@ Preference behavior:
 - Technician has no billing or payment visibility.
 
 ## 13. Admin Demo Scenario
+
 Admin actions for Paul persona:
+
 - Create/edit Paul customer record.
 - Create/edit property and access profile.
 - Create/edit Cooper pet profile and treat permission.
@@ -180,6 +203,7 @@ Admin actions for Paul persona:
 - Review audit logs for sensitive actions.
 
 ## 14. Test Assertions
+
 - Paul cannot access any other customer account data.
 - Megan can access only invited household/location scope.
 - Technician can access only assigned operational data.
@@ -190,6 +214,7 @@ Admin actions for Paul persona:
 - Route progress UI preserves privacy (stops-before-you + ETA, no exact GPS, no other-customer identities).
 
 ## Intended Usage In Future Packs
+
 - Default seed/demo persona for Sprint 01/S02 planning and implementation.
 - Default QA narrative for customer/technician/admin smoke checks.
 - Default acceptance context for route/report/quote/repair/chat/notification behavior.

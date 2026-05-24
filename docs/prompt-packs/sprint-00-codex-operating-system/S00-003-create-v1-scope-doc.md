@@ -1,18 +1,23 @@
 # Prompt Pack S00-003 — Create V1 Scope Doc
 
 ## Sprint
+
 S00 — Codex Operating System
 
 ## Priority
+
 P0 — Foundation
 
 ## Risk Level
+
 Low, if scoped correctly. Medium if Codex tries to implement app features instead of documenting scope.
 
 ## Can Run In Parallel?
+
 No. Run only after S00-001 and S00-002 have been completed and committed.
 
 ## Goal
+
 Create a clear V1 scope document at:
 
 ```txt
@@ -30,11 +35,13 @@ This document should define what belongs in:
 This scope doc should prevent the project from becoming either too small to matter or too large to launch.
 
 ## Why This Matters
+
 The Shipwrecked Pools app has a large vision: true mobile app, custom pool outline, route progress, technician workflow, reports, chemistry, questions, quotes, repairs, billing, deals, CRM, analytics, and eventual Skimmer replacement.
 
 Without a scope document, Codex may overbuild, underbuild, or mix future features into the wrong phase. This document should give future prompt packs a clear product boundary.
 
 ## Dependencies
+
 S00-001 and S00-002 should be complete first.
 
 Expected existing files:
@@ -47,6 +54,7 @@ docs/product/paul-story.md
 If either file does not exist, Codex should stop and report which prerequisite pack is missing.
 
 ## Scope Principles
+
 The scope document should follow these principles:
 
 1. V1 is a true mobile app, not a PWA.
@@ -67,6 +75,7 @@ The scope document should follow these principles:
 16. Weekly maintenance reports, repair reports, and green-to-clean reports should be separate report types.
 
 ## Required Sections In The Document
+
 Create `docs/product/v1-scope.md` with these sections:
 
 1. `# Shipwrecked Pools App V1 Scope`
@@ -86,9 +95,11 @@ Create `docs/product/v1-scope.md` with these sections:
 15. `## Scope Decision Checklist for Future Prompt Packs`
 
 ## Required Scope Content
+
 The scope doc must include the following.
 
 ### Internal Demo Must Prove
+
 The internal demo should prove:
 
 - Paul can exist as a customer.
@@ -106,6 +117,7 @@ The internal demo should prove:
 - Paul can see route progress in a seeded/demo scenario.
 
 ### Friendly Beta Must Include
+
 The friendly beta should include:
 
 - true mobile app access,
@@ -132,6 +144,7 @@ The friendly beta should include:
 - basic technician workflow.
 
 ### V1 Launch Must Include
+
 V1 launch should include all beta features plus:
 
 - stable billing/payment method support,
@@ -149,6 +162,7 @@ V1 launch should include all beta features plus:
 - audit logging for sensitive actions.
 
 ### Post-V1 / Skimmer Replacement Should Include
+
 Post-V1 should focus on replacing Skimmer more completely:
 
 - full route management,
@@ -163,6 +177,7 @@ Post-V1 should focus on replacing Skimmer more completely:
 - operational analytics.
 
 ### Later SaaS / Valuation Layer Should Include
+
 Later layers may include:
 
 - multi-tenant SaaS hardening,
@@ -176,6 +191,7 @@ Later layers may include:
 - automation and AI-assisted internal suggestions.
 
 ## Files Codex Should Create Or Modify
+
 Codex should create:
 
 ```txt
@@ -195,6 +211,7 @@ docs/handoffs/S00-003-create-v1-scope-doc.md
 ```
 
 ## Files Codex Must Not Touch
+
 Codex must not modify:
 
 ```txt
@@ -217,6 +234,7 @@ tsconfig.base.json
 Codex must not implement mobile screens, admin screens, API endpoints, database migrations, billing, auth, reports, notifications, or any functional app code.
 
 ## Build Prompt For Codex
+
 Copy/paste the following prompt into Codex for this pack:
 
 ```txt
@@ -274,6 +292,7 @@ Do not implement S00-004 or any other pack.
 ```
 
 ## Bite-Sized Implementation Steps
+
 Codex should complete these steps:
 
 1. Confirm S00-001 and S00-002 output files exist.
@@ -288,6 +307,7 @@ Codex should complete these steps:
 10. Stop.
 
 ## Acceptance Criteria
+
 This pack is complete when:
 
 - `docs/product/v1-scope.md` exists.
@@ -307,6 +327,7 @@ This pack is complete when:
 - No app code, database code, API code, mobile screens, admin screens, auth logic, notification logic, billing logic, or package config was changed.
 
 ## Codex Self-Review Prompt
+
 After implementation, paste this into Codex:
 
 ```txt
@@ -333,6 +354,7 @@ If anything is missing, too vague, or outside scope, fix it now. Then summarize 
 ```
 
 ## Expected Git Diff
+
 Expected changed/created files:
 
 ```txt
@@ -344,6 +366,7 @@ docs/prompt-packs/STATUS_BOARD.md
 Anything outside those files should be treated as suspicious unless Codex gives a very good reason.
 
 ## Recommended Commit Message
+
 After Codex completes and self-reviews this pack, commit with:
 
 ```bash
