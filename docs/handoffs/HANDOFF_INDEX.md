@@ -34,7 +34,7 @@ This index keeps Sprint handoff notes discoverable as the repository grows.
 | S00-025 | Create Affected Sprint Recalculation Rules | `docs/handoffs/S00-025-create-affected-sprint-recalculation-rules.md` | Add change-impact recalculation rules. | Implemented |
 | S00-026 | Create Master Index Update Prompt Template | `docs/handoffs/S00-026-create-master-index-update-prompt-template.md` | Add reusable governance update prompt templates. | Implemented |
 
-## Sprint 01 Handoffs (Through S01-015)
+## Sprint 01 Handoffs (Through S01-016)
 | Pack ID | Title | Handoff File | Short Purpose | Status |
 |---|---|---|---|---|
 | S01-001 | Initialize Monorepo Workspace | `docs/handoffs/S01-001-initialize-monorepo-workspace.md` | Create monorepo workspace and base TS config. | Implemented |
