@@ -31,5 +31,8 @@ describe('db package smoke', () => {
     expect(db.PROPERTIES_TABLE).toBe('properties');
     expect(db.PROPERTY_TYPES).toContain('commercial');
     expect(db.PROPERTY_STATUSES).toContain('paused');
+    expect(db.PROPERTY_ACCESS_PROFILES_TABLE).toBe('property_access_profiles');
+    expect(db.PROPERTY_ACCESS_PROFILE_STATUSES).toContain('inactive');
+    expect(db.PROPERTY_ACCESS_TYPES).toContain('gate_code');
   });
 });
