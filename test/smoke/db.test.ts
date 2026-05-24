@@ -15,5 +15,9 @@ describe('db package smoke', () => {
     expect(db.ORGANIZATION_MEMBERSHIP_ROLES).toContain('technician');
     expect(db.ORGANIZATION_MEMBERSHIP_ADMIN_ROLES).toContain('owner');
     expect(db.ORGANIZATION_MEMBERSHIP_STATUSES).toContain('active');
+    expect(db.LEADS_TABLE).toBe('leads');
+    expect(db.LEAD_TYPES).toContain('commercial');
+    expect(db.LEAD_STATUSES).toContain('qualified');
+    expect(db.LEAD_SOURCES).toContain('website');
   });
 });
