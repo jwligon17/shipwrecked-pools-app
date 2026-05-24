@@ -24,5 +24,9 @@ describe('db package smoke', () => {
     expect(db.CUSTOMER_STATUSES).toContain('past_due');
     expect(db.CUSTOMER_ONBOARDING_STATUSES).toContain('in_progress');
     expect(db.CUSTOMER_BILLING_PROFILE_STATUSES).toContain('active');
+    expect(db.HOUSEHOLD_MEMBERS_TABLE).toBe('household_members');
+    expect(db.HOUSEHOLD_MEMBER_RELATIONSHIPS).toContain('spouse');
+    expect(db.HOUSEHOLD_MEMBER_STATUSES).toContain('active');
+    expect(db.HOUSEHOLD_MEMBER_ACCESS_LEVELS).toContain('manage_profile');
   });
 });
