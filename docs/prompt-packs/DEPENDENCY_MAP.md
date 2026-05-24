@@ -144,7 +144,7 @@ S03 technician assignment + access rules
 
 ### Billing / Payments
 
-```txt
+````txt
 S02 billing schema + suspension state model
 S12 quote/repair payment trigger readiness
   -> S13 payment workflows + failure thresholds
@@ -161,7 +161,7 @@ S12 approval/part/no-part/completion trigger logic
   -> S14 progress notifications/reminders
   -> S16 admin pending/active queue visibility
   -> S19 privacy and lifecycle integrity validation
-```
+````
 
 ### Workflow-Linked Shopping List
 
@@ -173,7 +173,8 @@ S12 workflow linkage (approved, pending, inventory, non-billable)
   -> S18 revenue-association analytics
   -> S19 permission and data-separation tests
 ```
-```
+
+````
 
 ### Deal/Product Eligibility
 
@@ -183,7 +184,7 @@ S10 service and chemistry history context
   -> S15 recommendation/deal targeting
     -> S16 campaign operations
     -> S18 performance analytics
-```
+````
 
 ### Privacy / Export / Deletion
 

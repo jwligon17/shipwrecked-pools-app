@@ -13,6 +13,7 @@ Important:
 Sprint 02 is higher risk than Sprint 00/S01. These packs create database/domain schema artifacts. Do not run them in parallel. Run sequentially and consider committing after each pack, or at minimum inspect after each pack before allowing Codex to continue.
 
 Recommended:
+
 - Add and commit these prompt pack files.
 - Run S02-001 first.
 - Inspect diff.

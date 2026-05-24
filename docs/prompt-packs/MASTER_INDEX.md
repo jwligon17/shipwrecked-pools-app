@@ -350,9 +350,9 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 | S02-035 | P1       | No       | Critical | Billing Suspension + Partial Payment Schema       | Support monthly billing, autopay, grace periods, failed payment thresholds, partial payments, invoices, and suspension.              |
 | S02-036 | P2       | No       | High     | Technician Accountability Metrics Schema          | Track missed checklist items, skipped photos, route speed anomalies, repeat chemistry corrections, complaints, and dirty-pool flags. |
 | S02-037 | P0       | No       | Critical | Pool Outline Operational Relationship Constraints | Enforce relationships between service markers and reports, visits, photos, quotes, repairs, comments, and status history.            |
-| S02-038 | P0       | No       | Critical | Work Order Progress Schema                        | Store work-order lifecycle, status history, and customer-visible three-stage progress states for repair/install workflows.            |
-| S02-039 | P0       | No       | Critical | Work Order Parts Schema                           | Store part-required flags, customer-friendly part descriptors, and ordered/purchased/received/not-required part lifecycle states.     |
-| S02-040 | P1       | No       | High     | Shopping List Schema                              | Store internal shopping list items tied to approved workflows, pending approvals, inventory needs, or non-billable service needs.     |
+| S02-038 | P0       | No       | Critical | Work Order Progress Schema                        | Store work-order lifecycle, status history, and customer-visible three-stage progress states for repair/install workflows.           |
+| S02-039 | P0       | No       | Critical | Work Order Parts Schema                           | Store part-required flags, customer-friendly part descriptors, and ordered/purchased/received/not-required part lifecycle states.    |
+| S02-040 | P1       | No       | High     | Shopping List Schema                              | Store internal shopping list items tied to approved workflows, pending approvals, inventory needs, or non-billable service needs.    |
 
 ## S03 — Auth, Roles, Permissions
 
@@ -484,35 +484,35 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S07 — Customer Mobile Shell + Dynamic Home
 
-| Pack ID | Priority | Parallel | Risk     | Title                         | Purpose                                        |
-| ------- | -------- | -------- | -------- | ----------------------------- | ---------------------------------------------- |
-| S07-001 | P0       | Limited  | High     | Mobile Navigation Structure   | Create main app navigation.                    |
-| S07-002 | P0       | Limited  | High     | Customer App Shell            | Build logged-in customer layout.               |
-| S07-003 | P0       | Limited  | Medium   | Lead App Shell                | Build logged-in lead layout.                   |
-| S07-004 | P0       | Limited  | Critical | Dynamic Home Priority Engine  | Decide what appears first.                     |
-| S07-005 | P0       | Limited  | High     | Service Day Home State        | Show technician progress first on service day. |
-| S07-006 | P0       | Limited  | High     | Report Ready Home State       | Show new report priority.                      |
-| S07-007 | P0       | Limited  | High     | Pending Quote Home State      | Show pending quote priority.                   |
-| S07-008 | P0       | Limited  | High     | Normal Pool Status Home State | Show outline/status when no urgent action.     |
-| S07-009 | P0       | Limited  | Critical | Pool Outline Hero Card        | Show custom pool outline prominently.          |
-| S07-010 | P0       | Yes      | Medium   | Pool Status Summary Card      | Show good/watch/action status.                 |
-| S07-011 | P0       | Yes      | Medium   | Chemistry Summary Card        | Show latest chemistry.                         |
-| S07-012 | P0       | Yes      | Medium   | Reports Access Card           | Clean access to previous reports.              |
-| S07-013 | P0       | Yes      | Medium   | Quotes/Requests Card          | Access pending and past quotes.                |
-| S07-014 | P0       | Yes      | Medium   | Questions Card                | Ask and view questions.                        |
-| S07-015 | P0       | Yes      | Medium   | Profile Card                  | Access customer profile.                       |
-| S07-016 | P0       | Yes      | Medium   | Pet Profile Card              | Access dog/pet info.                           |
-| S07-017 | P1       | Yes      | Medium   | Billing Card                  | Access billing/payment basics.                 |
-| S07-018 | P0       | Yes      | Medium   | Notification Settings Card    | Access notification preferences.               |
-| S07-019 | P0       | Yes      | Medium   | Premium Empty States          | Make incomplete states polished.               |
-| S07-020 | P0       | Yes      | Medium   | Loading States                | Add loading skeletons/spinners.                |
-| S07-021 | P0       | Yes      | Medium   | Error States                  | Add graceful error handling.                   |
-| S07-022 | P1       | Yes      | Medium   | Dark Mode Foundation          | Prepare premium dark mode.                     |
-| S07-023 | P0       | Limited  | High     | Customer Home Tests           | Test dynamic priority states.                  |
-| S07-024 | P0       | No       | High     | Customer Shell Review Pack    | Codex reviews mobile shell.                    |
-| S07-025 | P0       | Limited  | High     | Customer Work Order Progress Card | Show active repair/install progress under the pool outline or in the home priority area.   |
-| S07-026 | P1       | Limited  | Medium   | Customer Work Orders Screen   | Let customers view pending approvals and active approved repair/install workflows.           |
-| S07-027 | P1       | Limited  | Medium   | Pending Approval Cash-Flow Card | Highlight pending customer approvals for repair/install workflows in a premium home card. |
+| Pack ID | Priority | Parallel | Risk     | Title                             | Purpose                                                                                   |
+| ------- | -------- | -------- | -------- | --------------------------------- | ----------------------------------------------------------------------------------------- |
+| S07-001 | P0       | Limited  | High     | Mobile Navigation Structure       | Create main app navigation.                                                               |
+| S07-002 | P0       | Limited  | High     | Customer App Shell                | Build logged-in customer layout.                                                          |
+| S07-003 | P0       | Limited  | Medium   | Lead App Shell                    | Build logged-in lead layout.                                                              |
+| S07-004 | P0       | Limited  | Critical | Dynamic Home Priority Engine      | Decide what appears first.                                                                |
+| S07-005 | P0       | Limited  | High     | Service Day Home State            | Show technician progress first on service day.                                            |
+| S07-006 | P0       | Limited  | High     | Report Ready Home State           | Show new report priority.                                                                 |
+| S07-007 | P0       | Limited  | High     | Pending Quote Home State          | Show pending quote priority.                                                              |
+| S07-008 | P0       | Limited  | High     | Normal Pool Status Home State     | Show outline/status when no urgent action.                                                |
+| S07-009 | P0       | Limited  | Critical | Pool Outline Hero Card            | Show custom pool outline prominently.                                                     |
+| S07-010 | P0       | Yes      | Medium   | Pool Status Summary Card          | Show good/watch/action status.                                                            |
+| S07-011 | P0       | Yes      | Medium   | Chemistry Summary Card            | Show latest chemistry.                                                                    |
+| S07-012 | P0       | Yes      | Medium   | Reports Access Card               | Clean access to previous reports.                                                         |
+| S07-013 | P0       | Yes      | Medium   | Quotes/Requests Card              | Access pending and past quotes.                                                           |
+| S07-014 | P0       | Yes      | Medium   | Questions Card                    | Ask and view questions.                                                                   |
+| S07-015 | P0       | Yes      | Medium   | Profile Card                      | Access customer profile.                                                                  |
+| S07-016 | P0       | Yes      | Medium   | Pet Profile Card                  | Access dog/pet info.                                                                      |
+| S07-017 | P1       | Yes      | Medium   | Billing Card                      | Access billing/payment basics.                                                            |
+| S07-018 | P0       | Yes      | Medium   | Notification Settings Card        | Access notification preferences.                                                          |
+| S07-019 | P0       | Yes      | Medium   | Premium Empty States              | Make incomplete states polished.                                                          |
+| S07-020 | P0       | Yes      | Medium   | Loading States                    | Add loading skeletons/spinners.                                                           |
+| S07-021 | P0       | Yes      | Medium   | Error States                      | Add graceful error handling.                                                              |
+| S07-022 | P1       | Yes      | Medium   | Dark Mode Foundation              | Prepare premium dark mode.                                                                |
+| S07-023 | P0       | Limited  | High     | Customer Home Tests               | Test dynamic priority states.                                                             |
+| S07-024 | P0       | No       | High     | Customer Shell Review Pack        | Codex reviews mobile shell.                                                               |
+| S07-025 | P0       | Limited  | High     | Customer Work Order Progress Card | Show active repair/install progress under the pool outline or in the home priority area.  |
+| S07-026 | P1       | Limited  | Medium   | Customer Work Orders Screen       | Let customers view pending approvals and active approved repair/install workflows.        |
+| S07-027 | P1       | Limited  | Medium   | Pending Approval Cash-Flow Card   | Highlight pending customer approvals for repair/install workflows in a premium home card. |
 
 ## S08 — Route Management + Technician Progress
 
@@ -552,40 +552,40 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S09 — Technician Visit Workflow
 
-| Pack ID | Priority | Parallel | Risk     | Title                             | Purpose                                      |
-| ------- | -------- | -------- | -------- | --------------------------------- | -------------------------------------------- |
-| S09-001 | P0       | Limited  | High     | Technician Home Screen            | Show assigned route.                         |
-| S09-002 | P0       | Limited  | High     | Technician Stop Detail            | Show customer/property/pool info.            |
-| S09-003 | P0       | Limited  | Critical | Access Reminder Panel             | Show gate, dog, treat, arrival reminders.    |
-| S09-004 | P0       | Limited  | High     | Arrival Confirmation              | Start visit.                                 |
-| S09-005 | P0       | Limited  | Critical | Gate Arrival Photo Requirement    | Require arrival gate photo.                  |
-| S09-006 | P0       | Limited  | High     | Water Body Checklist              | Show checklist per pool/spa.                 |
-| S09-007 | P0       | Yes      | High     | Deep End Photo Requirement        | Capture required photo.                      |
-| S09-008 | P0       | Yes      | High     | Shallow End Photo Requirement     | Capture required photo.                      |
-| S09-009 | P0       | Yes      | High     | Steps Photo Requirement           | Capture required photo.                      |
-| S09-010 | P0       | Yes      | Medium   | Alcove Photo Requirement          | Capture if applicable.                       |
-| S09-011 | P0       | Yes      | High     | Spa Photo Requirement             | Capture attached/separate spa photos.        |
-| S09-012 | P0       | Yes      | High     | Filter Pressure Photo Requirement | Capture filter pressure.                     |
-| S09-013 | P0       | Yes      | High     | Equipment Photo Requirement       | Capture equipment issues/work.               |
-| S09-014 | P0       | Limited  | High     | Chemistry Entry Form              | Enter readings.                              |
-| S09-015 | P0       | Limited  | High     | Chemical Dosage Entry             | Enter chemicals added.                       |
-| S09-016 | P1       | Limited  | High     | Chemical Usage Billing Link       | Track usage for billing/admin.               |
-| S09-017 | P0       | Limited  | Critical | Internal Technician Notes         | Add internal notes.                          |
-| S09-018 | P0       | Limited  | Critical | Customer-Friendly Notes           | Add customer-visible notes.                  |
-| S09-019 | P0       | Limited  | High     | Issue Flagging                    | Flag watch/action-needed issues.             |
-| S09-020 | P0       | Limited  | High     | Service Point Status Updates      | Update marker statuses from visit.           |
-| S09-021 | P0       | Limited  | High     | Technician Quote Recommendation   | Recommend quote/repair from field.           |
-| S09-022 | P0       | Limited  | Critical | Gate Departure Photo Requirement  | Require departure gate photo.                |
-| S09-023 | P0       | No       | Critical | Complete Visit Validation         | Block completion if required fields missing. |
-| S09-024 | P1       | Limited  | Medium   | Time On Site Tracking             | Track service time.                          |
-| S09-025 | P0       | Limited  | High     | Visit Exception Handling          | Handle locked gate/weather/dog/etc.          |
-| S09-026 | P0       | Limited  | Critical | Technician Visit Tests            | Test required photo/checklist flow.          |
-| S09-027 | P0       | No       | Critical | Technician Visit Review Pack      | Codex reviews visit workflow.                |
-| S09-028 | P0       | Yes      | Medium   | Technician Workflow Handoff       | Document technician usage.                   |
-| S09-029 | P0       | Limited  | High     | Technician Create Work Order Flow | Let technicians start a small repair/install workflow from failed or failing equipment/items. |
-| S09-030 | P0       | Limited  | High     | Technician Part Requirement Flow | Let technicians mark whether a work order requires a part or no part is required.            |
-| S09-031 | P1       | Limited  | High     | Technician Part Ordered/Purchased Status | Let technicians/admins update the item/part ordered milestone state.                |
-| S09-032 | P0       | No       | Critical | Technician Work Order Completion Flow | Complete specific repair/install work orders separately from weekly maintenance completion. |
+| Pack ID | Priority | Parallel | Risk     | Title                                    | Purpose                                                                                       |
+| ------- | -------- | -------- | -------- | ---------------------------------------- | --------------------------------------------------------------------------------------------- |
+| S09-001 | P0       | Limited  | High     | Technician Home Screen                   | Show assigned route.                                                                          |
+| S09-002 | P0       | Limited  | High     | Technician Stop Detail                   | Show customer/property/pool info.                                                             |
+| S09-003 | P0       | Limited  | Critical | Access Reminder Panel                    | Show gate, dog, treat, arrival reminders.                                                     |
+| S09-004 | P0       | Limited  | High     | Arrival Confirmation                     | Start visit.                                                                                  |
+| S09-005 | P0       | Limited  | Critical | Gate Arrival Photo Requirement           | Require arrival gate photo.                                                                   |
+| S09-006 | P0       | Limited  | High     | Water Body Checklist                     | Show checklist per pool/spa.                                                                  |
+| S09-007 | P0       | Yes      | High     | Deep End Photo Requirement               | Capture required photo.                                                                       |
+| S09-008 | P0       | Yes      | High     | Shallow End Photo Requirement            | Capture required photo.                                                                       |
+| S09-009 | P0       | Yes      | High     | Steps Photo Requirement                  | Capture required photo.                                                                       |
+| S09-010 | P0       | Yes      | Medium   | Alcove Photo Requirement                 | Capture if applicable.                                                                        |
+| S09-011 | P0       | Yes      | High     | Spa Photo Requirement                    | Capture attached/separate spa photos.                                                         |
+| S09-012 | P0       | Yes      | High     | Filter Pressure Photo Requirement        | Capture filter pressure.                                                                      |
+| S09-013 | P0       | Yes      | High     | Equipment Photo Requirement              | Capture equipment issues/work.                                                                |
+| S09-014 | P0       | Limited  | High     | Chemistry Entry Form                     | Enter readings.                                                                               |
+| S09-015 | P0       | Limited  | High     | Chemical Dosage Entry                    | Enter chemicals added.                                                                        |
+| S09-016 | P1       | Limited  | High     | Chemical Usage Billing Link              | Track usage for billing/admin.                                                                |
+| S09-017 | P0       | Limited  | Critical | Internal Technician Notes                | Add internal notes.                                                                           |
+| S09-018 | P0       | Limited  | Critical | Customer-Friendly Notes                  | Add customer-visible notes.                                                                   |
+| S09-019 | P0       | Limited  | High     | Issue Flagging                           | Flag watch/action-needed issues.                                                              |
+| S09-020 | P0       | Limited  | High     | Service Point Status Updates             | Update marker statuses from visit.                                                            |
+| S09-021 | P0       | Limited  | High     | Technician Quote Recommendation          | Recommend quote/repair from field.                                                            |
+| S09-022 | P0       | Limited  | Critical | Gate Departure Photo Requirement         | Require departure gate photo.                                                                 |
+| S09-023 | P0       | No       | Critical | Complete Visit Validation                | Block completion if required fields missing.                                                  |
+| S09-024 | P1       | Limited  | Medium   | Time On Site Tracking                    | Track service time.                                                                           |
+| S09-025 | P0       | Limited  | High     | Visit Exception Handling                 | Handle locked gate/weather/dog/etc.                                                           |
+| S09-026 | P0       | Limited  | Critical | Technician Visit Tests                   | Test required photo/checklist flow.                                                           |
+| S09-027 | P0       | No       | Critical | Technician Visit Review Pack             | Codex reviews visit workflow.                                                                 |
+| S09-028 | P0       | Yes      | Medium   | Technician Workflow Handoff              | Document technician usage.                                                                    |
+| S09-029 | P0       | Limited  | High     | Technician Create Work Order Flow        | Let technicians start a small repair/install workflow from failed or failing equipment/items. |
+| S09-030 | P0       | Limited  | High     | Technician Part Requirement Flow         | Let technicians mark whether a work order requires a part or no part is required.             |
+| S09-031 | P1       | Limited  | High     | Technician Part Ordered/Purchased Status | Let technicians/admins update the item/part ordered milestone state.                          |
+| S09-032 | P0       | No       | Critical | Technician Work Order Completion Flow    | Complete specific repair/install work orders separately from weekly maintenance completion.   |
 
 ## S10 — Chemistry + Report Engine
 
@@ -654,44 +654,44 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S12 — Requests, Quotes, Repairs
 
-| Pack ID | Priority | Parallel | Risk     | Title                          | Purpose                                             |
-| ------- | -------- | -------- | -------- | ------------------------------ | --------------------------------------------------- |
-| S12-001 | P0       | Limited  | Critical | Combined Request Backend       | One request system with categories.                 |
-| S12-002 | P0       | Limited  | High     | Request Category Library       | Quote, repair, green-to-clean, robot, billing, etc. |
-| S12-003 | P0       | Limited  | High     | Customer Request Flow          | Customer submits request.                           |
-| S12-004 | P0       | Limited  | High     | Small Repair Request Flow      | Customer requests small repair.                     |
-| S12-005 | P0       | Limited  | High     | Major Repair Request Flow      | Customer requests larger repair.                    |
-| S12-006 | P0       | Limited  | High     | Technician Recommendation Flow | Tech recommends repair/quote.                       |
-| S12-007 | P0       | Limited  | High     | Admin Quote Creation           | Admin creates quote.                                |
-| S12-008 | P0       | Limited  | High     | Quote Template System          | Common quote templates.                             |
-| S12-009 | P0       | Yes      | Medium   | Filter Clean Quote Template    | Template for filter cleaning.                       |
-| S12-010 | P1       | Yes      | Medium   | Cleaner/Robot Quote Template   | Template for cleaner/robot work.                    |
-| S12-011 | P1       | Yes      | Medium   | Salt Cell Quote Template       | Template for salt cell work.                        |
-| S12-012 | P0       | Yes      | Medium   | Green-to-Clean Quote Template  | Template for green-to-clean work.                   |
-| S12-013 | P0       | Limited  | High     | Quote Line Items               | Support itemized quote details.                     |
-| S12-014 | P0       | Limited  | High     | Customer Quote Screen          | Customer views quote.                               |
-| S12-015 | P0       | Limited  | Medium   | Quote Question Flow            | Customer asks about quote.                          |
-| S12-016 | P0       | Limited  | Critical | Quote Approval Button          | Customer approves quote.                            |
-| S12-017 | P0       | Limited  | Critical | Approval Checkbox              | Customer confirms approval.                         |
-| S12-018 | P0       | Limited  | Critical | Typed Signature                | Customer types signature.                           |
-| S12-019 | P0       | No       | Critical | Approval Audit Log             | Store who/when/what/version approved.               |
-| S12-020 | P0       | Limited  | High     | Quote Decline Flow             | Customer declines quote.                            |
-| S12-021 | P0       | Limited  | High     | Decline Reason Storage         | Store decline reason/history.                       |
-| S12-022 | P1       | No       | Critical | Payment Trigger On Approval    | Charge stored payment method.                       |
-| S12-023 | P0       | Limited  | Critical | Repair Job Creation            | Create job after approval.                          |
-| S12-024 | P0       | Limited  | High     | Attach Repair to Service Visit | Attach if appropriate.                              |
-| S12-025 | P0       | Limited  | High     | Separate Repair Scheduling     | Schedule separate repair if needed.                 |
-| S12-026 | P0       | Limited  | High     | Before/After Repair Photos     | Store before/after proof.                           |
-| S12-027 | P0       | Limited  | High     | Repair Report Generation       | Generate repair report.                             |
-| S12-028 | P0       | Limited  | High     | Quote/Repair Notifications     | Trigger quote/repair updates.                       |
-| S12-029 | P0       | Limited  | Critical | Quote/Repair Tests             | Test approvals, signatures, permissions.            |
-| S12-030 | P0       | No       | Critical | Quote/Repair Review Pack       | Codex reviews revenue workflow.                     |
-| S12-031 | P0       | No       | Critical | Repair/Install Progress Tracker Backend | Add customer-visible three-stage progress tracking for approved repair/install workflows. |
-| S12-032 | P0       | No       | High     | Work Order Approval Progress Trigger | Fill stage one after customer approval is completed.                                         |
-| S12-033 | P0       | No       | High     | Part Ordered Progress Trigger  | Fill stage two when part is ordered/purchased, or auto-complete stage two when no part is required. |
-| S12-034 | P0       | No       | Critical | Repair/Install Completion Progress Trigger | Fill final stage only when the specific work order is completed.                          |
-| S12-035 | P1       | No       | High     | Work Order Visit Association Rules | Support work orders inside weekly visits or as separate visits while preserving separate statuses. |
-| S12-036 | P0       | No       | Critical | Work Order Progress Tests      | Test approval, part-required/no-part flows, separate-vs-attached visit behavior, and completion integrity. |
+| Pack ID | Priority | Parallel | Risk     | Title                                      | Purpose                                                                                                    |
+| ------- | -------- | -------- | -------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| S12-001 | P0       | Limited  | Critical | Combined Request Backend                   | One request system with categories.                                                                        |
+| S12-002 | P0       | Limited  | High     | Request Category Library                   | Quote, repair, green-to-clean, robot, billing, etc.                                                        |
+| S12-003 | P0       | Limited  | High     | Customer Request Flow                      | Customer submits request.                                                                                  |
+| S12-004 | P0       | Limited  | High     | Small Repair Request Flow                  | Customer requests small repair.                                                                            |
+| S12-005 | P0       | Limited  | High     | Major Repair Request Flow                  | Customer requests larger repair.                                                                           |
+| S12-006 | P0       | Limited  | High     | Technician Recommendation Flow             | Tech recommends repair/quote.                                                                              |
+| S12-007 | P0       | Limited  | High     | Admin Quote Creation                       | Admin creates quote.                                                                                       |
+| S12-008 | P0       | Limited  | High     | Quote Template System                      | Common quote templates.                                                                                    |
+| S12-009 | P0       | Yes      | Medium   | Filter Clean Quote Template                | Template for filter cleaning.                                                                              |
+| S12-010 | P1       | Yes      | Medium   | Cleaner/Robot Quote Template               | Template for cleaner/robot work.                                                                           |
+| S12-011 | P1       | Yes      | Medium   | Salt Cell Quote Template                   | Template for salt cell work.                                                                               |
+| S12-012 | P0       | Yes      | Medium   | Green-to-Clean Quote Template              | Template for green-to-clean work.                                                                          |
+| S12-013 | P0       | Limited  | High     | Quote Line Items                           | Support itemized quote details.                                                                            |
+| S12-014 | P0       | Limited  | High     | Customer Quote Screen                      | Customer views quote.                                                                                      |
+| S12-015 | P0       | Limited  | Medium   | Quote Question Flow                        | Customer asks about quote.                                                                                 |
+| S12-016 | P0       | Limited  | Critical | Quote Approval Button                      | Customer approves quote.                                                                                   |
+| S12-017 | P0       | Limited  | Critical | Approval Checkbox                          | Customer confirms approval.                                                                                |
+| S12-018 | P0       | Limited  | Critical | Typed Signature                            | Customer types signature.                                                                                  |
+| S12-019 | P0       | No       | Critical | Approval Audit Log                         | Store who/when/what/version approved.                                                                      |
+| S12-020 | P0       | Limited  | High     | Quote Decline Flow                         | Customer declines quote.                                                                                   |
+| S12-021 | P0       | Limited  | High     | Decline Reason Storage                     | Store decline reason/history.                                                                              |
+| S12-022 | P1       | No       | Critical | Payment Trigger On Approval                | Charge stored payment method.                                                                              |
+| S12-023 | P0       | Limited  | Critical | Repair Job Creation                        | Create job after approval.                                                                                 |
+| S12-024 | P0       | Limited  | High     | Attach Repair to Service Visit             | Attach if appropriate.                                                                                     |
+| S12-025 | P0       | Limited  | High     | Separate Repair Scheduling                 | Schedule separate repair if needed.                                                                        |
+| S12-026 | P0       | Limited  | High     | Before/After Repair Photos                 | Store before/after proof.                                                                                  |
+| S12-027 | P0       | Limited  | High     | Repair Report Generation                   | Generate repair report.                                                                                    |
+| S12-028 | P0       | Limited  | High     | Quote/Repair Notifications                 | Trigger quote/repair updates.                                                                              |
+| S12-029 | P0       | Limited  | Critical | Quote/Repair Tests                         | Test approvals, signatures, permissions.                                                                   |
+| S12-030 | P0       | No       | Critical | Quote/Repair Review Pack                   | Codex reviews revenue workflow.                                                                            |
+| S12-031 | P0       | No       | Critical | Repair/Install Progress Tracker Backend    | Add customer-visible three-stage progress tracking for approved repair/install workflows.                  |
+| S12-032 | P0       | No       | High     | Work Order Approval Progress Trigger       | Fill stage one after customer approval is completed.                                                       |
+| S12-033 | P0       | No       | High     | Part Ordered Progress Trigger              | Fill stage two when part is ordered/purchased, or auto-complete stage two when no part is required.        |
+| S12-034 | P0       | No       | Critical | Repair/Install Completion Progress Trigger | Fill final stage only when the specific work order is completed.                                           |
+| S12-035 | P1       | No       | High     | Work Order Visit Association Rules         | Support work orders inside weekly visits or as separate visits while preserving separate statuses.         |
+| S12-036 | P0       | No       | Critical | Work Order Progress Tests                  | Test approval, part-required/no-part flows, separate-vs-attached visit behavior, and completion integrity. |
 
 ## S13 — Billing + Payments
 
@@ -735,43 +735,43 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S14 — Notifications
 
-| Pack ID | Priority | Parallel | Risk     | Title                               | Purpose                                                                           |
-| ------- | -------- | -------- | -------- | ----------------------------------- | --------------------------------------------------------------------------------- |
-| S14-001 | P0       | Limited  | High     | Notification Backend Service        | Create notification event system.                                                 |
-| S14-002 | P0       | Limited  | High     | Device Token Registration           | Store push tokens.                                                                |
-| S14-003 | P0       | No       | Critical | Notification Preferences Model      | Store user preferences.                                                           |
-| S14-004 | P0       | Limited  | High     | Household Preferences               | Separate preferences per household user.                                          |
-| S14-005 | P0       | Limited  | High     | Notification Settings Screen        | Let customers manage categories.                                                  |
-| S14-006 | P0       | Limited  | High     | Service Day Reminder                | Notify before service day.                                                        |
-| S14-007 | P0       | Limited  | Medium   | Add Water Reminder                  | Remind customer to add water.                                                     |
-| S14-008 | P0       | Limited  | High     | Technician On The Way Notification  | Trigger route status update.                                                      |
-| S14-009 | P0       | Limited  | High     | Arriving Soon Notification          | Trigger closer arrival update.                                                    |
-| S14-010 | P0       | Limited  | High     | Service Complete Notification       | Notify service completion.                                                        |
-| S14-011 | P0       | Limited  | High     | Report Ready Notification           | Notify report availability.                                                       |
-| S14-012 | P0       | Limited  | High     | Quote Ready Notification            | Notify quote availability.                                                        |
-| S14-013 | P0       | Limited  | High     | Quote Approved Notification         | Notify after approval.                                                            |
-| S14-014 | P1       | Limited  | Medium   | Repair Scheduled Notification       | Notify repair schedule.                                                           |
-| S14-015 | P0       | Limited  | High     | Repair Complete Notification        | Notify repair completion.                                                         |
-| S14-016 | P0       | Limited  | High     | Gate Locked Notification            | Notify customer and admin.                                                        |
-| S14-017 | P0       | Limited  | High     | Aggressive Dog Notification         | Notify customer and admin.                                                        |
-| S14-018 | P0       | Limited  | High     | Weather Delay Notification          | Notify customer and admin.                                                        |
-| S14-019 | P0       | Limited  | High     | Reschedule Notification             | Notify customer and admin.                                                        |
-| S14-020 | P0       | Limited  | High     | Urgent Pool Issue Notification      | Notify important pool issue.                                                      |
-| S14-021 | P1       | Limited  | Medium   | Deal Notification                   | Notify product/deal availability.                                                 |
-| S14-022 | P1       | Limited  | High     | Billing Notification                | Notify payment/invoice events.                                                    |
-| S14-023 | P1       | Limited  | High     | SMS Fallback Rules                  | Add SMS fallback logic.                                                           |
-| S14-024 | P1       | Limited  | Medium   | Email Fallback Rules                | Add email fallback logic.                                                         |
-| S14-025 | P1       | Limited  | Medium   | Notification Log Admin View         | View sent notifications.                                                          |
-| S14-026 | P0       | Limited  | Critical | Notification Tests                  | Test preferences and delivery logic.                                              |
-| S14-027 | P0       | No       | Critical | Notification Review Pack            | Codex reviews notification system.                                                |
-| S14-028 | P0       | Yes      | Medium   | Notification Handoff                | Document notification categories.                                                 |
-| S14-029 | P1       | Limited  | High     | Weather Intelligence Backend        | Connect weather conditions to notifications, delays, warnings, and route impacts. |
-| S14-030 | P1       | Limited  | High     | Freeze/Pump Warning Notifications   | Notify customers to run pumps or protect equipment during cold conditions.        |
-| S14-031 | P1       | Limited  | High     | Rain/Lightning Service Delay Rules  | Trigger service delay messaging based on unsafe or service-disrupting weather.    |
-| S14-032 | P1       | Limited  | High     | Weather-Based ETA/Route Adjustments | Allow weather to affect route estimates and admin/tech route decisions.           |
-| S14-033 | P1       | No       | High     | Weather Notification Tests          | Test weather alert rules, preference handling, and route-delay impacts.           |
-| S14-034 | P0       | Limited  | High     | Work Order Progress Notifications   | Notify customers on meaningful repair/install progress state changes.               |
-| S14-035 | P1       | Limited  | Medium   | Pending Work Order Approval Reminder | Remind customers about pending approvals with controlled cadence.                  |
+| Pack ID | Priority | Parallel | Risk     | Title                                | Purpose                                                                           |
+| ------- | -------- | -------- | -------- | ------------------------------------ | --------------------------------------------------------------------------------- |
+| S14-001 | P0       | Limited  | High     | Notification Backend Service         | Create notification event system.                                                 |
+| S14-002 | P0       | Limited  | High     | Device Token Registration            | Store push tokens.                                                                |
+| S14-003 | P0       | No       | Critical | Notification Preferences Model       | Store user preferences.                                                           |
+| S14-004 | P0       | Limited  | High     | Household Preferences                | Separate preferences per household user.                                          |
+| S14-005 | P0       | Limited  | High     | Notification Settings Screen         | Let customers manage categories.                                                  |
+| S14-006 | P0       | Limited  | High     | Service Day Reminder                 | Notify before service day.                                                        |
+| S14-007 | P0       | Limited  | Medium   | Add Water Reminder                   | Remind customer to add water.                                                     |
+| S14-008 | P0       | Limited  | High     | Technician On The Way Notification   | Trigger route status update.                                                      |
+| S14-009 | P0       | Limited  | High     | Arriving Soon Notification           | Trigger closer arrival update.                                                    |
+| S14-010 | P0       | Limited  | High     | Service Complete Notification        | Notify service completion.                                                        |
+| S14-011 | P0       | Limited  | High     | Report Ready Notification            | Notify report availability.                                                       |
+| S14-012 | P0       | Limited  | High     | Quote Ready Notification             | Notify quote availability.                                                        |
+| S14-013 | P0       | Limited  | High     | Quote Approved Notification          | Notify after approval.                                                            |
+| S14-014 | P1       | Limited  | Medium   | Repair Scheduled Notification        | Notify repair schedule.                                                           |
+| S14-015 | P0       | Limited  | High     | Repair Complete Notification         | Notify repair completion.                                                         |
+| S14-016 | P0       | Limited  | High     | Gate Locked Notification             | Notify customer and admin.                                                        |
+| S14-017 | P0       | Limited  | High     | Aggressive Dog Notification          | Notify customer and admin.                                                        |
+| S14-018 | P0       | Limited  | High     | Weather Delay Notification           | Notify customer and admin.                                                        |
+| S14-019 | P0       | Limited  | High     | Reschedule Notification              | Notify customer and admin.                                                        |
+| S14-020 | P0       | Limited  | High     | Urgent Pool Issue Notification       | Notify important pool issue.                                                      |
+| S14-021 | P1       | Limited  | Medium   | Deal Notification                    | Notify product/deal availability.                                                 |
+| S14-022 | P1       | Limited  | High     | Billing Notification                 | Notify payment/invoice events.                                                    |
+| S14-023 | P1       | Limited  | High     | SMS Fallback Rules                   | Add SMS fallback logic.                                                           |
+| S14-024 | P1       | Limited  | Medium   | Email Fallback Rules                 | Add email fallback logic.                                                         |
+| S14-025 | P1       | Limited  | Medium   | Notification Log Admin View          | View sent notifications.                                                          |
+| S14-026 | P0       | Limited  | Critical | Notification Tests                   | Test preferences and delivery logic.                                              |
+| S14-027 | P0       | No       | Critical | Notification Review Pack             | Codex reviews notification system.                                                |
+| S14-028 | P0       | Yes      | Medium   | Notification Handoff                 | Document notification categories.                                                 |
+| S14-029 | P1       | Limited  | High     | Weather Intelligence Backend         | Connect weather conditions to notifications, delays, warnings, and route impacts. |
+| S14-030 | P1       | Limited  | High     | Freeze/Pump Warning Notifications    | Notify customers to run pumps or protect equipment during cold conditions.        |
+| S14-031 | P1       | Limited  | High     | Rain/Lightning Service Delay Rules   | Trigger service delay messaging based on unsafe or service-disrupting weather.    |
+| S14-032 | P1       | Limited  | High     | Weather-Based ETA/Route Adjustments  | Allow weather to affect route estimates and admin/tech route decisions.           |
+| S14-033 | P1       | No       | High     | Weather Notification Tests           | Test weather alert rules, preference handling, and route-delay impacts.           |
+| S14-034 | P0       | Limited  | High     | Work Order Progress Notifications    | Notify customers on meaningful repair/install progress state changes.             |
+| S14-035 | P1       | Limited  | Medium   | Pending Work Order Approval Reminder | Remind customers about pending approvals with controlled cadence.                 |
 
 ## S15 — Deals, Robots, Product Recommendations
 
@@ -798,45 +798,45 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S16 — Admin Dashboard / Internal CRM
 
-| Pack ID | Priority | Parallel | Risk     | Title                                    | Purpose                                                                                 |
-| ------- | -------- | -------- | -------- | ---------------------------------------- | --------------------------------------------------------------------------------------- |
-| S16-001 | P0       | Limited  | High     | Admin Dashboard Shell                    | Create admin app layout.                                                                |
-| S16-002 | P0       | Limited  | Medium   | Lead Dashboard                           | View/manage leads.                                                                      |
-| S16-003 | P0       | Limited  | Medium   | Customer Dashboard                       | View/manage customers.                                                                  |
-| S16-004 | P0       | Limited  | High     | Customer Detail Page                     | Full customer profile.                                                                  |
-| S16-005 | P0       | Limited  | High     | Property Detail Page                     | Address/access/property data.                                                           |
-| S16-006 | P0       | Limited  | Critical | Pet + Access Admin View                  | Manage dog/gate notes.                                                                  |
-| S16-007 | P0       | Limited  | High     | Water Body Admin View                    | Manage pools/spas.                                                                      |
-| S16-008 | P0       | Limited  | Medium   | Equipment Admin View                     | Manage equipment data.                                                                  |
-| S16-009 | P0       | Limited  | High     | Pool Outline Admin Entry                 | Link to outline studio.                                                                 |
-| S16-010 | P0       | Limited  | High     | Route Admin Dashboard                    | View/manage routes.                                                                     |
-| S16-011 | P1       | Limited  | Medium   | Technician Admin Dashboard               | Manage technicians.                                                                     |
-| S16-012 | P0       | Limited  | High     | Service Visit Admin View                 | View visits/checklists/photos.                                                          |
-| S16-013 | P0       | Limited  | High     | Report Admin View                        | View/edit reports.                                                                      |
-| S16-014 | P0       | Limited  | High     | Quote Admin Dashboard                    | Manage quotes.                                                                          |
-| S16-015 | P0       | Limited  | High     | Repair Admin Dashboard                   | Manage repairs.                                                                         |
-| S16-016 | P1       | Limited  | High     | Billing Admin Dashboard                  | Manage invoices/payments.                                                               |
-| S16-017 | P0       | Limited  | Medium   | Conversation Admin Inbox                 | Answer customer questions.                                                              |
-| S16-018 | P1       | Limited  | Medium   | Deal Admin Dashboard                     | Manage deals/products.                                                                  |
-| S16-019 | P1       | Limited  | Medium   | Notification Log Dashboard               | Review sent notifications.                                                              |
-| S16-020 | P0       | Limited  | High     | Audit Log Dashboard                      | Review sensitive actions.                                                               |
-| S16-021 | P2       | Limited  | High     | Customer Profitability View              | Admin-only profitability.                                                               |
-| S16-022 | P2       | Limited  | High     | Route Profitability View                 | Admin-only route profitability.                                                         |
-| S16-023 | P1       | Limited  | High     | Data Export Request Admin                | Manage exports.                                                                         |
-| S16-024 | P1       | Limited  | High     | Deletion Request Admin                   | Manage account deletion.                                                                |
-| S16-025 | P2       | Limited  | Medium   | Admin Impersonation/View-As              | Admin can view customer experience.                                                     |
-| S16-026 | P1       | Limited  | Medium   | Admin Search                             | Search customers/properties/routes.                                                     |
-| S16-027 | P1       | Limited  | Medium   | Admin Filters/Tags                       | Organize CRM.                                                                           |
-| S16-028 | P1       | Limited  | High     | Admin Tests                              | Test admin permissions.                                                                 |
-| S16-029 | P1       | No       | High     | Admin Review Pack                        | Codex reviews admin dashboard.                                                          |
-| S16-030 | P1       | Yes      | Low      | Admin Handoff                            | Document admin usage.                                                                   |
-| S16-031 | P1       | Limited  | High     | Commercial Property Admin View           | Manage apartment/commercial pool facilities and property-management contacts.           |
-| S16-032 | P1       | Limited  | High     | Commercial Daily Chemical Log Admin View | Review daily commercial chemical readings and chemical additions.                       |
-| S16-033 | P1       | Limited  | Critical | Suspension Admin View                    | Manage failed-payment grace periods, suspension state, and resume service.              |
-| S16-034 | P0       | Limited  | High     | Route Optimization Admin Controls        | View optimized route logic, override route order, and inspect service-time assumptions. |
-| S16-035 | P0       | Limited  | High     | Work Order Dashboard                    | Admin view for pending, approved, in-progress, waiting-on-part, and completed work orders. |
-| S16-036 | P1       | Limited  | High     | Shopping List Dashboard                 | Admin/authorized-tech shopping list across approved, pending, inventory, and non-billable needs. |
-| S16-037 | P1       | Limited  | High     | Pending Approval Revenue Queue          | Show pending repair/install approvals as a cash-flow opportunity queue.                 |
+| Pack ID | Priority | Parallel | Risk     | Title                                    | Purpose                                                                                          |
+| ------- | -------- | -------- | -------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| S16-001 | P0       | Limited  | High     | Admin Dashboard Shell                    | Create admin app layout.                                                                         |
+| S16-002 | P0       | Limited  | Medium   | Lead Dashboard                           | View/manage leads.                                                                               |
+| S16-003 | P0       | Limited  | Medium   | Customer Dashboard                       | View/manage customers.                                                                           |
+| S16-004 | P0       | Limited  | High     | Customer Detail Page                     | Full customer profile.                                                                           |
+| S16-005 | P0       | Limited  | High     | Property Detail Page                     | Address/access/property data.                                                                    |
+| S16-006 | P0       | Limited  | Critical | Pet + Access Admin View                  | Manage dog/gate notes.                                                                           |
+| S16-007 | P0       | Limited  | High     | Water Body Admin View                    | Manage pools/spas.                                                                               |
+| S16-008 | P0       | Limited  | Medium   | Equipment Admin View                     | Manage equipment data.                                                                           |
+| S16-009 | P0       | Limited  | High     | Pool Outline Admin Entry                 | Link to outline studio.                                                                          |
+| S16-010 | P0       | Limited  | High     | Route Admin Dashboard                    | View/manage routes.                                                                              |
+| S16-011 | P1       | Limited  | Medium   | Technician Admin Dashboard               | Manage technicians.                                                                              |
+| S16-012 | P0       | Limited  | High     | Service Visit Admin View                 | View visits/checklists/photos.                                                                   |
+| S16-013 | P0       | Limited  | High     | Report Admin View                        | View/edit reports.                                                                               |
+| S16-014 | P0       | Limited  | High     | Quote Admin Dashboard                    | Manage quotes.                                                                                   |
+| S16-015 | P0       | Limited  | High     | Repair Admin Dashboard                   | Manage repairs.                                                                                  |
+| S16-016 | P1       | Limited  | High     | Billing Admin Dashboard                  | Manage invoices/payments.                                                                        |
+| S16-017 | P0       | Limited  | Medium   | Conversation Admin Inbox                 | Answer customer questions.                                                                       |
+| S16-018 | P1       | Limited  | Medium   | Deal Admin Dashboard                     | Manage deals/products.                                                                           |
+| S16-019 | P1       | Limited  | Medium   | Notification Log Dashboard               | Review sent notifications.                                                                       |
+| S16-020 | P0       | Limited  | High     | Audit Log Dashboard                      | Review sensitive actions.                                                                        |
+| S16-021 | P2       | Limited  | High     | Customer Profitability View              | Admin-only profitability.                                                                        |
+| S16-022 | P2       | Limited  | High     | Route Profitability View                 | Admin-only route profitability.                                                                  |
+| S16-023 | P1       | Limited  | High     | Data Export Request Admin                | Manage exports.                                                                                  |
+| S16-024 | P1       | Limited  | High     | Deletion Request Admin                   | Manage account deletion.                                                                         |
+| S16-025 | P2       | Limited  | Medium   | Admin Impersonation/View-As              | Admin can view customer experience.                                                              |
+| S16-026 | P1       | Limited  | Medium   | Admin Search                             | Search customers/properties/routes.                                                              |
+| S16-027 | P1       | Limited  | Medium   | Admin Filters/Tags                       | Organize CRM.                                                                                    |
+| S16-028 | P1       | Limited  | High     | Admin Tests                              | Test admin permissions.                                                                          |
+| S16-029 | P1       | No       | High     | Admin Review Pack                        | Codex reviews admin dashboard.                                                                   |
+| S16-030 | P1       | Yes      | Low      | Admin Handoff                            | Document admin usage.                                                                            |
+| S16-031 | P1       | Limited  | High     | Commercial Property Admin View           | Manage apartment/commercial pool facilities and property-management contacts.                    |
+| S16-032 | P1       | Limited  | High     | Commercial Daily Chemical Log Admin View | Review daily commercial chemical readings and chemical additions.                                |
+| S16-033 | P1       | Limited  | Critical | Suspension Admin View                    | Manage failed-payment grace periods, suspension state, and resume service.                       |
+| S16-034 | P0       | Limited  | High     | Route Optimization Admin Controls        | View optimized route logic, override route order, and inspect service-time assumptions.          |
+| S16-035 | P0       | Limited  | High     | Work Order Dashboard                     | Admin view for pending, approved, in-progress, waiting-on-part, and completed work orders.       |
+| S16-036 | P1       | Limited  | High     | Shopping List Dashboard                  | Admin/authorized-tech shopping list across approved, pending, inventory, and non-billable needs. |
+| S16-037 | P1       | Limited  | High     | Pending Approval Revenue Queue           | Show pending repair/install approvals as a cash-flow opportunity queue.                          |
 
 ## S17 — Technician Mobile Polish
 
@@ -863,83 +863,83 @@ Beta should still include the custom pool outline, reports, chemistry, customer 
 
 ## S18 — Analytics, Profitability, Valuation Data
 
-| Pack ID | Priority | Parallel | Risk   | Title                                | Purpose                                                                               |
-| ------- | -------- | -------- | ------ | ------------------------------------ | ------------------------------------------------------------------------------------- |
-| S18-001 | P2       | Limited  | Medium | Analytics Event Model                | Track meaningful app/business events.                                                 |
-| S18-002 | P2       | Limited  | Medium | Report Open Analytics                | Track report engagement.                                                              |
-| S18-003 | P2       | Limited  | Medium | Quote Conversion Analytics           | Track approval/decline rates.                                                         |
-| S18-004 | P2       | Limited  | Medium | Repair Revenue Analytics             | Track repair revenue.                                                                 |
-| S18-005 | P2       | Limited  | Medium | Deal Conversion Analytics            | Track deal performance.                                                               |
-| S18-006 | P2       | Limited  | Medium | Robot Sales Analytics                | Track robot revenue.                                                                  |
-| S18-007 | P2       | Limited  | High   | Customer Profitability Model         | Admin-only customer profitability.                                                    |
-| S18-008 | P2       | Limited  | High   | Route Profitability Model            | Admin-only route profitability.                                                       |
-| S18-009 | P2       | Limited  | Medium | Chemical Usage Analytics             | Track chemical costs/usage.                                                           |
-| S18-010 | P2       | Limited  | Medium | Time On Site Analytics               | Track labor time.                                                                     |
-| S18-011 | P2       | Limited  | Medium | Technician Performance Metrics       | Internal operational metrics.                                                         |
-| S18-012 | P2       | Limited  | Medium | Service Consistency Metrics          | Track missed photos/checklists/issues.                                                |
-| S18-013 | P2       | Limited  | Medium | Pool System Type Database            | Build historical pool/equipment dataset.                                              |
-| S18-014 | P2       | Limited  | Medium | Local Market Pool Data Insights      | Surface equipment/system trends.                                                      |
-| S18-015 | P2       | Limited  | Medium | Customer Lifetime Value Basics       | Track LTV indicators.                                                                 |
-| S18-016 | P2       | Limited  | Medium | Churn Risk Indicators                | Flag disengaged/problem customers.                                                    |
-| S18-017 | P2       | Limited  | Medium | Admin Analytics Dashboard            | Display metrics.                                                                      |
-| S18-018 | P2       | Limited  | Medium | Analytics Tests                      | Verify data events.                                                                   |
-| S18-019 | P2       | No       | Medium | Analytics Review Pack                | Codex reviews analytics.                                                              |
-| S18-020 | P2       | Yes      | Low    | Valuation Data Handoff               | Document strategic business data.                                                     |
-| S18-021 | P2       | Limited  | Medium | Missed Checklist Metrics             | Track missed checklist items by technician, route, and account.                       |
-| S18-022 | P2       | Limited  | Medium | Skipped Photo Metrics                | Track skipped or missing required photo patterns.                                     |
-| S18-023 | P2       | Limited  | Medium | Route Speed Anomaly Metrics          | Track unusually fast/slow service patterns without creating a customer-visible score. |
-| S18-024 | P2       | Limited  | Medium | Repeat Chemistry Correction Metrics  | Track repeated chemical corrections and recurring water-balance issues.               |
-| S18-025 | P2       | Limited  | Medium | Customer Complaint Frequency Metrics | Track complaint frequency and unresolved issue patterns.                              |
-| S18-026 | P2       | Limited  | Medium | Pool Still Dirty Flag Metrics        | Track post-service dirty-pool flags and related follow-up.                            |
-| S18-027 | P2       | Limited  | Medium | Technician Coaching History          | Store admin-only coaching/follow-up history without customer-visible quality scores.  |
-| S18-028 | P2       | Limited  | Medium | Work Order Cycle Time Analytics      | Track recommendation-to-approval, approval-to-part-ordered, and part-ordered-to-completion timing. |
-| S18-029 | P2       | Limited  | Medium | Pending Approval Value Analytics     | Track total pending repair/install approval value over time.                                        |
+| Pack ID | Priority | Parallel | Risk   | Title                                       | Purpose                                                                                                 |
+| ------- | -------- | -------- | ------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| S18-001 | P2       | Limited  | Medium | Analytics Event Model                       | Track meaningful app/business events.                                                                   |
+| S18-002 | P2       | Limited  | Medium | Report Open Analytics                       | Track report engagement.                                                                                |
+| S18-003 | P2       | Limited  | Medium | Quote Conversion Analytics                  | Track approval/decline rates.                                                                           |
+| S18-004 | P2       | Limited  | Medium | Repair Revenue Analytics                    | Track repair revenue.                                                                                   |
+| S18-005 | P2       | Limited  | Medium | Deal Conversion Analytics                   | Track deal performance.                                                                                 |
+| S18-006 | P2       | Limited  | Medium | Robot Sales Analytics                       | Track robot revenue.                                                                                    |
+| S18-007 | P2       | Limited  | High   | Customer Profitability Model                | Admin-only customer profitability.                                                                      |
+| S18-008 | P2       | Limited  | High   | Route Profitability Model                   | Admin-only route profitability.                                                                         |
+| S18-009 | P2       | Limited  | Medium | Chemical Usage Analytics                    | Track chemical costs/usage.                                                                             |
+| S18-010 | P2       | Limited  | Medium | Time On Site Analytics                      | Track labor time.                                                                                       |
+| S18-011 | P2       | Limited  | Medium | Technician Performance Metrics              | Internal operational metrics.                                                                           |
+| S18-012 | P2       | Limited  | Medium | Service Consistency Metrics                 | Track missed photos/checklists/issues.                                                                  |
+| S18-013 | P2       | Limited  | Medium | Pool System Type Database                   | Build historical pool/equipment dataset.                                                                |
+| S18-014 | P2       | Limited  | Medium | Local Market Pool Data Insights             | Surface equipment/system trends.                                                                        |
+| S18-015 | P2       | Limited  | Medium | Customer Lifetime Value Basics              | Track LTV indicators.                                                                                   |
+| S18-016 | P2       | Limited  | Medium | Churn Risk Indicators                       | Flag disengaged/problem customers.                                                                      |
+| S18-017 | P2       | Limited  | Medium | Admin Analytics Dashboard                   | Display metrics.                                                                                        |
+| S18-018 | P2       | Limited  | Medium | Analytics Tests                             | Verify data events.                                                                                     |
+| S18-019 | P2       | No       | Medium | Analytics Review Pack                       | Codex reviews analytics.                                                                                |
+| S18-020 | P2       | Yes      | Low    | Valuation Data Handoff                      | Document strategic business data.                                                                       |
+| S18-021 | P2       | Limited  | Medium | Missed Checklist Metrics                    | Track missed checklist items by technician, route, and account.                                         |
+| S18-022 | P2       | Limited  | Medium | Skipped Photo Metrics                       | Track skipped or missing required photo patterns.                                                       |
+| S18-023 | P2       | Limited  | Medium | Route Speed Anomaly Metrics                 | Track unusually fast/slow service patterns without creating a customer-visible score.                   |
+| S18-024 | P2       | Limited  | Medium | Repeat Chemistry Correction Metrics         | Track repeated chemical corrections and recurring water-balance issues.                                 |
+| S18-025 | P2       | Limited  | Medium | Customer Complaint Frequency Metrics        | Track complaint frequency and unresolved issue patterns.                                                |
+| S18-026 | P2       | Limited  | Medium | Pool Still Dirty Flag Metrics               | Track post-service dirty-pool flags and related follow-up.                                              |
+| S18-027 | P2       | Limited  | Medium | Technician Coaching History                 | Store admin-only coaching/follow-up history without customer-visible quality scores.                    |
+| S18-028 | P2       | Limited  | Medium | Work Order Cycle Time Analytics             | Track recommendation-to-approval, approval-to-part-ordered, and part-ordered-to-completion timing.      |
+| S18-029 | P2       | Limited  | Medium | Pending Approval Value Analytics            | Track total pending repair/install approval value over time.                                            |
 | S18-030 | P2       | Limited  | Medium | Shopping List Revenue Association Analytics | Separate shopping-list signals by approved revenue, pending revenue, inventory, and non-billable needs. |
 
 ## S19 — Privacy, Security, QA, Hardening
 
-| Pack ID | Priority | Parallel | Risk     | Title                                        | Purpose                                                                                                |
-| ------- | -------- | -------- | -------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| S19-001 | P0       | Limited  | Critical | Sensitive Data Inventory                     | Identify gate codes, payments, notes, photos, etc.                                                     |
-| S19-002 | P1       | Limited  | High     | Data Export Flow                             | Basic customer data export.                                                                            |
-| S19-003 | P1       | Limited  | High     | Account Deletion Flow                        | Customer account deletion request.                                                                     |
-| S19-004 | P1       | Limited  | High     | Deletion Admin Review                        | Admin handles deletion request.                                                                        |
-| S19-005 | P0       | Limited  | Medium   | Privacy Policy Linkage                       | Ensure privacy policy is shown/accepted.                                                               |
-| S19-006 | P0       | Limited  | Medium   | Terms Linkage                                | Ensure terms are shown/accepted.                                                                       |
-| S19-007 | P1       | No       | Critical | Payment Security Review                      | Verify no raw card storage.                                                                            |
-| S19-008 | P0       | No       | Critical | Gate Code Security Review                    | Verify gate access is restricted/logged.                                                               |
-| S19-009 | P0       | No       | Critical | Photo Privacy Review                         | Verify photos are customer-specific/private.                                                           |
-| S19-010 | P0       | No       | Critical | Technician Data Restriction Review           | Verify no tech access to sensitive business data.                                                      |
-| S19-011 | P0       | No       | Critical | Customer Isolation Review                    | Verify no cross-customer data leakage.                                                                 |
-| S19-012 | P0       | No       | Critical | Internal Notes Leakage Review                | Verify no internal notes leak.                                                                         |
-| S19-013 | P0       | No       | Critical | Route Privacy Review                         | Verify no other customer route info leaks.                                                             |
-| S19-014 | P0       | No       | Critical | Audit Log Coverage Review                    | Verify important events are logged.                                                                    |
-| S19-015 | P0       | Limited  | High     | Backend Unit Test Pack                       | Add/verify backend tests.                                                                              |
-| S19-016 | P0       | Limited  | High     | API Integration Test Pack                    | Add/verify API tests.                                                                                  |
-| S19-017 | P0       | Limited  | High     | Mobile Smoke Test Pack                       | Test critical mobile flows.                                                                            |
-| S19-018 | P0       | Limited  | High     | Admin Smoke Test Pack                        | Test admin flows.                                                                                      |
-| S19-019 | P0       | Limited  | High     | Technician Smoke Test Pack                   | Test tech flows.                                                                                       |
-| S19-020 | P1       | Limited  | Critical | Billing Test Pack                            | Test payment/quote/invoice flows.                                                                      |
-| S19-021 | P0       | Limited  | High     | Notification Test Pack                       | Test preferences/delivery triggers.                                                                    |
-| S19-022 | P0       | Limited  | Critical | Report Generation Test Pack                  | Test report flow.                                                                                      |
-| S19-023 | P0       | Limited  | Critical | Pool Outline Test Pack                       | Test outline rendering/editing.                                                                        |
-| S19-024 | P0       | Limited  | Critical | Quote Approval Test Pack                     | Test signature/approval/payment.                                                                       |
-| S19-025 | P1       | Limited  | Medium   | Error Monitoring Setup                       | Add error/crash monitoring.                                                                            |
-| S19-026 | P1       | Limited  | High     | Backup Verification                          | Verify database backup strategy.                                                                       |
-| S19-027 | P0       | Yes      | Medium   | Seed Beta Customer Data                      | Create beta-ready test data.                                                                           |
-| S19-028 | P1       | Limited  | Medium   | Performance Basic Review                     | Catch obvious slow screens/queries.                                                                    |
-| S19-029 | P1       | Limited  | Medium   | Accessibility Basic Review                   | Basic mobile accessibility.                                                                            |
-| S19-030 | P0       | No       | Critical | Security Review Pack                         | Codex reviews security.                                                                                |
-| S19-031 | P0       | No       | Critical | QA Review Pack                               | Codex reviews QA readiness.                                                                            |
-| S19-032 | P0       | Yes      | Medium   | Beta Readiness Handoff                       | Summarize readiness and risks.                                                                         |
-| S19-033 | P0       | No       | Critical | High-Quality Two-Year Media Retention Policy | Retain high-quality photos for up to two years for service proof and liability reduction.              |
-| S19-034 | P1       | No       | Critical | Post-Two-Year Media Compression Workflow     | Compress/archive old media after two years while preserving historical evidence.                       |
-| S19-035 | P1       | No       | Critical | Account Deletion Liability Exception         | Delete pool-owner account information while retaining historical photos and report logs for liability. |
-| S19-036 | P1       | No       | Critical | Retained Report/Photo Access Rules           | Define who can access retained historical photos/report logs after account deletion.                   |
-| S19-037 | P1       | No       | Critical | Media Retention + Deletion Tests             | Test media retention, compression, deletion, and liability-exception rules.                            |
-| S19-038 | P0       | No       | Critical | Work Order Progress Privacy Tests            | Verify customers only see their own work-order progress and customer-visible status details.            |
+| Pack ID | Priority | Parallel | Risk     | Title                                        | Purpose                                                                                                   |
+| ------- | -------- | -------- | -------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| S19-001 | P0       | Limited  | Critical | Sensitive Data Inventory                     | Identify gate codes, payments, notes, photos, etc.                                                        |
+| S19-002 | P1       | Limited  | High     | Data Export Flow                             | Basic customer data export.                                                                               |
+| S19-003 | P1       | Limited  | High     | Account Deletion Flow                        | Customer account deletion request.                                                                        |
+| S19-004 | P1       | Limited  | High     | Deletion Admin Review                        | Admin handles deletion request.                                                                           |
+| S19-005 | P0       | Limited  | Medium   | Privacy Policy Linkage                       | Ensure privacy policy is shown/accepted.                                                                  |
+| S19-006 | P0       | Limited  | Medium   | Terms Linkage                                | Ensure terms are shown/accepted.                                                                          |
+| S19-007 | P1       | No       | Critical | Payment Security Review                      | Verify no raw card storage.                                                                               |
+| S19-008 | P0       | No       | Critical | Gate Code Security Review                    | Verify gate access is restricted/logged.                                                                  |
+| S19-009 | P0       | No       | Critical | Photo Privacy Review                         | Verify photos are customer-specific/private.                                                              |
+| S19-010 | P0       | No       | Critical | Technician Data Restriction Review           | Verify no tech access to sensitive business data.                                                         |
+| S19-011 | P0       | No       | Critical | Customer Isolation Review                    | Verify no cross-customer data leakage.                                                                    |
+| S19-012 | P0       | No       | Critical | Internal Notes Leakage Review                | Verify no internal notes leak.                                                                            |
+| S19-013 | P0       | No       | Critical | Route Privacy Review                         | Verify no other customer route info leaks.                                                                |
+| S19-014 | P0       | No       | Critical | Audit Log Coverage Review                    | Verify important events are logged.                                                                       |
+| S19-015 | P0       | Limited  | High     | Backend Unit Test Pack                       | Add/verify backend tests.                                                                                 |
+| S19-016 | P0       | Limited  | High     | API Integration Test Pack                    | Add/verify API tests.                                                                                     |
+| S19-017 | P0       | Limited  | High     | Mobile Smoke Test Pack                       | Test critical mobile flows.                                                                               |
+| S19-018 | P0       | Limited  | High     | Admin Smoke Test Pack                        | Test admin flows.                                                                                         |
+| S19-019 | P0       | Limited  | High     | Technician Smoke Test Pack                   | Test tech flows.                                                                                          |
+| S19-020 | P1       | Limited  | Critical | Billing Test Pack                            | Test payment/quote/invoice flows.                                                                         |
+| S19-021 | P0       | Limited  | High     | Notification Test Pack                       | Test preferences/delivery triggers.                                                                       |
+| S19-022 | P0       | Limited  | Critical | Report Generation Test Pack                  | Test report flow.                                                                                         |
+| S19-023 | P0       | Limited  | Critical | Pool Outline Test Pack                       | Test outline rendering/editing.                                                                           |
+| S19-024 | P0       | Limited  | Critical | Quote Approval Test Pack                     | Test signature/approval/payment.                                                                          |
+| S19-025 | P1       | Limited  | Medium   | Error Monitoring Setup                       | Add error/crash monitoring.                                                                               |
+| S19-026 | P1       | Limited  | High     | Backup Verification                          | Verify database backup strategy.                                                                          |
+| S19-027 | P0       | Yes      | Medium   | Seed Beta Customer Data                      | Create beta-ready test data.                                                                              |
+| S19-028 | P1       | Limited  | Medium   | Performance Basic Review                     | Catch obvious slow screens/queries.                                                                       |
+| S19-029 | P1       | Limited  | Medium   | Accessibility Basic Review                   | Basic mobile accessibility.                                                                               |
+| S19-030 | P0       | No       | Critical | Security Review Pack                         | Codex reviews security.                                                                                   |
+| S19-031 | P0       | No       | Critical | QA Review Pack                               | Codex reviews QA readiness.                                                                               |
+| S19-032 | P0       | Yes      | Medium   | Beta Readiness Handoff                       | Summarize readiness and risks.                                                                            |
+| S19-033 | P0       | No       | Critical | High-Quality Two-Year Media Retention Policy | Retain high-quality photos for up to two years for service proof and liability reduction.                 |
+| S19-034 | P1       | No       | Critical | Post-Two-Year Media Compression Workflow     | Compress/archive old media after two years while preserving historical evidence.                          |
+| S19-035 | P1       | No       | Critical | Account Deletion Liability Exception         | Delete pool-owner account information while retaining historical photos and report logs for liability.    |
+| S19-036 | P1       | No       | Critical | Retained Report/Photo Access Rules           | Define who can access retained historical photos/report logs after account deletion.                      |
+| S19-037 | P1       | No       | Critical | Media Retention + Deletion Tests             | Test media retention, compression, deletion, and liability-exception rules.                               |
+| S19-038 | P0       | No       | Critical | Work Order Progress Privacy Tests            | Verify customers only see their own work-order progress and customer-visible status details.              |
 | S19-039 | P0       | No       | Critical | Shopping List Permission Tests               | Verify customers cannot see internal shopping-list details and technicians cannot see margin/profit data. |
-| S19-040 | P0       | No       | Critical | Work Order Progress Integrity Review         | Verify tracker states align with approval, part, and completion records with no status drift.           |
+| S19-040 | P0       | No       | Critical | Work Order Progress Integrity Review         | Verify tracker states align with approval, part, and completion records with no status drift.             |
 
 ## S20 — Release, Beta, Migration from Skimmer
 
