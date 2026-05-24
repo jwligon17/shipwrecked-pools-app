@@ -8,5 +8,8 @@ describe('db package smoke', () => {
     expect(db.ORGANIZATIONS_TABLE).toBe('organizations');
     expect(db.ORGANIZATION_STATUSES).toContain('active');
     expect(db.ORGANIZATION_TYPES).toContain('shipwrecked_internal');
+    expect(db.APP_USERS_TABLE).toBe('app_users');
+    expect(db.APP_USER_STATUSES).toContain('invited');
+    expect(db.APP_USER_PREFERRED_CONTACT_METHODS).toContain('push');
   });
 });

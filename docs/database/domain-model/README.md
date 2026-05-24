@@ -5,6 +5,7 @@ This directory documents Shipwrecked domain-model intent as schema packs are imp
 ## Current Coverage
 
 - `organizations.md`: foundational tenant/organization model.
+- `app-users.md`: app-level user profile model with auth-provider separation.
 
 ## Scope Rules
 
