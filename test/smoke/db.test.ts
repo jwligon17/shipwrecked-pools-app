@@ -56,6 +56,10 @@ describe('db package smoke', () => {
     expect(db.SERVICE_POINT_TYPES).toContain('skimmer');
     expect(db.SERVICE_POINT_STATUSES).toContain('action_needed');
     expect(db.SERVICE_POINT_COORDINATE_SYSTEMS).toContain('normalized_outline');
+    expect(db.ROUTES_TABLE).toBe('routes');
+    expect(db.ROUTE_TYPES).toContain('green_to_clean');
+    expect(db.ROUTE_STATUSES).toContain('in_progress');
+    expect(db.ROUTE_WEATHER_STATUSES).toContain('storm_delay');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');

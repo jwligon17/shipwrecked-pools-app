@@ -10,6 +10,7 @@ export * from './pool-outlines';
 export * from './property-access';
 export * from './properties';
 export * from './roles';
+export * from './routes';
 export * from './service-points';
 export * from './water-bodies';
 export * from './water-body-relationships';
