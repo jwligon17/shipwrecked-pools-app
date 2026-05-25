@@ -4,6 +4,7 @@ export * from './household-members';
 export * from './leads';
 export * from './organization-memberships';
 export * from './organizations';
+export * from './pets';
 export * from './property-access';
 export * from './properties';
 export * from './roles';

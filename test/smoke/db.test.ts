@@ -34,5 +34,9 @@ describe('db package smoke', () => {
     expect(db.PROPERTY_ACCESS_PROFILES_TABLE).toBe('property_access_profiles');
     expect(db.PROPERTY_ACCESS_PROFILE_STATUSES).toContain('inactive');
     expect(db.PROPERTY_ACCESS_TYPES).toContain('gate_code');
+    expect(db.PETS_TABLE).toBe('pets');
+    expect(db.PET_TYPES).toContain('dog');
+    expect(db.PET_STATUSES).toContain('active');
+    expect(db.PET_TEMPERAMENTS).toContain('friendly');
   });
 });
