@@ -48,5 +48,10 @@ describe('db package smoke', () => {
     expect(db.WATER_BODY_RELATIONSHIPS_TABLE).toBe('water_body_relationships');
     expect(db.WATER_BODY_RELATIONSHIP_TYPES).toContain('connected_spa');
     expect(db.WATER_BODY_RELATIONSHIP_STATUSES).toContain('active');
+    expect(db.EQUIPMENT_TABLE).toBe('equipment');
+    expect(db.EQUIPMENT_TYPES).toContain('pump');
+    expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');
+    expect(db.EQUIPMENT_FILTER_TYPES).toContain('not_applicable');
+    expect(db.EQUIPMENT_PUMP_TYPES).toContain('variable_speed');
   });
 });
