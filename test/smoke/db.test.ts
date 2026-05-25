@@ -45,5 +45,8 @@ describe('db package smoke', () => {
     expect(db.WATER_BODY_SANITIZER_TYPES).toContain('salt');
     expect(db.WATER_BODY_SURFACE_TYPES).toContain('pebble');
     expect(db.WATER_BODY_CHEMISTRY_PROFILE_STATUSES).toContain('ready');
+    expect(db.WATER_BODY_RELATIONSHIPS_TABLE).toBe('water_body_relationships');
+    expect(db.WATER_BODY_RELATIONSHIP_TYPES).toContain('connected_spa');
+    expect(db.WATER_BODY_RELATIONSHIP_STATUSES).toContain('active');
   });
 });

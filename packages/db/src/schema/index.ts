@@ -9,3 +9,4 @@ export * from './property-access';
 export * from './properties';
 export * from './roles';
 export * from './water-bodies';
+export * from './water-body-relationships';
