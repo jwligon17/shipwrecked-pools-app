@@ -48,6 +48,10 @@ describe('db package smoke', () => {
     expect(db.WATER_BODY_RELATIONSHIPS_TABLE).toBe('water_body_relationships');
     expect(db.WATER_BODY_RELATIONSHIP_TYPES).toContain('connected_spa');
     expect(db.WATER_BODY_RELATIONSHIP_STATUSES).toContain('active');
+    expect(db.POOL_OUTLINES_TABLE).toBe('pool_outlines');
+    expect(db.POOL_OUTLINE_STATUSES).toContain('published');
+    expect(db.POOL_OUTLINE_SOURCE_TYPES).toContain('ai_assisted');
+    expect(db.POOL_OUTLINE_SHAPE_TYPES).toContain('svg_path');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');
