@@ -52,6 +52,10 @@ describe('db package smoke', () => {
     expect(db.POOL_OUTLINE_STATUSES).toContain('published');
     expect(db.POOL_OUTLINE_SOURCE_TYPES).toContain('ai_assisted');
     expect(db.POOL_OUTLINE_SHAPE_TYPES).toContain('svg_path');
+    expect(db.SERVICE_POINTS_TABLE).toBe('service_points');
+    expect(db.SERVICE_POINT_TYPES).toContain('skimmer');
+    expect(db.SERVICE_POINT_STATUSES).toContain('action_needed');
+    expect(db.SERVICE_POINT_COORDINATE_SYSTEMS).toContain('normalized_outline');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');
