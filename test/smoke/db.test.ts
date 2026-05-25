@@ -38,5 +38,12 @@ describe('db package smoke', () => {
     expect(db.PET_TYPES).toContain('dog');
     expect(db.PET_STATUSES).toContain('active');
     expect(db.PET_TEMPERAMENTS).toContain('friendly');
+    expect(db.WATER_BODIES_TABLE).toBe('water_bodies');
+    expect(db.WATER_BODY_TYPES).toContain('connected_spa');
+    expect(db.WATER_BODY_STATUSES).toContain('paused');
+    expect(db.WATER_BODY_SERVICE_STATUSES).toContain('active_service');
+    expect(db.WATER_BODY_SANITIZER_TYPES).toContain('salt');
+    expect(db.WATER_BODY_SURFACE_TYPES).toContain('pebble');
+    expect(db.WATER_BODY_CHEMISTRY_PROFILE_STATUSES).toContain('ready');
   });
 });
