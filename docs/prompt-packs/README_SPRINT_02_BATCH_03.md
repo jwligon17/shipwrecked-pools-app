@@ -13,6 +13,7 @@ Important:
 Sprint 02 database/domain packs should be run one at a time. Commit each pack separately. Do not parallelize database/schema packs.
 
 Recommended:
+
 - Add and commit these prompt pack files.
 - Run S02-009 only.
 - Inspect and commit S02-009.
