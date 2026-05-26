@@ -22,7 +22,6 @@ This pack should support before/after pairing metadata and visibility controls w
 
 Photos are essential to Shipwrecked’s customer trust and technician workflow. The system needs to support required service photos, before/after proof, gate photos, filter/equipment photos, and service-point history while respecting customer privacy and internal-note boundaries.
 
-
 ## Common Sprint 02 Scope Guard
 
 Sprint 02 is the core database/domain-model sprint.
@@ -30,6 +29,7 @@ Sprint 02 is the core database/domain-model sprint.
 This pack may create database/domain schema artifacts, migration files, type exports, schema documentation, seed-shape notes, and tests/checks related to the specific domain object in this pack.
 
 This pack must not implement:
+
 - auth flows or login screens
 - billing/payment logic
 - notification delivery
@@ -42,7 +42,6 @@ This pack must not implement:
 - secrets
 
 Do not run migrations against a live database unless the repo already has an explicit safe local/test migration workflow and the prompt pack requires it. Prefer creating migrations/schema files and running static checks/tests first.
-
 
 ## Files Codex Should Read First
 
