@@ -1,5 +1,6 @@
 export * from './app-users';
 export * from './checklists';
+export * from './chemistry-readings';
 export * from './customers';
 export * from './equipment';
 export * from './household-members';

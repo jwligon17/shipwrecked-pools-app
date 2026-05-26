@@ -81,6 +81,9 @@ describe('db package smoke', () => {
     expect(db.PHOTO_TYPES).toContain('before');
     expect(db.PHOTO_CAPTURE_STAGES).toContain('during');
     expect(db.PHOTO_VISIBILITIES).toContain('commercial_export_visible');
+    expect(db.CHEMISTRY_READINGS_TABLE).toBe('chemistry_readings');
+    expect(db.CHEMISTRY_READING_SOURCES).toContain('commercial_manager');
+    expect(db.CHEMISTRY_READING_STATUSES).toContain('corrected');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');
