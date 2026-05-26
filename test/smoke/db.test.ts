@@ -63,6 +63,12 @@ describe('db package smoke', () => {
     expect(db.ROUTE_STOPS_TABLE).toBe('route_stops');
     expect(db.ROUTE_STOP_STATUSES).toContain('rescheduled');
     expect(db.ROUTE_STOP_DELAY_REASONS).toContain('gate_locked');
+    expect(db.SERVICE_VISITS_TABLE).toBe('service_visits');
+    expect(db.SERVICE_VISIT_TYPES).toContain('weekly_maintenance');
+    expect(db.SERVICE_VISIT_TYPES).toContain('green_to_clean');
+    expect(db.SERVICE_VISIT_STATUSES).toContain('needs_admin_review');
+    expect(db.SERVICE_VISIT_SKIP_REASONS).toContain('unsafe_conditions');
+    expect(db.SERVICE_VISIT_COMPLETION_SOURCES).toContain('technician');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');

@@ -12,6 +12,7 @@ export * from './properties';
 export * from './roles';
 export * from './route-stops';
 export * from './routes';
+export * from './service-visits';
 export * from './service-points';
 export * from './water-bodies';
 export * from './water-body-relationships';
