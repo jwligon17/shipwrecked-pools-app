@@ -69,6 +69,13 @@ describe('db package smoke', () => {
     expect(db.SERVICE_VISIT_STATUSES).toContain('needs_admin_review');
     expect(db.SERVICE_VISIT_SKIP_REASONS).toContain('unsafe_conditions');
     expect(db.SERVICE_VISIT_COMPLETION_SOURCES).toContain('technician');
+    expect(db.CHECKLIST_TEMPLATES_TABLE).toBe('checklist_templates');
+    expect(db.CHECKLIST_TEMPLATE_ITEMS_TABLE).toBe('checklist_template_items');
+    expect(db.SERVICE_VISIT_CHECKLIST_ITEMS_TABLE).toBe('service_visit_checklist_items');
+    expect(db.CHECKLIST_TEMPLATE_TYPES).toContain('weekly_maintenance');
+    expect(db.CHECKLIST_TEMPLATE_STATUSES).toContain('active');
+    expect(db.CHECKLIST_ITEM_TYPES).toContain('photo_required');
+    expect(db.SERVICE_VISIT_CHECKLIST_ITEM_STATUSES).toContain('needs_review');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');

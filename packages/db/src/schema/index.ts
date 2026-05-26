@@ -1,4 +1,5 @@
 export * from './app-users';
+export * from './checklists';
 export * from './customers';
 export * from './equipment';
 export * from './household-members';
