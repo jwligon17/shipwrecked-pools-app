@@ -76,6 +76,11 @@ describe('db package smoke', () => {
     expect(db.CHECKLIST_TEMPLATE_STATUSES).toContain('active');
     expect(db.CHECKLIST_ITEM_TYPES).toContain('photo_required');
     expect(db.SERVICE_VISIT_CHECKLIST_ITEM_STATUSES).toContain('needs_review');
+    expect(db.PHOTOS_TABLE).toBe('photos');
+    expect(db.PHOTO_TYPES).toContain('gate_arrival');
+    expect(db.PHOTO_TYPES).toContain('before');
+    expect(db.PHOTO_CAPTURE_STAGES).toContain('during');
+    expect(db.PHOTO_VISIBILITIES).toContain('commercial_export_visible');
     expect(db.EQUIPMENT_TABLE).toBe('equipment');
     expect(db.EQUIPMENT_TYPES).toContain('pump');
     expect(db.EQUIPMENT_STATUSES).toContain('recommended_replacement');
